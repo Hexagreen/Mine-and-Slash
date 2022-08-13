@@ -31,6 +31,7 @@ public interface IBaseAutoLoc extends IGUID {
         Potions,
         Alchemy,
 
+
     }
 
     default String getPrefix() {

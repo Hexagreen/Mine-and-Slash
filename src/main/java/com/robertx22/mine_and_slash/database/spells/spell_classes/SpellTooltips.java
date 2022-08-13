@@ -2,14 +2,15 @@ package com.robertx22.mine_and_slash.database.spells.spell_classes;
 
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 
 public class SpellTooltips {
 
     public static ITextComponent singleTargetProjectile() {
-        return new StringTextComponent("Throw a projectile, damaging first enemy hit: ");
+        return new StringTextComponent(Spells.Single_Target_Proj.locName().getString());
     }
 
     public static ITextComponent buff() {
-        return new StringTextComponent("Applies buff to caster: ");
+        return new StringTextComponent(Spells.Self_Buff.locName().getString());
     }
 }

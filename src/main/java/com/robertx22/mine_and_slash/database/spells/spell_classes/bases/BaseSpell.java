@@ -28,6 +28,7 @@ import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Masteries;
 import com.robertx22.mine_and_slash.uncommon.interfaces.data_items.IRarity;
 import com.robertx22.mine_and_slash.uncommon.localization.Words;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
 import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
 import net.minecraft.entity.LivingEntity;
@@ -454,19 +455,19 @@ public abstract class BaseSpell implements ISlashRegistryEntry<BaseSpell>, ITool
         TooltipUtils.addEmpty(list);
 
         if (getCalculatedHealthCost(ctx) * 2 > 0.00) {
-            list.add(new StringTextComponent(TextFormatting.RED + "Health Cost: " + Math.round(getHealthCost(ctx) * 100) + "%" + " (" + Math.round(getCalculatedHealthCost(ctx) * 2) + ")"));
+            list.add(new StringTextComponent(TextFormatting.RED + Spells.Health_Cost.locName().getString() + Math.round(getHealthCost(ctx) * 100) + "%" + " (" + Math.round(getCalculatedHealthCost(ctx) * 2) + ")"));
         }
         if (getCalculatedMagicShieldCost(ctx) * 2 > 0.00) {
-            list.add(new StringTextComponent(TextFormatting.AQUA + "Magic Shield Cost: " + Math.round(getMagicShieldCost(ctx) * 100) + "%" + " (" + Math.round(getCalculatedMagicShieldCost(ctx) * 2) + ")"));
+            list.add(new StringTextComponent(TextFormatting.AQUA + Spells.Magic_Shield_Cost.locName().getString() + Math.round(getMagicShieldCost(ctx) * 100) + "%" + " (" + Math.round(getCalculatedMagicShieldCost(ctx) * 2) + ")"));
         }
         if (getCalculatedManaCost(ctx) > 0) {
-            list.add(new StringTextComponent(TextFormatting.BLUE + "Mana Cost: " + getCalculatedManaCost(ctx)));
+            list.add(new StringTextComponent(TextFormatting.BLUE + Spells.Mana_Cost.locName().getString() + getCalculatedManaCost(ctx)));
         }
         if (getCalculatedEnergyCost(ctx) > 0) {
-            list.add(new StringTextComponent(TextFormatting.YELLOW + "Energy Cost: " + getCalculatedEnergyCost(ctx)));
+            list.add(new StringTextComponent(TextFormatting.YELLOW + Spells.Energy_Cost.locName().getString() + getCalculatedEnergyCost(ctx)));
         }
-        list.add(new StringTextComponent(TextFormatting.GREEN + "Cooldown: " + getCooldownInSeconds(ctx) + "s"));
-        list.add(new StringTextComponent(TextFormatting.GREEN + "Cast Time: " + getUseDurationInSeconds(ctx) + "s"));
+        list.add(new StringTextComponent(TextFormatting.GREEN + Spells.Cooldown.locName().getString() + getCooldownInSeconds(ctx) + "s"));
+        list.add(new StringTextComponent(TextFormatting.GREEN + Spells.Cast_Time.locName().getString() + getUseDurationInSeconds(ctx) + "s"));
 
         TooltipUtils.addEmpty(list);
 
@@ -479,10 +480,10 @@ public abstract class BaseSpell implements ISlashRegistryEntry<BaseSpell>, ITool
 
         if (this.immutableConfigs.allowedAsRightClickOn() == AllowedAsRightClickOn.MAGE_WEAPON) {
             TooltipUtils.addEmpty(list);
-            list.add(new SText(TextFormatting.GRAY + "Can be set as right-click on staves/wands."));
+            list.add(new SText(TextFormatting.GRAY + Spells.Bind_On_Wands.locName().getString()));
         } else if (this.immutableConfigs.allowedAsRightClickOn() == AllowedAsRightClickOn.MELEE_WEAPON) {
             TooltipUtils.addEmpty(list);
-            list.add(new SText(TextFormatting.GRAY + "Can be set as right-click on melee weapons."));
+            list.add(new SText(TextFormatting.GRAY + Spells.Bind_On_Melee.locName().getString()));
         }
         TooltipUtils.addEmpty(list);
 

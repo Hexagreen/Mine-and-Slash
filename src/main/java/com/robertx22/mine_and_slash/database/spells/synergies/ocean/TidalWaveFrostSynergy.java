@@ -15,6 +15,7 @@ import com.robertx22.mine_and_slash.uncommon.effectdatas.DamageEffect;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.EffectData;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.SpellDamageEffect;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.interfaces.WeaponTypes;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.RandomUtils;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
 import net.minecraft.util.text.ITextComponent;
@@ -33,7 +34,7 @@ public class TidalWaveFrostSynergy extends OnAttackSpellDmgDoneSynergy {
 
         addSpellName(list);
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Synergy"));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.locName().getString()));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "Modifies Tidal Waves"));
 
         TooltipUtils.addEmpty(list);
@@ -50,6 +51,7 @@ public class TidalWaveFrostSynergy extends OnAttackSpellDmgDoneSynergy {
         c.set(SC.MANA_COST, 1, 4);
         c.set(SC.ENERGY_COST, 1, 2);
     }
+
 
     @Override
     public PreCalcSpellConfigs getPreCalcConfig() {

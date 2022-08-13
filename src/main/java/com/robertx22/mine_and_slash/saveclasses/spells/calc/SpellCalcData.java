@@ -15,6 +15,7 @@ import com.robertx22.mine_and_slash.saveclasses.spells.StatScaling;
 import com.robertx22.mine_and_slash.uncommon.capability.entity.EntityCap;
 import com.robertx22.mine_and_slash.uncommon.capability.player.PlayerSpellCap;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
 import info.loenwind.autosave.annotations.Factory;
 import info.loenwind.autosave.annotations.Storable;
@@ -257,7 +258,7 @@ public class SpellCalcData {
 
             if (baseValue > 0) {
                 list.add(new StringTextComponent(
-                    TextFormatting.RED + "Base Value: " + getCalculatedBaseValue(spells, ability, info.unitdata)));
+                    TextFormatting.RED + Spells.BaseValue.locName().getString() + getCalculatedBaseValue(spells, ability, info.unitdata)));
             }
         }
 

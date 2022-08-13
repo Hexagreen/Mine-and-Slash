@@ -7,6 +7,7 @@ import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.uncommon.capability.entity.EntityCap;
 import com.robertx22.mine_and_slash.uncommon.capability.player.PlayerSpellCap;
 import com.robertx22.mine_and_slash.uncommon.datasaving.Load;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -48,7 +49,7 @@ public interface IApplyStatPotion {
         ExtraPotionData minStacks = new ExtraPotionData();
         minStacks.casterLvl = info.unitdata.getLevel();
 
-        list.add(new StringTextComponent(TextFormatting.GREEN + "Affects Stats: "));
+        list.add(new StringTextComponent(TextFormatting.GREEN + Spells.AffectSpell.locName().getString()));
 
         getOwnStatsAffected(effect, info.unitdata, Load.spells(info.player), minStacks).forEach(x -> {
             list.addAll(x.GetTooltipString(info));

@@ -12,6 +12,7 @@ import com.robertx22.mine_and_slash.uncommon.capability.entity.EntityCap;
 import com.robertx22.mine_and_slash.uncommon.capability.player.PlayerSpellCap;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Masteries;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
 import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
@@ -155,14 +156,14 @@ public interface IAbility extends IGUID, ITooltipList {
 
             TooltipUtils.abilityLevel(list, ctx.spellsCap.getLevelOf(this), getMaxSpellLevelNormal());
 
-            list.add(new SText(TextFormatting.YELLOW + "Effective Ability Level: " + getEffectiveAbilityLevel(ctx.spellsCap, ctx.data)));
+            list.add(new SText(TextFormatting.YELLOW + Spells.EffAbilityLevel.locName().getString() + getEffectiveAbilityLevel(ctx.spellsCap, ctx.data)));
 
-            list.add(new SText(getElement().format + "Element: " + getElement().name()));
+            list.add(new SText(getElement().format + Spells.Element.locName().getString() + getElement().name()));
 
             if (ctx.spellsCap.getAbilitiesData()
                 .getSchoolPoints(this.getMastery()) < getSchoolPointsNeeded()) {
-                list.add(new SText(TextFormatting.RED + "Needs ").appendSibling(getMastery().getFullName()
-                    .appendText(" Level: " + getSchoolPointsNeeded())));
+                list.add(new SText(TextFormatting.RED + Spells.Needs.locName().getString()).appendSibling(getMastery().getFullName()
+                    .appendText(Spells.Level.locName().getString() + getSchoolPointsNeeded())));
             }
 
             list.add(new SText(""));
@@ -170,7 +171,7 @@ public interface IAbility extends IGUID, ITooltipList {
             if (!Screen.hasShiftDown()) {
                 list.add(new SText(TextFormatting.BLUE + "").appendSibling(Words.Press_Shift_For_More_Info.locName()));
             } else {
-                list.add(new SText(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.BOLD).appendText("Ability Stats:"));
+                list.add(new SText(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.BOLD).appendText(Spells.AbilityStats.locName().getString()));
 
                 list.addAll(ctx.getConfigFor(this)
                     .GetTooltipString(info, ctx));
@@ -179,7 +180,7 @@ public interface IAbility extends IGUID, ITooltipList {
                     Synergy s = (Synergy) this;
 
                     list.add(new SText(""));
-                    list.add(new SText(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.BOLD + "Affects Spell: "));
+                    list.add(new SText(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.BOLD + Spells.AffectSpell.locName().getString()));
 
                     list.addAll(s.getConfigsAffectingSpell()
                         .GetTooltipString(info, ctx));

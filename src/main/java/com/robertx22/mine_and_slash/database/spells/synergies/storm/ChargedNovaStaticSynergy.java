@@ -15,6 +15,7 @@ import com.robertx22.mine_and_slash.saveclasses.spells.IAbility;
 import com.robertx22.mine_and_slash.uncommon.datasaving.Load;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.AttackSpellDamageEffect;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.SpellDamageEffect;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.RandomUtils;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
 import net.minecraft.util.text.ITextComponent;
@@ -33,12 +34,12 @@ public class ChargedNovaStaticSynergy extends OnAttackSpellDmgDoneSynergy {
 
         addSpellName(list);
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Synergy"));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.locName().getString()));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "Modifies Charged Sweep"));
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Hits have a chance to apply: " + StaticEffect.INSTANCE.locNameForLangFile()));
+        list.add(new StringTextComponent(Spells.HitApplyEffect.locName().getString() + StaticEffect.INSTANCE.locNameForLangFile()));
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 

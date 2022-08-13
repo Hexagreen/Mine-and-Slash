@@ -6,6 +6,7 @@ import com.robertx22.mine_and_slash.saveclasses.item_classes.IInstability;
 import com.robertx22.mine_and_slash.uncommon.capability.entity.EntityCap;
 import com.robertx22.mine_and_slash.uncommon.interfaces.data_items.ICommonDataItem;
 import com.robertx22.mine_and_slash.uncommon.localization.CLOC;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.localization.Styles;
 import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
@@ -200,14 +201,14 @@ public class TooltipUtils {
 
     public static void abilityLevel(List<ITextComponent> list, int current, int max) {
         list.add(
-            new SText(TextFormatting.YELLOW + "").appendText("Ability ")
+            new SText(TextFormatting.YELLOW + "").appendText(Spells.SpellAbility.locName().getString())
                 .appendSibling(Words.Level.locName())
                 .appendText(": " + current + "/" + max));
     }
 
     public static void totalMasteryLevel(List<ITextComponent> list, int current, int max) {
         list.add(
-                new SText(TextFormatting.LIGHT_PURPLE + "").appendText("Total Mastery ")
+                new SText(TextFormatting.LIGHT_PURPLE + "").appendText(Spells.SpellTotalMastery.locName().getString())
                         .appendSibling(Words.Level.locName())
                         .appendText(": " + current + "/" + max));
     }
