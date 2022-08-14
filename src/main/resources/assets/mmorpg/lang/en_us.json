@@ -2064,8 +2064,8 @@
 "mmorpg.spell_desc.spellability": "Ability ",
 "mmorpg.spell_desc.spelltotalmastery": "Total Mastery ",
 
-"mmorpg.spell_desc.needranged": "Requires Ranged Weapon",
-"mmorpg.spell_desc.needmelee": "Requires Melee Weapon",
+"mmorpg.spell_desc.reqranged": "Requires Ranged Weapon",
+"mmorpg.spell_desc.reqmelee": "Requires Melee Weapon",
 "mmorpg.spell_desc.modifies": "Modifies ",
 
 "mmorpg.spell_desc.single_target_proj": "Throw a projectile, damaging first enemy hit: ",
