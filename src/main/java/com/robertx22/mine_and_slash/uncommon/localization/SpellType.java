@@ -8,10 +8,10 @@ public class SpellType {
         String typeStr = "";
         Iterator<Spells> itr = spellTypes.iterator();
 
-        typeStr = typeStr.concat(itr.next().locName().getString());
+        typeStr = typeStr.concat(itr.next().getLocName());
 
         while(itr.hasNext()) {
-            typeStr = typeStr.concat(", ").concat(itr.next().locName().getString());
+            typeStr = typeStr.concat(", ").concat(itr.next().getLocName());
         }
         return typeStr;
     }

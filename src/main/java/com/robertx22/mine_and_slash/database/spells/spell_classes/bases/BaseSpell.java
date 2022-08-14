@@ -455,19 +455,19 @@ public abstract class BaseSpell implements ISlashRegistryEntry<BaseSpell>, ITool
         TooltipUtils.addEmpty(list);
 
         if (getCalculatedHealthCost(ctx) * 2 > 0.00) {
-            list.add(new StringTextComponent(TextFormatting.RED + Spells.Health_Cost.locName().getString() + Math.round(getHealthCost(ctx) * 100) + "%" + " (" + Math.round(getCalculatedHealthCost(ctx) * 2) + ")"));
+            list.add(new StringTextComponent(TextFormatting.RED + Spells.Health_Cost.getLocName() + Math.round(getHealthCost(ctx) * 100) + "%" + " (" + Math.round(getCalculatedHealthCost(ctx) * 2) + ")"));
         }
         if (getCalculatedMagicShieldCost(ctx) * 2 > 0.00) {
-            list.add(new StringTextComponent(TextFormatting.AQUA + Spells.Magic_Shield_Cost.locName().getString() + Math.round(getMagicShieldCost(ctx) * 100) + "%" + " (" + Math.round(getCalculatedMagicShieldCost(ctx) * 2) + ")"));
+            list.add(new StringTextComponent(TextFormatting.AQUA + Spells.Magic_Shield_Cost.getLocName() + Math.round(getMagicShieldCost(ctx) * 100) + "%" + " (" + Math.round(getCalculatedMagicShieldCost(ctx) * 2) + ")"));
         }
         if (getCalculatedManaCost(ctx) > 0) {
-            list.add(new StringTextComponent(TextFormatting.BLUE + Spells.Mana_Cost.locName().getString() + getCalculatedManaCost(ctx)));
+            list.add(new StringTextComponent(TextFormatting.BLUE + Spells.Mana_Cost.getLocName() + getCalculatedManaCost(ctx)));
         }
         if (getCalculatedEnergyCost(ctx) > 0) {
-            list.add(new StringTextComponent(TextFormatting.YELLOW + Spells.Energy_Cost.locName().getString() + getCalculatedEnergyCost(ctx)));
+            list.add(new StringTextComponent(TextFormatting.YELLOW + Spells.Energy_Cost.getLocName() + getCalculatedEnergyCost(ctx)));
         }
-        list.add(new StringTextComponent(TextFormatting.GREEN + Spells.Cooldown.locName().getString() + getCooldownInSeconds(ctx) + "s"));
-        list.add(new StringTextComponent(TextFormatting.GREEN + Spells.Cast_Time.locName().getString() + getUseDurationInSeconds(ctx) + "s"));
+        list.add(new StringTextComponent(TextFormatting.GREEN + Spells.Cooldown.getLocName() + getCooldownInSeconds(ctx) + "s"));
+        list.add(new StringTextComponent(TextFormatting.GREEN + Spells.Cast_Time.getLocName() + getUseDurationInSeconds(ctx) + "s"));
 
         TooltipUtils.addEmpty(list);
 
@@ -480,10 +480,10 @@ public abstract class BaseSpell implements ISlashRegistryEntry<BaseSpell>, ITool
 
         if (this.immutableConfigs.allowedAsRightClickOn() == AllowedAsRightClickOn.MAGE_WEAPON) {
             TooltipUtils.addEmpty(list);
-            list.add(new SText(TextFormatting.GRAY + Spells.Bind_On_Wands.locName().getString()));
+            list.add(new SText(TextFormatting.GRAY + Spells.Bind_On_Wands.getLocName()));
         } else if (this.immutableConfigs.allowedAsRightClickOn() == AllowedAsRightClickOn.MELEE_WEAPON) {
             TooltipUtils.addEmpty(list);
-            list.add(new SText(TextFormatting.GRAY + Spells.Bind_On_Melee.locName().getString()));
+            list.add(new SText(TextFormatting.GRAY + Spells.Bind_On_Melee.getLocName()));
         }
         TooltipUtils.addEmpty(list);
 

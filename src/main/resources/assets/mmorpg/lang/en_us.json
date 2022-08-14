@@ -2064,8 +2064,9 @@
 "mmorpg.spell_desc.spellability": "Ability ",
 "mmorpg.spell_desc.spelltotalmastery": "Total Mastery ",
 
-"mmorpg.spell_desc.need_ranged": "Requires Ranged Weapon",
-"mmorpg.spell_desc.need_melee": "Requires Melee Weapon",
+"mmorpg.spell_desc.needranged": "Requires Ranged Weapon",
+"mmorpg.spell_desc.needmelee": "Requires Melee Weapon",
+"mmorpg.spell_desc.modifies": "Modifies ",
 
 "mmorpg.spell_desc.single_target_proj": "Throw a projectile, damaging first enemy hit: ",
 "mmorpg.spell_desc.self_buff": "Applies buff to caster: ",
@@ -2100,6 +2101,20 @@
 
 "mmorpg.spell_desc.unlocksecondmastery": "You can unlock a second Mastery tree at level ",
 "mmorpg.spell_desc.unlockthirdmastery": "You can unlock a third Mastery tree at level ",
-"mmorpg.spell_desc.masterylevelcap": "Your total Mastery level cannot go past your max level."
+"mmorpg.spell_desc.masterylevelcap": "Your total Mastery level cannot go past your max level.",
+
+"mmorpg.spell_desc.scalewepatk": "Weapon Attack Damage",
+"mmorpg.spell_desc.scaleeleatk": "Elemental Attack Damage",
+"mmorpg.spell_desc.scalephyatk": "Physical Attack Damage",
+"mmorpg.spell_desc.scalefireatk": "Fire Attack Damage",
+"mmorpg.spell_desc.scalefrostatk": "Frost Attack Damage",
+"mmorpg.spell_desc.scalelightatk": "Lightning Attack Damage",
+"mmorpg.spell_desc.scalenatureatk": "Nature Attack Damage",
+"mmorpg.spell_desc.scalearmor": "Armor",
+"mmorpg.spell_desc.scalehealth": "Health",
+"mmorpg.spell_desc.scaleenergy": "Energy",
+"mmorpg.spell_desc.scalemana": "Mana",
+"mmorpg.spell_desc.scalemagicshld": "Magic Shield"
+
 
 }

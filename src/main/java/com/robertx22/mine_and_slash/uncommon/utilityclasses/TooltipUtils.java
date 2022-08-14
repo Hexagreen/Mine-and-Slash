@@ -201,14 +201,14 @@ public class TooltipUtils {
 
     public static void abilityLevel(List<ITextComponent> list, int current, int max) {
         list.add(
-            new SText(TextFormatting.YELLOW + "").appendText(Spells.SpellAbility.locName().getString())
+            new SText(TextFormatting.YELLOW + "").appendText(Spells.SpellAbility.getLocName())
                 .appendSibling(Words.Level.locName())
                 .appendText(": " + current + "/" + max));
     }
 
     public static void totalMasteryLevel(List<ITextComponent> list, int current, int max) {
         list.add(
-                new SText(TextFormatting.LIGHT_PURPLE + "").appendText(Spells.SpellTotalMastery.locName().getString())
+                new SText(TextFormatting.LIGHT_PURPLE + "").appendText(Spells.SpellTotalMastery.getLocName())
                         .appendSibling(Words.Level.locName())
                         .appendText(": " + current + "/" + max));
     }

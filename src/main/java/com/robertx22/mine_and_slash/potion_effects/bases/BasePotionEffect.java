@@ -172,7 +172,7 @@ public abstract class BasePotionEffect extends Effect implements ISlashRegistryE
 
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent(
-            TextFormatting.LIGHT_PURPLE + Spells.SpellPotionStack.locName().getString() + TextFormatting.DARK_PURPLE + getMaxStacks()));
+            TextFormatting.LIGHT_PURPLE + Spells.SpellPotionStack.getLocName() + TextFormatting.DARK_PURPLE + getMaxStacks()));
 
         return list;
 
@@ -183,7 +183,7 @@ public abstract class BasePotionEffect extends Effect implements ISlashRegistryE
 
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent(
-            TextFormatting.GOLD + Spells.SpellPotionDuration.locName().getString() + TextFormatting.YELLOW + getDurationInSeconds(info.player) + "s"));
+            TextFormatting.GOLD + Spells.SpellPotionDuration.getLocName() + TextFormatting.YELLOW + getDurationInSeconds(info.player) + "s"));
 
         return list;
 

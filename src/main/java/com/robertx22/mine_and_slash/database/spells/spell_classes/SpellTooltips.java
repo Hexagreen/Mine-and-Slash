@@ -7,10 +7,10 @@ import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 public class SpellTooltips {
 
     public static ITextComponent singleTargetProjectile() {
-        return new StringTextComponent(Spells.Single_Target_Proj.locName().getString());
+        return new StringTextComponent(Spells.Single_Target_Proj.getLocName());
     }
 
     public static ITextComponent buff() {
-        return new StringTextComponent(Spells.Self_Buff.locName().getString());
+        return new StringTextComponent(Spells.Self_Buff.getLocName());
     }
 }

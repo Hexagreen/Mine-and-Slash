@@ -2,6 +2,7 @@ package com.robertx22.mine_and_slash.uncommon.localization;
 
 import com.robertx22.mine_and_slash.mmorpg.Ref;
 import com.robertx22.mine_and_slash.uncommon.interfaces.IAutoLocName;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.Iterator;
 import java.util.List;
@@ -19,6 +20,18 @@ public enum Spells implements IAutoLocName {
     Bind_On_Melee("Can be set as right-click on melee weapons."),
 
     // saveclasses.spells.calc.SpellCalcData.java
+    ScaleWepAtk("Weapon Attack Damage"),
+    ScaleEleAtk("Elemental Attack Damage"),
+    ScalePhyAtk("Physical Attack Damage"),
+    ScaleFireAtk("Fire Attack Damage"),
+    ScaleWaterAtk("Frost Attack Damage"),
+    ScaleThunderAtk("Lightning Attack Damage"),
+    ScaleNatureAtk("Nature Attack Damage"),
+    ScaleArmor("Armor"),
+    ScaleHealth("Health"),
+    ScaleEnergy("Energy"),
+    ScaleMana("Mana"),
+    ScaleMagicShld("Magic Shield"),
     BaseValue("Base Value: "),
 
     // saveclasses.spells.calc.BaseStatCalc.java
@@ -44,8 +57,8 @@ public enum Spells implements IAutoLocName {
     SpellTotalMastery("Total Mastery "),
 
     // bases.SpellPredicates.java
-    Need_Ranged("Requires Ranged Weapon"),
-    Need_Melee("Requires Melee Weapon"),
+    reqRanged("Requires Ranged Weapon"),
+    reqMelee("Requires Melee Weapon"),
 
     // SpellTooltips.java
     Single_Target_Proj("Throw a projectile, damaging first enemy hit: "),
@@ -80,12 +93,12 @@ public enum Spells implements IAutoLocName {
     Craft("Craft"),
     Summon("Summon"),
     Movement("Movement"),
+    Modifies("Modifies "),
 
     // gui.screens.spell_schools.SpellSchoolScreen.java
     UnlockSecondMastery("You can unlock a second Mastery tree at level "),
     UnlockThirdMastery("You can unlock a third Mastery tree at level "),
     MasteryLevelCap("Your total Mastery level cannot go past your max level."),
-
 
     ;
 
@@ -116,5 +129,7 @@ public enum Spells implements IAutoLocName {
         return localization;
     }
 
-
+    public String getLocName() {
+        return CLOC.blank(Ref.MODID + ".spell_desc." + formattedGUID()).getString();
+    }
 }

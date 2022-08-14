@@ -508,9 +508,9 @@ public class SpellSchoolScreen extends BaseScreen implements INamedScreen, IAler
                     });
 
                 if (data.getLevel() < Masteries.LVL_TO_UNLOCK_2ND_SCHOOL) {
-                    list.add(new SText(TextFormatting.AQUA + "" + TextFormatting.ITALIC + Spells.UnlockSecondMastery.locName().getString() + Masteries.LVL_TO_UNLOCK_2ND_SCHOOL + "."));
+                    list.add(new SText(TextFormatting.AQUA + "" + TextFormatting.ITALIC + Spells.UnlockSecondMastery.getLocName() + Masteries.LVL_TO_UNLOCK_2ND_SCHOOL + "."));
                 } else if (maxLevelIs120Plus && data.getLevel() < Masteries.LVL_TO_UNLOCK_3RD_SCHOOL) {
-                    list.add(new SText(TextFormatting.AQUA + "" + TextFormatting.ITALIC + Spells.UnlockThirdMastery.locName().getString() + Masteries.LVL_TO_UNLOCK_3RD_SCHOOL + "."));
+                    list.add(new SText(TextFormatting.AQUA + "" + TextFormatting.ITALIC + Spells.UnlockThirdMastery.getLocName() + Masteries.LVL_TO_UNLOCK_3RD_SCHOOL + "."));
                 }
 
                 TooltipUtils.abilityLevel(list, spells.getAbilitiesData()
@@ -523,7 +523,7 @@ public class SpellSchoolScreen extends BaseScreen implements INamedScreen, IAler
 
                 if (spells.getAbilitiesData()
                         .getTotalSchoolPoints() >= data.getLevel()) {
-                    list.add(new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.MasteryLevelCap.locName().getString()));
+                    list.add(new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.MasteryLevelCap.getLocName()));
                 }
 
                 GuiUtils.renderTooltip(list, mouseX, mouseY);
