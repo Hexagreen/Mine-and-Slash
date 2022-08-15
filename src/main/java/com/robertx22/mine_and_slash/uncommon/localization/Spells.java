@@ -53,6 +53,7 @@ public enum Spells implements IAutoLocName {
     AffectSpell("Affects Spell: "),
 
     // uncommon.utilityclasses.TooltipUtils.java
+    LevelReq("Lvl Req"),
     SpellAbility("Ability "),
     SpellTotalMastery("Total Mastery "),
 

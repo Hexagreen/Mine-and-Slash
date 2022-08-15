@@ -10,6 +10,7 @@ import com.robertx22.mine_and_slash.saveclasses.item_classes.GearItemData;
 import com.robertx22.mine_and_slash.saveclasses.item_classes.RuneItemData;
 import com.robertx22.mine_and_slash.uncommon.interfaces.data_items.IRarity;
 import com.robertx22.mine_and_slash.uncommon.localization.Styles;
+import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import info.loenwind.autosave.annotations.Storable;
 import info.loenwind.autosave.annotations.Store;
 import net.minecraft.util.text.ITextComponent;
@@ -194,7 +195,7 @@ public class RunesData implements IGearPartTooltip, IStatModsContainer {
         list.add(new StringTextComponent(""));
 
         list.add(Styles.GRAYCOMP()
-            .appendSibling(new StringTextComponent("Runes: ")));
+            .appendSibling(new StringTextComponent(Words.RuneSlotList.locName().getString())));
 
         for (InsertedRuneData rune : runes) {
 
@@ -206,7 +207,7 @@ public class RunesData implements IGearPartTooltip, IStatModsContainer {
         for (int i = 0; i < empty; i++) {
 
             list.add(Styles.GRAYCOMP()
-                .appendSibling(new StringTextComponent("Rune: [Empty ]")));
+                .appendSibling(new StringTextComponent(Words.RuneSlotEmpty.locName().getString())));
 
         }
 

@@ -27,6 +27,7 @@ import com.robertx22.mine_and_slash.uncommon.datasaving.Load;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Masteries;
 import com.robertx22.mine_and_slash.uncommon.interfaces.data_items.IRarity;
+import com.robertx22.mine_and_slash.uncommon.localization.SpellType;
 import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
@@ -476,7 +477,7 @@ public abstract class BaseSpell implements ISlashRegistryEntry<BaseSpell>, ITool
         //TooltipUtils.addEmpty(list);
 
         this.immutableConfigs.castRequirements()
-            .forEach(x -> list.add(x.text));
+            .forEach(x -> list.add(SpellType.getSpellPreText(x)));
 
         if (this.immutableConfigs.allowedAsRightClickOn() == AllowedAsRightClickOn.MAGE_WEAPON) {
             TooltipUtils.addEmpty(list);

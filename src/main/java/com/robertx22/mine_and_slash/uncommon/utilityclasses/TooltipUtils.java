@@ -129,7 +129,7 @@ public class TooltipUtils {
     }
 
     public static ITextComponent lvlReq(int lvl, EntityCap.UnitData player) {
-        return requirement(new StringTextComponent("Lvl Req"), player.getLevel(), lvl);
+        return requirement(new StringTextComponent(Spells.LevelReq.getLocName()), player.getLevel(), lvl);
     }
 
     public static List<ITextComponent> removeDoubleBlankLines(List<ITextComponent> list) {
