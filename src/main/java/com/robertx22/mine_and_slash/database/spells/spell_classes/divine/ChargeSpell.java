@@ -77,7 +77,7 @@ public class ChargeSpell extends BaseSpell {
         c.set(SC.ENERGY_COST, 5, 8);
         c.set(SC.MAGIC_SHIELD_COST, 0, 0);
         c.set(SC.BASE_VALUE, 2, 8);
-        c.set(SC.PHYSICAL_ATTACK_SCALE_VALUE, 1.4F, 2.5F);
+        c.set(SC.PHYSICAL_ATTACK_SCALE_VALUE, 1.4F, 2.0F);
         c.set(SC.CAST_TIME_TICKS, 0, 0);
         c.set(SC.COOLDOWN_SECONDS, 13, 6);
 
@@ -163,6 +163,7 @@ public class ChargeSpell extends BaseSpell {
             .radius(3)
             .distance(12)
             .finder(EntityFinder.Finder.IN_FRONT)
+                .searchFor(EntityFinder.SearchFor.ENEMIES)
             .build();
 
         entities.forEach(x -> {
