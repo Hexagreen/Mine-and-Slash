@@ -101,6 +101,9 @@ public enum Spells implements IAutoLocName {
     UnlockThirdMastery("You can unlock a third Mastery tree at level "),
     MasteryLevelCap("Your total Mastery level cannot go past your max level."),
 
+    descOnTick01("Effect occurs every"),
+    descOnTick02(" ticks."),
+
     ;
 
     private String localization = "";

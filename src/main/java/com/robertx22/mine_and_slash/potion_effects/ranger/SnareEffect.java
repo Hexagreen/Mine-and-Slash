@@ -101,7 +101,7 @@ public class SnareEffect extends BasePotionEffect {
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
 
         List<ITextComponent> list = new ArrayList<>();
-        list.add(new StringTextComponent(TextFormatting.AQUA + "Snares enemy, preventing movement."));
+        list.addAll(descLocName("", TextFormatting.AQUA));
 
         return list;
     }

@@ -103,7 +103,7 @@ public class PoisonBallSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Weapon DMG to Nature."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Nat.locName().getString()));
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent("Throw a projectile, damaging enemies in its path : "));
 

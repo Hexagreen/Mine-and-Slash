@@ -75,7 +75,7 @@ public class NourishmentEffect extends BasePotionEffect implements IApplyStatPot
     @Override
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
         List<ITextComponent> list = new ArrayList<>();
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "You must be near full hunger to regenerate!"));
+        list.addAll(descLocName("", TextFormatting.GRAY, TextFormatting.ITALIC));
         return list;
     }
 

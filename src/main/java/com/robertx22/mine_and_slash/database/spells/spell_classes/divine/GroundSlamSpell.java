@@ -104,7 +104,7 @@ public class GroundSlamSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Projectile))));
 
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Armor to Phys DMG."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + Words.Arm2Phy.locName().getString()));
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent("Turn your defenses into damage"));
         list.add(new StringTextComponent("to strike enemies in front of you: "));

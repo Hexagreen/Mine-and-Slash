@@ -102,7 +102,7 @@ public class FrostTotemSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area, Spells.Duration, Spells.Entity, Spells.Projectile))));
 
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Explosion AOE is half of the totem's detection AOE."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + Words.FrostTotemDesc.locName().getString()));
         TooltipUtils.addEmpty(list);
 
         list.add(new StringTextComponent("Summons a totem that fires a glacial blast at the"));

@@ -102,7 +102,7 @@ public class ChainLightningSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Bounce, Spells.Chance, Spells.Duration, Spells.Projectile))));
 
         TooltipUtils.addEmpty(list);
-        list.add(new SText(TextFormatting.GRAY + "Spell cannot bounce to the same target twice."));
+        list.add(new SText(TextFormatting.GRAY + Words.ChainLightningDesc.locName().getString()));
         TooltipUtils.addEmpty(list);
 
         list.add(new SText("Shoot out a crackling spear of lightning, damaging"));

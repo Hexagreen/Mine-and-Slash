@@ -44,7 +44,7 @@ public class RechargeEffect extends BasePotionEffect {
             return ctx;
         }, info -> {
             List<ITextComponent> list = new ArrayList<>();
-            list.add(new StringTextComponent("Recovers user's mana:"));
+            list.addAll(descLocName(""));
             list.addAll(getCalc(info.player).GetTooltipString(info, Load.spells(info.player), getAbilityThatDeterminesLevel()));
             return list;
         }));

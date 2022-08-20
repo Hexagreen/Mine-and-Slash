@@ -105,7 +105,7 @@ public class GorgonsGazeSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Weapon DMG to Nature."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Nat.locName().getString()));
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent("Damages all enemies in front of you and turn"));
         list.add(new StringTextComponent("them into stone:"));

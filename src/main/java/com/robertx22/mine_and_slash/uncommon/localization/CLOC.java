@@ -2,10 +2,14 @@ package com.robertx22.mine_and_slash.uncommon.localization;
 
 import com.robertx22.mine_and_slash.mmorpg.MMORPG;
 import com.robertx22.mine_and_slash.mmorpg.Ref;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.TranslationTextComponent;
+import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
+import net.minecraft.util.text.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.stream.Stream;
 
 public class CLOC {
 
@@ -38,4 +42,15 @@ public class CLOC {
         return base(string);
     }
 
+    public static List<ITextComponent> longDesc(String s) {
+        List<ITextComponent> res = new ArrayList<>();
+
+        String[] str = base(s).getString().split("\n");
+
+        for (String value : str) {
+            res.add(new SText(value));
+        }
+
+        return res;
+    }
 }

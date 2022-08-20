@@ -105,7 +105,7 @@ public class SoulShredSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Magic Shield to Phys DMG."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + Words.MShld2Phy.locName().getString()));
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent("Corrupt your own spirit and transmit fragments to"));
         list.add(new StringTextComponent("enemies in front of you, causing them to take"));
