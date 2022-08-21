@@ -136,7 +136,7 @@ public class BoneSquallSpell extends BaseSpell {
             int num = getCalculation(ctx).getCalculatedValue(Load.Unit(caster), ctx.spellsCap, ctx.ability);
 
             List<LivingEntity> entities = EntityFinder.start(caster, LivingEntity.class, caster.getPositionVector())
-                .radius(radius).searchFor(EntityFinder.SearchFor.ENEMIES)
+                .radius(radius)
                 .build();
 
             for (LivingEntity en : entities) {

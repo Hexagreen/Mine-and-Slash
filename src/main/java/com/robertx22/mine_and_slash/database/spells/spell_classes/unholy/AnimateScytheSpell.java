@@ -82,7 +82,7 @@ public class AnimateScytheSpell extends BaseSpell {
         List<LivingEntity> list = EntityFinder.start(ctx.caster, LivingEntity.class, ctx.caster.getPositionVector()
             .add(look)
             .add(0, ctx.caster.getHeight() / 2, 0))
-            .finder(EntityFinder.Finder.RADIUS).searchFor(EntityFinder.SearchFor.ENEMIES)
+            .finder(EntityFinder.Finder.RADIUS)
             .radius(2)
             .height(2)
             .build();
