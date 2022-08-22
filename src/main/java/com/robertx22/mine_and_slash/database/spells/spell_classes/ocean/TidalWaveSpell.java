@@ -105,6 +105,7 @@ public class TidalWaveSpell extends BaseSpell {
         TooltipUtils.addEmpty(list);
 
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Fro.locName().getString()));
+
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent("Spew waves from your blade, damaging enemies: "));
 

@@ -103,7 +103,10 @@ public class JudgementEffect extends BasePotionEffect implements IApplyStatPotio
         List<ITextComponent> list = new ArrayList<>();
 
         list.addAll(descLocName("1", TextFormatting.GRAY, TextFormatting.ITALIC));
-
+        TooltipUtils.addEmpty(list);
+        list.add(new StringTextComponent(TextFormatting.GRAY + "Bolt damage is a special damage type and is"));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "unaffected by spell damage modifiers."));
+        TooltipUtils.addEmpty(list);
         list.addAll(descLocName("2"));
 
         return list;
@@ -126,7 +129,7 @@ public class JudgementEffect extends BasePotionEffect implements IApplyStatPotio
             SoundUtils.playSound(target, SoundEvents.ENTITY_LIGHTNING_BOLT_IMPACT, 1, 1);
 
             int num = getCalc(source).getCalculatedValue(Load.Unit(caster), Load.spells(caster), this);
-            DamageEffect dmg = new DamageEffect(null, source, target, num, EffectData.EffectTypes.SPELL, WeaponTypes.None);
+            DamageEffect dmg = new DamageEffect(null, source, target, num, EffectData.EffectTypes.BOLT, WeaponTypes.None);
 
             dmg.element = Elements.Thunder;
             dmg.Activate();

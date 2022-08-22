@@ -25,9 +25,12 @@ public final class BaseUniqueShield extends ShieldItem implements IEffectItem {
 
         list.add(new StringTextComponent(color() + "" + TextFormatting.BOLD + "[Active]: " + TextFormatting.RESET + color() + "Block"));
         if (moreInfo) {
+
             list.add(new StringTextComponent(color() + Words.ShieldActiveDesc_1.locName().getString()));
             list.add(new StringTextComponent(color() + Words.ShieldActiveDesc_2.locName().getString()));
-        }       return list;
+            list.add(new StringTextComponent(color() + Words.ShieldActiveDesc_3.locName().getString()));
+        }
+        return list;
     }
 
 }

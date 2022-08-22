@@ -110,6 +110,7 @@ public class WeakenTrapSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
+
         list.add(new StringTextComponent("Throw out a trap that explodes, dealing"));
         list.add(new StringTextComponent("nature DoT and weakening enemies caught"));
         list.add(new StringTextComponent("in the blast: "));
