@@ -163,7 +163,7 @@ public class ChillingTouchSpell extends BaseSpell {
 
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Fro.locName().getString()));
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent("Attack enemies in front of you: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

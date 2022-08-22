@@ -97,7 +97,7 @@ public class QuickChargeSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Applies buff to nearby allies: "));
+        list.addAll(descLocName(""));
         list.addAll(QuickChargeEffect.INSTANCE.GetTooltipStringWithNoExtraSpellInfo(info));
 
         return list;

@@ -119,8 +119,7 @@ public class MagicBurstSpell extends BaseSpell {
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.MShld2Fro.locName().getString()));
         TooltipUtils.addEmpty(list);
-        list.add(new SText("Draw power from your magic shield"));
-        list.add(new SText("to damage nearby enemies: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

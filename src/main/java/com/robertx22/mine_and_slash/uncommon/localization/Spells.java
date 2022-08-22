@@ -64,10 +64,12 @@ public enum Spells implements IAutoLocName {
     // SpellTooltips.java
     Single_Target_Proj("Throw a projectile, damaging first enemy hit: "),
     Self_Buff("Applies buff to caster: "),
+    Target_Buff("Applies: "),
 
     // General Spell Tooltip
     AttackSpell("Attack Spell"),
     AttackSpellDesc("Spell that also triggers on-attack effects."),
+    SummonAttack("Summon Attack"),
     SummonSpellDesc("Summons also triggers on-attack effects."),
     NormalSpell("Spell"),
     Synergy("Synergy"),
@@ -102,9 +104,9 @@ public enum Spells implements IAutoLocName {
     MasteryLevelCap("Your total Mastery level cannot go past your max level."),
 
     descOnTick01("Effect occurs every"),
-    descOnTick02(" ticks."),
+    descOnTick02(" ticks.");
 
-    ;
+
 
     private String localization = "";
 

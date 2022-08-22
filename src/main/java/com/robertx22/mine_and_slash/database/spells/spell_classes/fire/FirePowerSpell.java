@@ -95,7 +95,7 @@ public class FirePowerSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Applies buff to nearby allies: "));
+        list.addAll(descLocName(""));
         list.addAll(FirePowerEffect.INSTANCE.GetTooltipStringWithNoExtraSpellInfo(info));
 
         return list;

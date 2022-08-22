@@ -105,9 +105,7 @@ public class ChainLightningSpell extends BaseSpell {
         list.add(new SText(TextFormatting.GRAY + Words.ChainLightningDesc.locName().getString()));
         TooltipUtils.addEmpty(list);
 
-        list.add(new SText("Shoot out a crackling spear of lightning, damaging"));
-        list.add(new SText("the first enemy in its path. The spear then has a"));
-        list.add(new SText("chance to bounce and target the next closest enemy:"));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

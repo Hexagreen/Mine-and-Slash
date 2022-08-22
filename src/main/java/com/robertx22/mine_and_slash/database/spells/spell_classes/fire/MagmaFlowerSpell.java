@@ -104,7 +104,7 @@ public class MagmaFlowerSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new SText("Summons a flower that damages nearby enemies: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

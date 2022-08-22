@@ -112,10 +112,9 @@ public class ThoughtSeizeSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Draw the attention of nearby enemies by provoking them."));
-        list.add(new SText("Also curses enemies around you with: "));
+        list.addAll(descLocName("1"));
         list.addAll(MindRotEffect.INSTANCE.GetTooltipStringWithNoExtraSpellInfo(info));
-        list.add(new StringTextComponent(TextFormatting.RED + "Only one Curse debuff is allowed at a time!"));
+        list.addAll(descLocName("2", TextFormatting.RED));
 
         return list;
 

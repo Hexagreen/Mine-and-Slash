@@ -114,8 +114,7 @@ public class ChargedNovaSpell extends BaseSpell {
 
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Mana2Lit.locName().getString()));
         TooltipUtils.addEmpty(list);
-        list.add(new SText("Channel your mana into your blade to damage enemies"));
-        list.add(new SText("around you in a sweeping motion, and also apply Static: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

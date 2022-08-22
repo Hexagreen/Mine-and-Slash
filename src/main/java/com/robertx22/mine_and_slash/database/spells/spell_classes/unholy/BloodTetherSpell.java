@@ -106,9 +106,8 @@ public class BloodTetherSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Applies buff (can apply more than"));
-        list.add(new StringTextComponent("once at a time): " + NecroticTetherEffect.INSTANCE
-                .locNameForLangFile()));
+        list.addAll(descLocName(""));
+        list.add(new StringTextComponent(NecroticTetherEffect.INSTANCE.locNameForLangFile()));
 
         return list;
 

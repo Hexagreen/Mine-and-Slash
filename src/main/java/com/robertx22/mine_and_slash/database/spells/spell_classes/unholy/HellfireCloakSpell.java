@@ -100,8 +100,7 @@ public class HellfireCloakSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Summon a powerful fire storm that follows you"));
-        list.add(new StringTextComponent("and damages nearby enemies for a while: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

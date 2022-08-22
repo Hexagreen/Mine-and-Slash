@@ -101,8 +101,7 @@ public class FireballSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Send forth an uncontrollable flame that explodes"));
-        list.add(new StringTextComponent("upon contact, dealing fire damage in an area: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

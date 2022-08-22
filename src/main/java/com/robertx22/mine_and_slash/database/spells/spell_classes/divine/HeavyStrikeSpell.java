@@ -156,8 +156,7 @@ public class HeavyStrikeSpell extends BaseSpell {
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Hlth2Phy.locName().getString()));
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent("Imbue your attack with your own life force and"));
-        list.add(new StringTextComponent("damage enemies in front of you: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

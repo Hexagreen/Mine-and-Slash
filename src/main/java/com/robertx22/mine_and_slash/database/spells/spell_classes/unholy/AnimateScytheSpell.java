@@ -162,8 +162,7 @@ public class AnimateScytheSpell extends BaseSpell {
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Hlth2Phy.locName().getString()));
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent("Conjure an animated scythe using your own"));
-        list.add(new StringTextComponent("health to attack enemies twice in front of you: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

@@ -102,7 +102,7 @@ public class VolcanoSpell extends BaseSpell {
 
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Fir.locName().getString()));
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent("Summons an erupting volcano: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

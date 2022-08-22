@@ -95,7 +95,7 @@ public class NaturesGiftSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Applies buff to nearby allies: "));
+        list.addAll(descLocName(""));
         list.addAll(NaturesGiftEffect.INSTANCE.GetTooltipStringWithNoExtraSpellInfo(info));
 
         return list;

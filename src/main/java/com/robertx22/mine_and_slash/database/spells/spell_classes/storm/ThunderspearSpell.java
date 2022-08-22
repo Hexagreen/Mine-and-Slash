@@ -103,8 +103,7 @@ public class ThunderspearSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new SText("Shoot out a crackling spear of lightning, damaging"));
-        list.add(new SText("all enemies in its wake: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

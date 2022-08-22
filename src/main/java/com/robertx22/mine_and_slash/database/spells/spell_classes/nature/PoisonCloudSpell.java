@@ -109,7 +109,8 @@ public class PoisonCloudSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new SText("Applies " + ThornsEffect.INSTANCE.locNameForLangFile() + " to enemies around you: "));
+        list.addAll(descLocName(""));
+        list.add(new SText(ThornsEffect.INSTANCE.locNameForLangFile()));
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 
         return list;

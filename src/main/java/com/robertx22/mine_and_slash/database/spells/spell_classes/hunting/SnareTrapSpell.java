@@ -1,16 +1,14 @@
 package com.robertx22.mine_and_slash.database.spells.spell_classes.hunting;
 
-import com.robertx22.mine_and_slash.database.spells.entities.proj.FireBombEntity;
 import com.robertx22.mine_and_slash.database.spells.entities.proj.SnareTrapEntity;
+import com.robertx22.mine_and_slash.database.spells.spell_classes.SpellTooltips;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.BaseSpell;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.SpellCastContext;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.cast_types.SpellCastType;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.ImmutableSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.PreCalcSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.SC;
-import com.robertx22.mine_and_slash.potion_effects.druid.ThornArmorEffect;
 import com.robertx22.mine_and_slash.potion_effects.ranger.SnareEffect;
-import com.robertx22.mine_and_slash.potion_effects.ranger.WeakenEffect;
 import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.saveclasses.spells.AbilityPlace;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
@@ -25,7 +23,6 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 
-import javax.tools.Tool;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -116,15 +113,13 @@ public class SnareTrapSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Throw out a trap that explodes, dealing"));
-        list.add(new StringTextComponent("AOE physical damage and snaring enemies"));
-        list.add(new StringTextComponent("in place: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Applies: "));
+        list.add(SpellTooltips.applyOnTarget());
         list.addAll(SnareEffect.INSTANCE.GetTooltipStringWithNoExtraSpellInfo(info));
 
         return list;

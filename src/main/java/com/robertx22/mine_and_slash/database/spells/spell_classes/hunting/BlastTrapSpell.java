@@ -111,8 +111,7 @@ public class BlastTrapSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Throw out a trap that explodes, dealing"));
-        list.add(new StringTextComponent("AOE fire damage: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

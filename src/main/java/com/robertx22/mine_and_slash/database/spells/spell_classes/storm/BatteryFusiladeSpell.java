@@ -104,7 +104,7 @@ public class BatteryFusiladeSpell extends BaseSpell {
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Mana2Lit.locName().getString()));
         TooltipUtils.addEmpty(list);
-        list.add(new SText("Discharge mana and rapidly fire bolts of lightning."));
+        list.addAll(descLocName(""));
 
         list.add(SpellTooltips.singleTargetProjectile());
 

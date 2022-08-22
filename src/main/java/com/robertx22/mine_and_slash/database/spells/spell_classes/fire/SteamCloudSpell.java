@@ -100,8 +100,7 @@ public class SteamCloudSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Emit steam from your body to damage"));
-        list.add(new StringTextComponent("nearby enemies for a while: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

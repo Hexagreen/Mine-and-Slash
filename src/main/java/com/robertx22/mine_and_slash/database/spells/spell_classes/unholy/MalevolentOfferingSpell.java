@@ -106,8 +106,7 @@ public class MalevolentOfferingSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Heal allies around you at the expense"));
-        list.add(new StringTextComponent("of your own health (does not heal caster): "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

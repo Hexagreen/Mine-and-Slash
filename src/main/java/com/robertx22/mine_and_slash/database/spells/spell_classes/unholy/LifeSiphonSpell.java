@@ -101,8 +101,7 @@ public class LifeSiphonSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Throw a projectile, damaging first enemy hit"));
-        list.add(new StringTextComponent("and healing the caster: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

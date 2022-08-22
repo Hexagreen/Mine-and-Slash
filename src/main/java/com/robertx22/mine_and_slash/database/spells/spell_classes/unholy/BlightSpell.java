@@ -1,5 +1,6 @@
 package com.robertx22.mine_and_slash.database.spells.spell_classes.unholy;
 
+import com.robertx22.mine_and_slash.database.spells.spell_classes.SpellTooltips;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.BaseSpell;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.SpellCastContext;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.cast_types.SpellCastType;
@@ -109,8 +110,8 @@ public class BlightSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Infect nearby enemies with your blood."));
-        list.add(new StringTextComponent("Applies: "));
+        list.addAll(descLocName(""));
+        list.add(SpellTooltips.applyOnTarget());
 
         list.addAll(BlightEffect.INSTANCE.GetTooltipStringWithNoExtraSpellInfo(info));
 

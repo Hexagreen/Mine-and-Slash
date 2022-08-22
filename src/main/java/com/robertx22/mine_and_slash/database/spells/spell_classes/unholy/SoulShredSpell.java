@@ -1,5 +1,6 @@
 package com.robertx22.mine_and_slash.database.spells.spell_classes.unholy;
 
+import com.robertx22.mine_and_slash.database.spells.spell_classes.SpellTooltips;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.BaseSpell;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.SpellCastContext;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.cast_types.SpellCastType;
@@ -107,10 +108,8 @@ public class SoulShredSpell extends BaseSpell {
 
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.MShld2Phy.locName().getString()));
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent("Corrupt your own spirit and transmit fragments to"));
-        list.add(new StringTextComponent("enemies in front of you, causing them to take"));
-        list.add(new StringTextComponent("damage when attacked and damage over time."));
-        list.add(new StringTextComponent("Applies: "));
+        list.addAll(descLocName(""));
+        list.add(SpellTooltips.applyOnTarget());
 
         list.addAll(SoulShredEffect.INSTANCE.GetTooltipStringWithNoExtraSpellInfo(info));
 

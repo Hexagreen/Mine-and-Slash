@@ -164,8 +164,7 @@ public class PurifyingFiresSpell extends BaseSpell {
 
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Fir.locName().getString()));
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent("Summon a blade of holy flame to sweep"));
-        list.add(new StringTextComponent("enemies in front of you: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

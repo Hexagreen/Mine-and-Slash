@@ -111,7 +111,7 @@ public class BlazingInfernoSpell extends BaseSpell {
 
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Fir.locName().getString()));
         TooltipUtils.addEmpty(list);
-        list.add(new SText("Damage enemies around you: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

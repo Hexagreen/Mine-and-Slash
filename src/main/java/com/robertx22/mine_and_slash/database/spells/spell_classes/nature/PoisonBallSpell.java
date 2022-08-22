@@ -105,7 +105,7 @@ public class PoisonBallSpell extends BaseSpell {
 
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Nat.locName().getString()));
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent("Throw a projectile, damaging enemies in its path : "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

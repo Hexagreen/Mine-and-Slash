@@ -106,8 +106,7 @@ public class SpearOfJudgementSpell extends BaseSpell {
 
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Lit.locName().getString()));
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent("Throw out a trident that deals damage and"));
-        list.add(new StringTextComponent("applies Judgment: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

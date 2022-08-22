@@ -106,12 +106,12 @@ public class ProvokeSpell extends BaseSpell {
         List<ITextComponent> list = new ArrayList<>();
 
         list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocName()));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Movement))));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area, Spells.Debuff, Spells.Taunt))));
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Draw the attention of nearby enemies by"));
-        list.add(new StringTextComponent("applying: " + EnrageEffect.INSTANCE.locNameForLangFile()));
+        list.addAll(descLocName(""));
+        list.add(new StringTextComponent(EnrageEffect.INSTANCE.locNameForLangFile()));
 
         return list;
 

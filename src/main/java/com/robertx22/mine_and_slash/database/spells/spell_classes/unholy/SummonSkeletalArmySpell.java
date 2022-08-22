@@ -104,7 +104,7 @@ public class SummonSkeletalArmySpell extends BaseSpell {
 
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Summon Attack"));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.SummonAttack.getLocName()));
         list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.ITALIC + Spells.SummonSpellDesc.getLocName()));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Channel, Spells.Duration, Spells.Entity, Spells.Summon))));
 
@@ -112,7 +112,7 @@ public class SummonSkeletalArmySpell extends BaseSpell {
 
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Phy.locName().getString()));
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent("Summon a skeletal army to aid in combat."));
+        list.addAll(descLocName(""));
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 
         return list;
