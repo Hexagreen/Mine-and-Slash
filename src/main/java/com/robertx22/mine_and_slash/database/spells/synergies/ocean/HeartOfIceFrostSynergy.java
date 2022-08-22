@@ -39,7 +39,7 @@ public class HeartOfIceFrostSynergy extends OnSpellCastSynergy {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("If user has Cold Essence, increase heal power: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 

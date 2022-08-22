@@ -40,7 +40,8 @@ public class PoisonballThornsSynergy extends OnDamageDoneSynergy {
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Nat.locName().getString()));
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Deal extra damage to enemies affected by " + ThornsEffect.INSTANCE.locNameForLangFile() + ": "));
+        list.addAll(descLocName(""));
+        list.add(new StringTextComponent(ThornsEffect.INSTANCE.locNameForLangFile()));
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 

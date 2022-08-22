@@ -41,8 +41,7 @@ public class SpellBladeBurstSynergy extends OnBasicAttackSynergy {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Attacks cause enemies to send out fiery"));
-        list.add(new StringTextComponent("novas, damaging other nearby enemies: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 

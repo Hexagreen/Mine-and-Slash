@@ -39,8 +39,7 @@ public class MagmaFlowerHealSynergy extends OnDamageDoneSynergy {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Enables the flower to restore health"));
-        list.add(new StringTextComponent("to the user: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalc(Load.spells(info.player))
             .GetTooltipString(info, Load.spells(info.player), this));

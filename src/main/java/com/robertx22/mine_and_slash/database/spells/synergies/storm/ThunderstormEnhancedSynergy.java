@@ -29,7 +29,7 @@ public class ThunderstormEnhancedSynergy extends Synergy {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Increase tick rate but reduce radius: "));
+        list.addAll(descLocName(""));
 
         return list;
     }

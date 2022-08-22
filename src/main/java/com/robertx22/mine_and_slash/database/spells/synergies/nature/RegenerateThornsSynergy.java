@@ -37,7 +37,8 @@ public class RegenerateThornsSynergy extends OnSpellCastSynergy {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("On cast, applies in AOE: " + ThornsEffect.INSTANCE.locNameForLangFile()));
+        list.addAll(descLocName(""));
+        list.add(new StringTextComponent(ThornsEffect.INSTANCE.locNameForLangFile()));
 
         return list;
     }

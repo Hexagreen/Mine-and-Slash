@@ -37,8 +37,7 @@ public class ThunderSpearLightningStrikeSynergy extends OnDamageDoneSynergy {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Consumes a Static stack on the enemy to"));
-        list.add(new StringTextComponent("summon a lightning bolt and deal damage: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 

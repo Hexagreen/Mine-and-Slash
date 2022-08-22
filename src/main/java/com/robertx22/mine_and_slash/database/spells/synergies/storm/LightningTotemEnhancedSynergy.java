@@ -30,7 +30,7 @@ public class LightningTotemEnhancedSynergy extends Synergy {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Reduce cooldown but reduce damage: "));
+        list.addAll(descLocName(""));
 
         return list;
     }

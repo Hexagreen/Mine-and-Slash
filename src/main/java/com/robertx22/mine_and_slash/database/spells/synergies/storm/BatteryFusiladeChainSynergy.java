@@ -49,9 +49,7 @@ public class BatteryFusiladeChainSynergy extends OnDamageDoneSynergy {
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Mana2Lit.locName().getString()));
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("If user has Lightning Essence, projectiles"));
-        list.add(new StringTextComponent("have a chance to release a small nova upon"));
-        list.add(new StringTextComponent("hitting an enemy: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 

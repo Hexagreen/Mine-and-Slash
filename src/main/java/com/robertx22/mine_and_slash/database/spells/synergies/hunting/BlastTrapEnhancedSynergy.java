@@ -30,7 +30,7 @@ public class BlastTrapEnhancedSynergy extends Synergy {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Throw more traps but reduce damage: "));
+        list.addAll(descLocName(""));
 
         return list;
     }

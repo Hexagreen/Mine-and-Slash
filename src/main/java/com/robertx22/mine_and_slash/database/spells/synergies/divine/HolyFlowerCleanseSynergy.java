@@ -32,7 +32,7 @@ public class HolyFlowerCleanseSynergy extends OnHealedSynergy {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Cleanses a negative effect with each heal."));
+        list.addAll(descLocName(""));
 
         return list;
     }
