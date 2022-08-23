@@ -9,8 +9,6 @@ import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.SC;
 import com.robertx22.mine_and_slash.packets.particles.ParticleEnum;
 import com.robertx22.mine_and_slash.packets.particles.ParticlePacketData;
-import com.robertx22.mine_and_slash.potion_effects.bases.PotionEffectUtils;
-import com.robertx22.mine_and_slash.potion_effects.shaman.StaticEffect;
 import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.saveclasses.spells.AbilityPlace;
 import com.robertx22.mine_and_slash.uncommon.datasaving.Load;
@@ -72,7 +70,7 @@ public class ChargedNovaSpell extends BaseSpell {
         c.set(SC.ENERGY_COST, 3, 5);
         c.set(SC.MAGIC_SHIELD_COST, 0, 0);
         c.set(SC.BASE_VALUE, 2, 5);
-        c.set(SC.MANA_ATTACK_SCALE_VALUE, 0.06F, 0.16F);
+        c.set(SC.MANA_ATTACK_SCALE_VALUE, 0.07F, 0.14F);
         c.set(SC.CAST_TIME_TICKS, 0, 0);
         c.set(SC.COOLDOWN_SECONDS, 4, 2);
         c.set(SC.RADIUS, 2, 4);
@@ -142,8 +140,6 @@ public class ChargedNovaSpell extends BaseSpell {
                         this
                 );
                 dmg.Activate();
-                PotionEffectUtils.apply(StaticEffect.INSTANCE, caster, en);
-
             }
         }
     }

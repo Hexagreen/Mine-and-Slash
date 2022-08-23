@@ -68,9 +68,8 @@ public class SummonSkeletalArmySpell extends BaseSpell {
         c.set(SC.MANA_COST, 12, 16);
         c.set(SC.ENERGY_COST, 0, 0);
         c.set(SC.MAGIC_SHIELD_COST, 0.2F, 0.3F);
-        c.set(SC.BASE_VALUE, 8, 17);
-        c.set(SC.ATTACK_SCALE_VALUE, 1.0F, 2.0F);
-        c.set(SC.BONUS_HEALTH, 0F, 1.0F);
+        c.set(SC.BASE_VALUE, 25, 42);
+        c.set(SC.BONUS_HEALTH, 0F, 0.5F);
         c.set(SC.TIMES_TO_CAST, 3, 6);
         c.set(SC.CAST_TIME_TICKS, 30, 30);
         c.set(SC.COOLDOWN_SECONDS, 30, 24);
@@ -103,12 +102,10 @@ public class SummonSkeletalArmySpell extends BaseSpell {
         List<ITextComponent> list = new ArrayList<>();
 
         list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.SummonAttack.getLocNameStr()));
+
         list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.ITALIC + Spells.SummonSpellDesc.getLocNameStr()));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Channel, Spells.Duration, Spells.Entity, Spells.Summon))));
 
-        TooltipUtils.addEmpty(list);
-
-        list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Phy.locName().getString()));
         TooltipUtils.addEmpty(list);
         list.addAll(descLocName(""));
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));

@@ -104,6 +104,7 @@ public class MultiShotSpell extends BaseSpell {
         TooltipUtils.addEmpty(list);
 
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Phy.locName().getString()));
+
         TooltipUtils.addEmpty(list);
         list.addAll(descLocName(""));
 

@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "mmorpg:alchemy/instant/misc/reset_spells"
+        },
+        {
+            "item": "mmorpg:alchemy/instant/misc/reset_stats"
+        },
+        {
+            "item": "mmorpg:alchemy/instant/misc/reset_talents"
+        }
+    ],
+    "result": {
+        "item": "mmorpg:alchemy/instant/misc/reset_all",
+        "count": 1
+    }
+}

@@ -110,6 +110,7 @@ public class WeakenTrapSpell extends BaseSpell {
 
         list.addAll(descLocName(""));
 
+
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 
         TooltipUtils.addEmpty(list);
