@@ -1,5 +1,6 @@
 package com.robertx22.mine_and_slash.database.spells.spell_classes.storm;
 
+import com.robertx22.mine_and_slash.database.spells.spell_classes.SpellTooltips;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.BaseSpell;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.SpellCastContext;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.cast_types.SpellCastType;
@@ -94,11 +95,12 @@ public class RechargeSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Buff, Spells.Duration, Spells.Self))));
 
         TooltipUtils.addEmpty(list);
+
         list.add(new StringTextComponent(TextFormatting.GRAY + "This spell's cooldown is unaffected by"));
         list.add(new StringTextComponent(TextFormatting.GRAY + "cooldown reduction."));
         TooltipUtils.addEmpty(list);
+        list.add(SpellTooltips.buff());
 
-        list.add(new StringTextComponent("Applies buff: "));
         list.addAll(RechargeEffect.INSTANCE.GetTooltipStringWithNoExtraSpellInfo(info));
 
         return list;

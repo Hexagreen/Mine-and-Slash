@@ -32,8 +32,7 @@ public class MalevolentOfferingShrewdSynergy extends OnSpellCastSynergy {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Restores magic shield to nearby allies"));
-        list.add(new StringTextComponent("(does not restore caster's): "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 

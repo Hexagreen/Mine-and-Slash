@@ -63,7 +63,7 @@ public class SteamCloudEntity extends BaseCloudEntity {
 
                     List<LivingEntity> entities = EntityFinder.start(
                             getCaster(), LivingEntity.class, getPositionVector())
-                            .radius(RADIUS).searchFor(EntityFinder.SearchFor.ENEMIES)
+                            .radius(RADIUS)
                             .build();
 
                     SoundUtils.playSound(this, SoundEvents.BLOCK_FIRE_EXTINGUISH, 1.1F, 0.9F);

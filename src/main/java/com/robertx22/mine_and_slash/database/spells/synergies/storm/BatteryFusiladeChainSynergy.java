@@ -41,7 +41,6 @@ public class BatteryFusiladeChainSynergy extends OnDamageDoneSynergy {
 
         addSpellName(list);
 
-
         list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocNameStr() + " (Bolt)"));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocNameStr() + getRequiredAbility().getLocName().getString()));
         TooltipUtils.addEmpty(list);
@@ -51,11 +50,7 @@ public class BatteryFusiladeChainSynergy extends OnDamageDoneSynergy {
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Mana2Lit.locName().getString()));
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("If user has Lightning Essence, projectiles"));
-        list.add(new StringTextComponent("have a chance to release a small nova upon"));
-        list.add(new StringTextComponent("hitting an enemy, dealing bolt damage. The"));
-        list.add(new StringTextComponent("chance is multiplied by the caster's number"));
-        list.add(new StringTextComponent("of stacks of Lightning Essence: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 
@@ -105,7 +100,7 @@ public class BatteryFusiladeChainSynergy extends OnDamageDoneSynergy {
             int num = getCalcVal(ctx.source);
 
             List<LivingEntity> entities = EntityFinder.start(ctx.source, LivingEntity.class, ctx.target.getPositionVector())
-                    .radius(radius).searchFor(EntityFinder.SearchFor.ENEMIES)
+                    .radius(radius)
                     .build();
 
             ParticlePacketData pdata = new ParticlePacketData(ctx.target.getPosition()

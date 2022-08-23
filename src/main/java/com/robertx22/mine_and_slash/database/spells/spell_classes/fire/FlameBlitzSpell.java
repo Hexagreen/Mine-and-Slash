@@ -81,7 +81,7 @@ public class FlameBlitzSpell extends BaseSpell {
         List<LivingEntity> list = EntityFinder.start(ctx.caster, LivingEntity.class, ctx.caster.getPositionVector()
             .add(look)
             .add(0, ctx.caster.getHeight() / 2, 0))
-            .finder(EntityFinder.Finder.RADIUS).searchFor(EntityFinder.SearchFor.ENEMIES)
+            .finder(EntityFinder.Finder.RADIUS)
             .radius(2)
             .height(2)
             .build();
@@ -122,7 +122,7 @@ public class FlameBlitzSpell extends BaseSpell {
         c.set(SC.ENERGY_COST, 3, 5);
         c.set(SC.MAGIC_SHIELD_COST, 0, 0);
         c.set(SC.BASE_VALUE, 1, 1.5F);
-        c.set(SC.ATTACK_SCALE_VALUE, 0.45F, 0.6F);
+        c.set(SC.ATTACK_SCALE_VALUE, 0.55F, 0.7F);
         c.set(SC.CAST_TIME_TICKS, 30, 40);
         c.set(SC.COOLDOWN_SECONDS, 9, 6);
         c.set(SC.TIMES_TO_CAST, 4, 6);
@@ -156,7 +156,7 @@ public class FlameBlitzSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Fir.locName().getString()));
 
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent("Rapidly strikes enemies directly in front of you: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

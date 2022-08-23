@@ -82,7 +82,7 @@ public class AnimateScytheSpell extends BaseSpell {
         List<LivingEntity> list = EntityFinder.start(ctx.caster, LivingEntity.class, ctx.caster.getPositionVector()
             .add(look)
             .add(0, ctx.caster.getHeight() / 2, 0))
-            .finder(EntityFinder.Finder.RADIUS).searchFor(EntityFinder.SearchFor.ENEMIES)
+            .finder(EntityFinder.Finder.RADIUS)
             .radius(2)
             .height(2)
             .build();
@@ -162,8 +162,7 @@ public class AnimateScytheSpell extends BaseSpell {
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Hlth2Phy.locName().getString()));
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent("Conjure an animated scythe using your own"));
-        list.add(new StringTextComponent("health to attack enemies twice in front of you: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

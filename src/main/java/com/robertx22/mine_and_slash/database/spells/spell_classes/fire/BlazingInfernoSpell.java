@@ -21,7 +21,6 @@ import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.EntityFinder;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.SoundUtils;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
-import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -109,7 +108,7 @@ public class BlazingInfernoSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Fir.locName().getString()));
 
         TooltipUtils.addEmpty(list);
-        list.add(new SText("Damage enemies around you: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 
@@ -133,7 +132,7 @@ public class BlazingInfernoSpell extends BaseSpell {
             int num = getCalculation(ctx).getCalculatedValue(Load.Unit(caster), ctx.spellsCap, ctx.ability);
 
             List<LivingEntity> entities = EntityFinder.start(caster, LivingEntity.class, caster.getPositionVector())
-                .radius(radius).searchFor(EntityFinder.SearchFor.ENEMIES)
+                .radius(radius)
                 .build();
 
             for (LivingEntity en : entities) {

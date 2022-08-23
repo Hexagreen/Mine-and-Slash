@@ -21,7 +21,6 @@ import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.EntityFinder;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.SoundUtils;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
-import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -105,8 +104,8 @@ public class ElectricalDischargeSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new SText("Discharge your mana, dealing 18% of nearby enemies'"));
-        list.add(new SText("remaining health and magic shield as lightning damage: "));
+        list.addAll(descLocName(""));
+
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

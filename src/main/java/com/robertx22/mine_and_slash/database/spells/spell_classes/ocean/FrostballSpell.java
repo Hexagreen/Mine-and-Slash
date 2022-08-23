@@ -99,8 +99,7 @@ public class FrostballSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Fire a bolt of ice, dealing cold damage to"));
-        list.add(new StringTextComponent("the first enemy hit: "));
+        list.addAll(descLocName(""));
 
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));

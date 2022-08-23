@@ -70,7 +70,7 @@ public class FireBombEntity extends EntityBaseProjectile {
                 }
 
                 List<LivingEntity> entities = EntityFinder.start(caster, LivingEntity.class, getPositionVector())
-                    .radius(RADIUS).searchFor(EntityFinder.SearchFor.ENEMIES)
+                    .radius(RADIUS)
                     .build();
 
                 if (entities.size() > 0) {

@@ -1,5 +1,6 @@
 package com.robertx22.mine_and_slash.database.spells.spell_classes.storm;
 
+import com.robertx22.mine_and_slash.database.spells.spell_classes.SpellTooltips;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.BaseSpell;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.SpellCastContext;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.cast_types.SpellCastType;
@@ -90,9 +91,9 @@ public class CriticalSurgeSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Applies buff: "));
+        list.add(SpellTooltips.buff());
         list.addAll(CriticalSurgeEffect.INSTANCE.GetTooltipStringWithNoExtraSpellInfo(info));
-        list.add(new StringTextComponent(TextFormatting.RED + "Only one Surge buff is allowed at a time!"));
+        list.addAll(descLocName("", TextFormatting.RED));
 
         return list;
 

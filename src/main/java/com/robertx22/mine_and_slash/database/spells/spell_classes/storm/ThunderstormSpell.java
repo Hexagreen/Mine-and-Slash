@@ -99,7 +99,7 @@ public class ThunderstormSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Summons a cloud of lightning, damaging all enemies inside: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

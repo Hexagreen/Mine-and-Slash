@@ -16,7 +16,6 @@ import com.robertx22.mine_and_slash.uncommon.localization.SpellType;
 import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
-import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -100,8 +99,7 @@ public class ThunderspearSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new SText("Shoot out a crackling spear of lightning, damaging"));
-        list.add(new SText("all enemies in its wake: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

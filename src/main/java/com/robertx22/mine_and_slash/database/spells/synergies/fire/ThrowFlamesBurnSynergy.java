@@ -46,8 +46,7 @@ public class ThrowFlamesBurnSynergy extends OnAttackSpellDmgDoneSynergy {
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Fir.locName().getString()));
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Consumes a Burn stack on the target to"));
-        list.add(new StringTextComponent("explode, dealing AOE damage: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 
@@ -104,7 +103,7 @@ public class ThrowFlamesBurnSynergy extends OnAttackSpellDmgDoneSynergy {
 
             List<LivingEntity> entities = EntityFinder.start(
                     ctx.source, LivingEntity.class, ctx.target.getPositionVector())
-                    .radius(radius).searchFor(EntityFinder.SearchFor.ENEMIES)
+                    .radius(radius)
                     .build();
 
             entities.forEach(e -> {

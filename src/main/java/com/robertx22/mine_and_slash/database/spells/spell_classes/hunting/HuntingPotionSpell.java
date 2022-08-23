@@ -99,7 +99,7 @@ public class HuntingPotionSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + "cooldown reduction."));
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Heal yourself instantly: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

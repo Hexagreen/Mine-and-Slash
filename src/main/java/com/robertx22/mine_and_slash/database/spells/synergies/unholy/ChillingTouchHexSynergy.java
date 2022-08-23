@@ -35,7 +35,7 @@ public class ChillingTouchHexSynergy extends OnAttackSpellDmgDoneSynergy {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Hits cause nearby summons to attack the target."));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 

@@ -13,7 +13,6 @@ import com.robertx22.mine_and_slash.uncommon.utilityclasses.*;
 import net.minecraft.command.arguments.EntityAnchorArgument;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.item.ArmorStandEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particles.ParticleTypes;
@@ -77,7 +76,7 @@ public class ChainLightningEntity extends BaseElementalBoltEntity {
 
         if (RandomUtils.roll(chance)) {
             List<LivingEntity> entities = EntityFinder.start(getCaster(), LivingEntity.class, entity.getPositionVector())
-                    .radius(6).searchFor(EntityFinder.SearchFor.ENEMIES)
+                    .radius(6)
                     .build();
 
             if (entities.size() > 0) {
@@ -86,7 +85,7 @@ public class ChainLightningEntity extends BaseElementalBoltEntity {
 
                 for (LivingEntity en : entities) {
                     if (en != closest) {
-                        if (this.getDistance(en) < this.getDistance(closest) && !PotionEffectUtils.has(en, ChainLightningEffect.INSTANCE) && !(en instanceof ArmorStandEntity)) {
+                        if (this.getDistance(en) < this.getDistance(closest) && !PotionEffectUtils.has(en, ChainLightningEffect.INSTANCE)) {
                             closest = en;
                         }
                     }

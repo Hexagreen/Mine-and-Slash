@@ -6,6 +6,7 @@ import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.PreCalcSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.SC;
 import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
+import com.robertx22.mine_and_slash.uncommon.localization.CLOC;
 import com.robertx22.mine_and_slash.uncommon.localization.SpellType;
 import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
@@ -49,12 +50,12 @@ public abstract class BaseDivineBuffSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Applies Aura buff to all nearby allies: "));
+        list.add(CLOC.blank("mmorpg.divinebuffs.desc1"));
 
         list.addAll(getImmutableConfigs().potionEffect()
             .GetTooltipStringWithNoExtraSpellInfo(info));
 
-        list.add(new StringTextComponent(TextFormatting.RED + "Only one Aura buff is allowed at a time! "));
+        list.add(new StringTextComponent(TextFormatting.RED + CLOC.blank("mmorpg.divinebuffs.desc2").getString()));
 
         return list;
 

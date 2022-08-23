@@ -18,11 +18,13 @@ import com.robertx22.mine_and_slash.uncommon.effectdatas.SynergyDamageEffect;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Masteries;
 import com.robertx22.mine_and_slash.uncommon.interfaces.IAutoLocName;
+import com.robertx22.mine_and_slash.uncommon.localization.CLOC;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
 import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextFormatting;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -179,6 +181,25 @@ public abstract class Synergy implements IAbility, ISlashRegistryEntry<Synergy>,
 
         TooltipUtils.addEmpty(tooltip);
 
+    }
+
+    public List<ITextComponent> descLocName(String descTag, TextFormatting... style) {
+        List<ITextComponent> desc = CLOC.longDesc(Ref.MODID + "." + GUID() + ".desc" + descTag);
+
+        List<ITextComponent> list = new ArrayList<>();
+
+        for (ITextComponent iTextComponent : desc) {
+            for(TextFormatting textStyle : style){
+                iTextComponent.applyTextStyle(textStyle);
+            }
+            list.add(iTextComponent);
+        }
+
+        return list;
+    }
+
+    public List<ITextComponent> descLocName(String descTag){
+        return descLocName(descTag, TextFormatting.RESET);
     }
 
 }

@@ -35,7 +35,8 @@ public class HuntingWolfSharpenedSynergy extends OnBasicAttackSynergy {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Summon hits have a chance to apply: " + WoundsEffect.getInstance().locNameForLangFile()));
+        list.addAll(descLocName(""));
+        list.add(new StringTextComponent(WoundsEffect.getInstance().locNameForLangFile()));
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 

@@ -102,8 +102,7 @@ public class FireBombsSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Throw out fire bombs that explode when near mobs: "));
-
+        list.addAll(descLocName(""));
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 
         return list;

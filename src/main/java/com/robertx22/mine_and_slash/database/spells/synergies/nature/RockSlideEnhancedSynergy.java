@@ -39,8 +39,8 @@ public class RockSlideEnhancedSynergy extends OnDamageDoneSynergy {
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Nat.locName().getString()));
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Deal extra damage to enemies affected by at"));
-        list.add(new StringTextComponent("least 6 (half of max) stacks of " + ThornsEffect.INSTANCE.locNameForLangFile() + ": "));
+        list.addAll(descLocName(""));
+        list.add(new StringTextComponent(ThornsEffect.INSTANCE.locNameForLangFile()));
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 

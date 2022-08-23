@@ -106,8 +106,7 @@ public class GroundSlamSpell extends BaseSpell {
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Arm2Phy.locName().getString()));
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent("Turn your defenses into damage"));
-        list.add(new StringTextComponent("to strike enemies in front of you: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

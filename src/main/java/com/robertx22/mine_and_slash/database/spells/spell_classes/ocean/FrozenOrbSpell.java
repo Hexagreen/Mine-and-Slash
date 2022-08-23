@@ -100,8 +100,7 @@ public class FrozenOrbSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Summons an orb that sprays ice to"));
-        list.add(new StringTextComponent("damage enemies in its path: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

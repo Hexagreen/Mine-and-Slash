@@ -16,7 +16,6 @@ import com.robertx22.mine_and_slash.uncommon.localization.SpellType;
 import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
-import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.text.ITextComponent;
@@ -103,7 +102,7 @@ public class BatteryFusiladeSpell extends BaseSpell {
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Mana2Lit.locName().getString()));
         TooltipUtils.addEmpty(list);
-        list.add(new SText("Discharge mana and rapidly fire bolts of lightning."));
+        list.addAll(descLocName(""));
 
         list.add(SpellTooltips.singleTargetProjectile());
 

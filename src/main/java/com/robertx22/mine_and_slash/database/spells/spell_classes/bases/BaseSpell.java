@@ -493,21 +493,23 @@ public abstract class BaseSpell implements ISlashRegistryEntry<BaseSpell>, ITool
 
     }
 
-    public List<ITextComponent> descLocName(String descTag, SText style) {
-        List<ITextComponent> desc = CLOC.longDesc(Ref.MODID + "." + GUID() + ".desc_" + descTag);
+    public List<ITextComponent> descLocName(String descTag, TextFormatting... style) {
+        List<ITextComponent> desc = CLOC.longDesc(Ref.MODID + "." + GUID() + ".desc" + descTag);
 
         List<ITextComponent> list = new ArrayList<>();
 
         for (ITextComponent iTextComponent : desc) {
-            list.add(style.appendSibling(iTextComponent));
+            for(TextFormatting textStyle : style){
+                iTextComponent.applyTextStyle(textStyle);
+            }
+            list.add(iTextComponent);
         }
 
         return list;
     }
 
     public List<ITextComponent> descLocName(String descTag){
-        SText normalText = new SText("");
-        return descLocName(descTag, normalText);
+        return descLocName(descTag, TextFormatting.RESET);
     }
 
 }

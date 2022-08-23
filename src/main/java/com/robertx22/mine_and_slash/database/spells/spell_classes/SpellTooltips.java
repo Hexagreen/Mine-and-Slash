@@ -13,4 +13,8 @@ public class SpellTooltips {
     public static ITextComponent buff() {
         return new StringTextComponent(Spells.Self_Buff.getLocNameStr());
     }
+
+    public static ITextComponent applyOnTarget(){
+        return new StringTextComponent(Spells.Target_Buff.getLocNameStr());
+    }
 }

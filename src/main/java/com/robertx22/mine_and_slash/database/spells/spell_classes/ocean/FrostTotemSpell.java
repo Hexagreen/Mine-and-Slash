@@ -104,9 +104,7 @@ public class FrostTotemSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.FrostTotemDesc.locName().getString()));
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Summons a totem that fires a glacial blast at the"));
-        list.add(new StringTextComponent("nearest enemy that explodes upon contact, dealing"));
-        list.add(new StringTextComponent("frost damage: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

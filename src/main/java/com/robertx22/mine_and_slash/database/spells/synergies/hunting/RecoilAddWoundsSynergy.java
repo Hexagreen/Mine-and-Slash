@@ -33,9 +33,8 @@ public class RecoilAddWoundsSynergy extends OnAttackSpellDmgDoneSynergy {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Enemies hit by Recoil of the Hunter"));
-        list.add(new StringTextComponent("have applied: " + WoundsEffect.getInstance()
-            .locNameForLangFile()));
+        list.addAll(descLocName(""));
+        list.add(new StringTextComponent(WoundsEffect.getInstance().locNameForLangFile()));
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 

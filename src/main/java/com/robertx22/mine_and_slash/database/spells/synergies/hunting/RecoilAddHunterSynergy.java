@@ -32,9 +32,8 @@ public class RecoilAddHunterSynergy extends OnAttackSpellDmgDoneSynergy {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Recoil of the Hunter also applies"));
-        list.add(new StringTextComponent("to self: " + HunterInstinctEffect.getInstance()
-            .locNameForLangFile()));
+        list.addAll(descLocName(""));
+        list.add(new StringTextComponent(HunterInstinctEffect.getInstance().locNameForLangFile()));
 
         return list;
     }

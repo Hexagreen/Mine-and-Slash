@@ -110,7 +110,7 @@ public class HuntingWolfSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Phy.locName().getString()));
 
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent("Summon a hunting wolf that aids in combat."));
+        list.addAll(descLocName(""));
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 
         return list;
