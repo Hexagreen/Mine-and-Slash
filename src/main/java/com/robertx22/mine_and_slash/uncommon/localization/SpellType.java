@@ -14,20 +14,20 @@ public class SpellType {
         String typeStr = "";
         Iterator<Spells> itr = spellTypes.iterator();
 
-        typeStr = typeStr.concat(itr.next().getLocName());
+        typeStr = typeStr.concat(itr.next().getLocNameStr());
 
         while(itr.hasNext()) {
-            typeStr = typeStr.concat(", ").concat(itr.next().getLocName());
+            typeStr = typeStr.concat(", ").concat(itr.next().getLocNameStr());
         }
         return typeStr;
     }
 
     public static ITextComponent getSpellPreText(SpellPredicate spellPredicate) {
         if(spellPredicate.equals(SpellPredicates.REQUIRE_SHOOTABLE))
-            return new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.reqRanged.getLocName());
+            return new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.reqRanged.getLocNameStr());
 
         if(spellPredicate.equals(SpellPredicates.REQUIRE_MELEE))
-            return new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.reqMelee.getLocName());
+            return new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.reqMelee.getLocNameStr());
 
         return new SText("Debug: See uncommon.localization.SpellType.getSpellPreText method");
     }

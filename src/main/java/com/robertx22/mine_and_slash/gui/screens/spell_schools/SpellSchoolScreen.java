@@ -27,7 +27,6 @@ import com.robertx22.mine_and_slash.uncommon.utilityclasses.GuiUtils;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
 import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.spectator.categories.TeleportToPlayer;
 import net.minecraft.client.gui.widget.button.ImageButton;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
@@ -508,9 +507,9 @@ public class SpellSchoolScreen extends BaseScreen implements INamedScreen, IAler
                     });
 
                 if (data.getLevel() < Masteries.LVL_TO_UNLOCK_2ND_SCHOOL) {
-                    list.add(new SText(TextFormatting.AQUA + "" + TextFormatting.ITALIC + Spells.UnlockSecondMastery.getLocName() + Masteries.LVL_TO_UNLOCK_2ND_SCHOOL + "."));
+                    list.add(new SText(TextFormatting.AQUA + "" + TextFormatting.ITALIC + Spells.UnlockSecondMastery.getLocNameStr() + Masteries.LVL_TO_UNLOCK_2ND_SCHOOL + "."));
                 } else if (maxLevelIs120Plus && data.getLevel() < Masteries.LVL_TO_UNLOCK_3RD_SCHOOL) {
-                    list.add(new SText(TextFormatting.AQUA + "" + TextFormatting.ITALIC + Spells.UnlockThirdMastery.getLocName() + Masteries.LVL_TO_UNLOCK_3RD_SCHOOL + "."));
+                    list.add(new SText(TextFormatting.AQUA + "" + TextFormatting.ITALIC + Spells.UnlockThirdMastery.getLocNameStr() + Masteries.LVL_TO_UNLOCK_3RD_SCHOOL + "."));
                 }
 
                 TooltipUtils.abilityLevel(list, spells.getAbilitiesData()
@@ -523,7 +522,7 @@ public class SpellSchoolScreen extends BaseScreen implements INamedScreen, IAler
 
                 if (spells.getAbilitiesData()
                         .getTotalSchoolPoints() >= data.getLevel()) {
-                    list.add(new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.MasteryLevelCap.getLocName()));
+                    list.add(new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.MasteryLevelCap.getLocNameStr()));
                 }
 
                 GuiUtils.renderTooltip(list, mouseX, mouseY);

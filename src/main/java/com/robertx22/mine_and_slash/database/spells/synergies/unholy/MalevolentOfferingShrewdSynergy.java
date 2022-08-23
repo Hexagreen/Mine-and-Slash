@@ -3,7 +3,6 @@ package com.robertx22.mine_and_slash.database.spells.synergies.unholy;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.SpellCastContext;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.PreCalcSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.SC;
-import com.robertx22.mine_and_slash.database.spells.spell_classes.ocean.HeartOfIceSpell;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.unholy.MalevolentOfferingSpell;
 import com.robertx22.mine_and_slash.database.spells.synergies.base.OnSpellCastSynergy;
 import com.robertx22.mine_and_slash.saveclasses.ResourcesData;
@@ -28,8 +27,8 @@ public class MalevolentOfferingShrewdSynergy extends OnSpellCastSynergy {
 
         addSpellName(list);
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocName()));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocName() + getRequiredAbility().getLocName().getString()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocNameStr()));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocNameStr() + getRequiredAbility().getLocName().getString()));
 
         TooltipUtils.addEmpty(list);
 
