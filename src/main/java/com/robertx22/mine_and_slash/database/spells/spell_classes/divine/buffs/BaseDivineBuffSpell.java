@@ -50,12 +50,12 @@ public abstract class BaseDivineBuffSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(CLOC.blank("mmorpg.divinebuffs.desc1"));
+        list.add(CLOC.blank("mmorpg.spell.divinebuffs.desc1"));
 
         list.addAll(getImmutableConfigs().potionEffect()
             .GetTooltipStringWithNoExtraSpellInfo(info));
 
-        list.add(new StringTextComponent(TextFormatting.RED + CLOC.blank("mmorpg.divinebuffs.desc2").getString()));
+        list.add(new StringTextComponent(TextFormatting.RED + CLOC.blank("mmorpg.spell.divinebuffs.desc2").getString()));
 
         return list;
 

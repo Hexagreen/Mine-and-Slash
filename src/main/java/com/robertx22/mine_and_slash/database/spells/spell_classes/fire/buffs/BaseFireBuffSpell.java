@@ -50,12 +50,12 @@ public abstract class BaseFireBuffSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(CLOC.blank("mmorpg.firebuffs.desc1"));
+        list.add(CLOC.blank("mmorpg.spell.firebuffs.desc1"));
 
         list.addAll(getImmutableConfigs().potionEffect()
             .GetTooltipStringWithNoExtraSpellInfo(info));
 
-        list.add(new StringTextComponent(TextFormatting.RED + CLOC.blank("mmorpg.firebuffs.desc2").getString()));
+        list.add(new StringTextComponent(TextFormatting.RED + CLOC.blank("mmorpg.spell.firebuffs.desc2").getString()));
 
         return list;
 

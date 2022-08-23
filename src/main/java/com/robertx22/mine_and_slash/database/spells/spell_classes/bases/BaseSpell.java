@@ -494,7 +494,7 @@ public abstract class BaseSpell implements ISlashRegistryEntry<BaseSpell>, ITool
     }
 
     public List<ITextComponent> descLocName(String descTag, TextFormatting... style) {
-        List<ITextComponent> desc = CLOC.longDesc(Ref.MODID + "." + GUID() + ".desc" + descTag);
+        List<ITextComponent> desc = CLOC.longDesc(Ref.MODID + ".spell." + GUID() + ".desc" + descTag);
 
         List<ITextComponent> list = new ArrayList<>();
 

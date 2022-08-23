@@ -184,7 +184,7 @@ public abstract class Synergy implements IAbility, ISlashRegistryEntry<Synergy>,
     }
 
     public List<ITextComponent> descLocName(String descTag, TextFormatting... style) {
-        List<ITextComponent> desc = CLOC.longDesc(Ref.MODID + "." + GUID() + ".desc" + descTag);
+        List<ITextComponent> desc = CLOC.longDesc(Ref.MODID + ".synergy." + GUID() + ".desc" + descTag);
 
         List<ITextComponent> list = new ArrayList<>();
 

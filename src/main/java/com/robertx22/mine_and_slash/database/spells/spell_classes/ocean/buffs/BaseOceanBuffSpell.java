@@ -50,7 +50,7 @@ public abstract class BaseOceanBuffSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(CLOC.blank("mmorpg.oceonbuffs.desc"));
+        list.add(CLOC.blank("mmorpg.spell.oceonbuffs.desc"));
 
         list.addAll(getImmutableConfigs().potionEffect()
             .GetTooltipStringWithNoExtraSpellInfo(info));
