@@ -7,6 +7,8 @@ import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.cast_typ
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.ImmutableSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.PreCalcSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.SC;
+import com.robertx22.mine_and_slash.database.stats.mods.Mod;
+import com.robertx22.mine_and_slash.mmorpg.registers.common.ModSounds;
 import com.robertx22.mine_and_slash.packets.particles.ParticleEnum;
 import com.robertx22.mine_and_slash.packets.particles.ParticlePacketData;
 import com.robertx22.mine_and_slash.potion_effects.bases.PotionEffectUtils;
@@ -56,7 +58,7 @@ public class EmpoweringFinisher extends BaseSpell {
 
                 @Override
                 public SoundEvent sound() {
-                    return SoundEvents.ENTITY_EVOKER_FANGS_ATTACK;
+                    return ModSounds.EXPLOSION.get();
                 }
 
                 @Override
@@ -79,8 +81,7 @@ public class EmpoweringFinisher extends BaseSpell {
             player.spawnSweepParticles();
         }
 
-        ctx.caster.world.playSound((PlayerEntity) null, ctx.caster.getPosX(), ctx.caster.getPosY(), ctx.caster.getPosZ(), SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, SoundCategory.PLAYERS, 1.0F, 1.0F);
-
+        SoundUtils.playSound(ctx.caster, ModSounds.PUNCH.get(), 1.0F, 1.25F);
 
         ParticlePacketData pdata = new ParticlePacketData(ctx.caster.getPosition()
                 .up(1), ParticleEnum.MAGIC_BURST);
@@ -95,7 +96,7 @@ public class EmpoweringFinisher extends BaseSpell {
                 .radius(radius).searchFor(EntityFinder.SearchFor.ALLIES)
                 .build();
 
-        SoundUtils.playSound(ctx.caster, SoundEvents.ENTITY_GENERIC_EXPLODE, 1.0F, 1.0F);
+        SoundUtils.playSound(ctx.caster, ModSounds.EXPLOSION.get(), 1.0F, 1.0F);
 
         int num = ctx.getConfigFor(this)
                 .getCalc(ctx.spellsCap, this)
@@ -154,7 +155,7 @@ public class EmpoweringFinisher extends BaseSpell {
         c.set(SC.ATTACK_SCALE_VALUE, 3.75F, 5.75F);
         c.set(SC.RADIUS, 3, 5);
         c.set(SC.CAST_TIME_TICKS, 20, 20);
-        c.set(SC.COOLDOWN_TICKS, 60, 60);
+        c.set(SC.COOLDOWN_TICKS, 100, 100);
         c.set(SC.CDR_EFFICIENCY, 0, 0);
         c.set(SC.TIMES_TO_CAST, 1, 1);
         c.set(SC.AMOUNT, 1, 3);

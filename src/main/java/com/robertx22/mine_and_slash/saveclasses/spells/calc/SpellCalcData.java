@@ -51,7 +51,7 @@ public class SpellCalcData {
 
         List<Stat> list = new ElementalAttackDamage(Elements.Nature).generateAllSingleVariations();
         list.add(PhysicalDamage.getInstance());
-        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.GOLD + Spells.ScaleWepAtk.getLocNameStr())));
+        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.GOLD + Spells.ScaleAtk.getLocNameStr())));
 
         data.baseValue = base;
 

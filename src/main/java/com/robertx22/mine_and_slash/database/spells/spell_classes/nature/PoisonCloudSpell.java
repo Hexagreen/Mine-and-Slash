@@ -105,8 +105,11 @@ public class PoisonCloudSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
+        list.add(new StringTextComponent(TextFormatting.GRAY + "Higher levels apply more stacks."));
+        TooltipUtils.addEmpty(list);
         list.addAll(descLocName(""));
         list.add(new SText(ThornsEffect.INSTANCE.locNameForLangFile()));
+
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 
         return list;

@@ -17,7 +17,7 @@ public enum Spells implements IAutoLocName {
     Bind_On_Melee("Can be set as right-click on melee weapons."),
 
     // saveclasses.spells.calc.SpellCalcData.java
-    ScaleWepAtk("Weapon Attack Damage"),
+    ScaleAtk("Attack Damage"),
     ScaleEleAtk("Elemental Attack Damage"),
     ScalePhyAtk("Physical Attack Damage"),
     ScaleFireAtk("Fire Attack Damage"),

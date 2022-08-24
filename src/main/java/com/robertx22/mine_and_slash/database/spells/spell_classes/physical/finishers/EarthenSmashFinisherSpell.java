@@ -54,7 +54,7 @@ public class EarthenSmashFinisherSpell extends BaseSpell {
 
                 @Override
                 public SoundEvent sound() {
-                    return SoundEvents.ENTITY_EVOKER_FANGS_ATTACK;
+                    return ModSounds.EXPLOSION.get();
                 }
 
                 @Override
@@ -77,13 +77,13 @@ public class EarthenSmashFinisherSpell extends BaseSpell {
             player.spawnSweepParticles();
         }
 
-        ctx.caster.world.playSound((PlayerEntity) null, ctx.caster.getPosX(), ctx.caster.getPosY(), ctx.caster.getPosZ(), SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, SoundCategory.PLAYERS, 1.0F, 1.0F);
+        SoundUtils.playSound(ctx.caster, ModSounds.PUNCH.get(), 1.0F, 0.75F);
 
 
         ParticlePacketData pdata = new ParticlePacketData(ctx.caster.getPosition()
-                .up(1), ParticleEnum.PETRIFY);
+                .up(1), ParticleEnum.POISON_CLOUD);
         pdata.radius = radius;
-        ParticleEnum.PETRIFY.sendToClients(ctx.caster, pdata);
+        ParticleEnum.POISON_CLOUD.sendToClients(ctx.caster, pdata);
 
         List<LivingEntity> entities = EntityFinder.start(ctx.caster, LivingEntity.class, ctx.caster.getPositionVector())
                 .radius(radius).searchFor(EntityFinder.SearchFor.ENEMIES)
@@ -93,7 +93,7 @@ public class EarthenSmashFinisherSpell extends BaseSpell {
                 .radius(radius).searchFor(EntityFinder.SearchFor.ALLIES)
                 .build();
 
-        SoundUtils.playSound(ctx.caster, SoundEvents.ENTITY_GENERIC_EXPLODE, 1.0F, 1.0F);
+        SoundUtils.playSound(ctx.caster, ModSounds.EXPLOSION.get(), 1.0F, 0.8F);
 
         int num = ctx.getConfigFor(this)
                 .getCalc(ctx.spellsCap, this)
@@ -143,7 +143,7 @@ public class EarthenSmashFinisherSpell extends BaseSpell {
         c.set(SC.ATTACK_SCALE_VALUE, 4.0F, 6.0F);
         c.set(SC.RADIUS, 4, 6);
         c.set(SC.CAST_TIME_TICKS, 20, 20);
-        c.set(SC.COOLDOWN_TICKS, 60, 60);
+        c.set(SC.COOLDOWN_TICKS, 100, 100);
         c.set(SC.CDR_EFFICIENCY, 0, 0);
         c.set(SC.TIMES_TO_CAST, 1, 1);
         c.set(SC.DURATION_TICKS, 20 * 20, 30 * 20);

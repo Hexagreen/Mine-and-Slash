@@ -8,6 +8,7 @@ import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.cast_typ
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.ImmutableSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.PreCalcSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.SC;
+import com.robertx22.mine_and_slash.mmorpg.registers.common.ModSounds;
 import com.robertx22.mine_and_slash.packets.particles.ParticleEnum;
 import com.robertx22.mine_and_slash.packets.particles.ParticlePacketData;
 import com.robertx22.mine_and_slash.potion_effects.bases.PotionEffectUtils;
@@ -78,7 +79,7 @@ public class FlowingRiverLinkerSpell extends BaseSpell {
             player.spawnSweepParticles();
         }
 
-        ctx.caster.world.playSound((PlayerEntity) null, ctx.caster.getPosX(), ctx.caster.getPosY(), ctx.caster.getPosZ(), SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, SoundCategory.PLAYERS, 1.0F, 1.0F);
+        SoundUtils.playSound(ctx.caster, ModSounds.PUNCH.get(), 1.0F, 1.1F);
 
         List<LivingEntity> entities = EntityFinder.start(ctx.caster, LivingEntity.class, ctx.caster.getPositionVector())
                 .radius(RADIUS * 0.5F)
@@ -100,10 +101,9 @@ public class FlowingRiverLinkerSpell extends BaseSpell {
                 .getCalc(ctx.spellsCap, this)
                 .getCalculatedValue(ctx.data, ctx.spellsCap, this);
 
-        ParticlePacketData pdata = new ParticlePacketData(ctx.caster.getPosition()
-                .up(1), ParticleEnum.FROST_NOVA);
+        ParticlePacketData pdata = new ParticlePacketData(ctx.caster.getPosition(), ParticleEnum.SIMPLE_FROST_NOVA);
         pdata.radius = RADIUS;
-        ParticleEnum.FROST_NOVA.sendToClients(ctx.caster, pdata);
+        ParticleEnum.SIMPLE_FROST_NOVA.sendToClients(ctx.caster, pdata);
 
         for (LivingEntity en : entities) {
 
@@ -117,7 +117,7 @@ public class FlowingRiverLinkerSpell extends BaseSpell {
                 new ParticlePacketData(en.getPositionVector(), ParticleEnum.AOE).radius(1)
                     .motion(new Vec3d(0, 0, 0))
                     .type(ParticleTypes.ITEM_SNOWBALL)
-                    .amount((int) (30)));
+                    .amount((int) (10)));
 
         }
 
@@ -131,8 +131,8 @@ public class FlowingRiverLinkerSpell extends BaseSpell {
                     en.getPosition(), en.world,
                     new ParticlePacketData(en.getPositionVector(), ParticleEnum.AOE).radius(1)
                             .motion(new Vec3d(0, 0, 0))
-                            .type(ParticleTypes.HEART)
-                            .amount((int) (25)));
+                            .type(ParticleTypes.HAPPY_VILLAGER)
+                            .amount((int) (5)));
         }
 
         if (PotionEffectUtils.has(ctx.caster, ComboStarterEffect.INSTANCE)) {
@@ -154,9 +154,9 @@ public class FlowingRiverLinkerSpell extends BaseSpell {
         c.set(SC.ENERGY_COST, 6, 10);
         c.set(SC.MAGIC_SHIELD_COST, 0, 0);
         c.set(SC.BASE_VALUE, 0, 0);
-        c.set(SC.ATTACK_SCALE_VALUE, 2.5F, 3.5F);
+        c.set(SC.ATTACK_SCALE_VALUE, 2.5F, 3.25F);
         c.set(SC.CAST_TIME_TICKS, 10, 10);
-        c.set(SC.COOLDOWN_TICKS, 60, 60);
+        c.set(SC.COOLDOWN_TICKS, 80, 80);
         c.set(SC.CDR_EFFICIENCY, 0, 0);
         c.set(SC.TIMES_TO_CAST, 2, 2);
         c.set(SC.RADIUS, 6, 6);
