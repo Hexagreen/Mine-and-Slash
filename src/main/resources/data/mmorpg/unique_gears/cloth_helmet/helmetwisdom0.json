@@ -1,13 +1,13 @@
 {
   "id": "helmetwisdom0",
-  "weight": 10000,
+  "weight": 6666,
   "rarity": 1,
   "tier": 3,
   "registry": "unique_gear",
   "lang_file_string": "item.mmorpg.uniques.helmet.helmetwisdom0",
   "lang_file_desc_string": "item.mmorpg.uniques.helmet.helmetwisdom0.desc",
   "primary_stats": [
-    "high_magic_shield_flat"
+    "magic_shield_flat"
   ],
   "unique_stats": [
     "high_wisdom_flat",

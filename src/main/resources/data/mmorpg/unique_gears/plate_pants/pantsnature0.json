@@ -1,16 +1,15 @@
 {
   "id": "pantsnature0",
-  "weight": 10000,
+  "weight": 6666,
   "rarity": 1,
   "tier": 4,
   "registry": "unique_gear",
   "lang_file_string": "item.mmorpg.uniques.pants.pantsnature0",
   "lang_file_desc_string": "item.mmorpg.uniques.pants.pantsnature0.desc",
   "primary_stats": [
-	"slightly_high_armor_flat"
+    "health_flat"
   ],
   "unique_stats": [
-    "health_flat",
     "high_strength_flat",
     "high_nature_resist_flat",
     "high_thunder_resist_flat",

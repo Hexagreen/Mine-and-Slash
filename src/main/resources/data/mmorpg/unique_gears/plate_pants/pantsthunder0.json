@@ -1,17 +1,17 @@
 {
   "id": "pantsthunder0",
-  "weight": 10000,
+  "weight": 6666,
   "rarity": 1,
   "tier": 2,
   "registry": "unique_gear",
   "lang_file_string": "item.mmorpg.uniques.pants.pantsthunder0",
   "lang_file_desc_string": "item.mmorpg.uniques.pants.pantsthunder0.desc",
   "primary_stats": [
-	"slightly_high_armor_flat"
+    "health_flat",
+    "magic_shield_flat"
   ],
   "unique_stats": [
-    "health_flat",
-    "magic_shield_flat",
+    "spell_thunder_damage_flat",
     "high_dodge_flat",
     "high_fire_resist_flat",
     "health_regen_flat"

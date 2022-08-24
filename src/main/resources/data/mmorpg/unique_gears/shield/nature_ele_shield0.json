@@ -1,13 +1,13 @@
 {
   "id": "nature_ele_shield0",
-  "weight": 250,
+  "weight": 375,
   "rarity": 3,
   "tier": 3,
   "registry": "unique_gear",
   "lang_file_string": "item.mmorpg.uniques.shield.nature_ele_shield0",
   "lang_file_desc_string": "item.mmorpg.uniques.shield.nature_ele_shield0.desc",
   "primary_stats": [
-    "major_block_strength_flat",
+    "block_strength_flat",
     "nature_thorns_reflect_flat"
   ],
   "unique_stats": [

@@ -1,13 +1,12 @@
 {
   "id": "pantsfire0",
-  "weight": 10000,
+  "weight": 6666,
   "rarity": 1,
   "tier": 4,
   "registry": "unique_gear",
   "lang_file_string": "item.mmorpg.uniques.pants.pantsfire0",
   "lang_file_desc_string": "item.mmorpg.uniques.pants.pantsfire0.desc",
   "primary_stats": [
-	"slightly_high_armor_flat",
     "spell_fire_damage_flat"
   ],
   "unique_stats": [

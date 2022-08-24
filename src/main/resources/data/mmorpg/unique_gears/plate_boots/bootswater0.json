@@ -1,16 +1,15 @@
 {
   "id": "bootswater0",
-  "weight": 10000,
+  "weight": 6666,
   "rarity": 1,
   "tier": 5,
   "registry": "unique_gear",
   "lang_file_string": "item.mmorpg.uniques.boots.bootswater0",
   "lang_file_desc_string": "item.mmorpg.uniques.boots.bootswater0.desc",
   "primary_stats": [
-	"slightly_high_armor_flat"
+    "health_flat"
   ],
   "unique_stats": [
-    "health_flat",
     "sword_damage_flat",
     "high_water_spell_to_attack_dmg_flat",
     "water_resist_flat"

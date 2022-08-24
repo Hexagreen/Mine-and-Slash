@@ -1,13 +1,12 @@
 {
   "id": "helmetnature0",
-  "weight": 10000,
+  "weight": 6666,
   "rarity": 1,
   "tier": 5,
   "registry": "unique_gear",
   "lang_file_string": "item.mmorpg.uniques.helmet.helmetnature0",
   "lang_file_desc_string": "item.mmorpg.uniques.helmet.helmetnature0.desc",
   "primary_stats": [
-	"slightly_high_armor_flat",
     "spell_nature_damage_flat"
   ],
   "unique_stats": [
