@@ -1,7 +1,6 @@
 package com.robertx22.mine_and_slash.database.spells.spell_classes.bases;
 
 import com.robertx22.mine_and_slash.potion_effects.bases.PotionEffectUtils;
-import com.robertx22.mine_and_slash.potion_effects.ocean_mystic.FrostEffect;
 import com.robertx22.mine_and_slash.potion_effects.physical.ComboLinkerEffect;
 import com.robertx22.mine_and_slash.potion_effects.physical.ComboStarterEffect;
 import com.robertx22.mine_and_slash.saveclasses.item_classes.GearItemData;
@@ -48,8 +47,8 @@ public class SpellPredicates {
         }
     };
 
-    public static SpellPredicate REQUIRE_SHOOTABLE = new SpellPredicate(SHOOTABLE_PRED, new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.reqRanged.getLocName()));
-    public static SpellPredicate REQUIRE_MELEE = new SpellPredicate(MELEE_PRED, new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.reqMelee.getLocName()));
+    public static SpellPredicate REQUIRE_SHOOTABLE = new SpellPredicate(SHOOTABLE_PRED, new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.reqRanged.getLocNameStr()));
+    public static SpellPredicate REQUIRE_MELEE = new SpellPredicate(MELEE_PRED, new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.reqMelee.getLocNameStr()));
 
     public static SpellPredicate REQUIRE_STARTER = new SpellPredicate(STARTER_PRED, new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + "Requires Combo Starter Effect"));
     public static SpellPredicate REQUIRE_LINKER = new SpellPredicate(LINKER_PRED, new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + "Requires Combo Linker Effect"));

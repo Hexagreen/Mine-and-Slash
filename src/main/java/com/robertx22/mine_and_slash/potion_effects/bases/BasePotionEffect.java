@@ -19,7 +19,6 @@ import com.robertx22.mine_and_slash.uncommon.interfaces.IAutoLocName;
 import com.robertx22.mine_and_slash.uncommon.localization.CLOC;
 import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
-import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.entity.Entity;
@@ -174,7 +173,7 @@ public abstract class BasePotionEffect extends Effect implements ISlashRegistryE
 
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent(
-            TextFormatting.LIGHT_PURPLE + Spells.SpellPotionStack.getLocName() + TextFormatting.DARK_PURPLE + getMaxStacks()));
+            TextFormatting.LIGHT_PURPLE + Spells.SpellPotionStack.getLocNameStr() + TextFormatting.DARK_PURPLE + getMaxStacks()));
 
         return list;
 
@@ -185,7 +184,7 @@ public abstract class BasePotionEffect extends Effect implements ISlashRegistryE
 
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent(
-            TextFormatting.GOLD + Spells.SpellPotionDuration.getLocName() + TextFormatting.YELLOW + getDurationInSeconds(info.player) + "s"));
+            TextFormatting.GOLD + Spells.SpellPotionDuration.getLocNameStr() + TextFormatting.YELLOW + getDurationInSeconds(info.player) + "s"));
 
         return list;
 

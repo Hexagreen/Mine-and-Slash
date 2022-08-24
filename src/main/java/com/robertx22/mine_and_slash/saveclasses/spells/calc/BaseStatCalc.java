@@ -25,7 +25,7 @@ public abstract class BaseStatCalc implements ITooltipList {
 
         if (statname != null) {
             list.add(new StringTextComponent(
-                TextFormatting.RED + Spells.SpellScale.getLocName() + (int) (multi * 100F) + "% " + eleStr + " ").appendSibling(
+                TextFormatting.RED + Spells.SpellScale.getLocNameStr() + (int) (multi * 100F) + "% " + eleStr + " ").appendSibling(
                 statname)
                 .appendText(" (" + value + ")"));
         }

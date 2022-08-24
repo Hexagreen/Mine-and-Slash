@@ -129,7 +129,7 @@ public class TooltipUtils {
     }
 
     public static ITextComponent lvlReq(int lvl, EntityCap.UnitData player) {
-        return requirement(new StringTextComponent(Spells.LevelReq.getLocName()), player.getLevel(), lvl);
+        return requirement(new StringTextComponent(Spells.LevelReq.getLocNameStr()), player.getLevel(), lvl);
     }
 
     public static List<ITextComponent> removeDoubleBlankLines(List<ITextComponent> list) {
@@ -201,14 +201,14 @@ public class TooltipUtils {
 
     public static void abilityLevel(List<ITextComponent> list, int current, int max) {
         list.add(
-            new SText(TextFormatting.YELLOW + "").appendText(Spells.SpellAbility.getLocName())
+            new SText(TextFormatting.YELLOW + "").appendText(Spells.SpellAbility.getLocNameStr())
                 .appendSibling(Words.Level.locName())
                 .appendText(": " + current + "/" + max));
     }
 
     public static void totalMasteryLevel(List<ITextComponent> list, int current, int max) {
         list.add(
-                new SText(TextFormatting.LIGHT_PURPLE + "").appendText(Spells.SpellTotalMastery.getLocName())
+                new SText(TextFormatting.LIGHT_PURPLE + "").appendText(Spells.SpellTotalMastery.getLocNameStr())
                         .appendSibling(Words.Level.locName())
                         .appendText(": " + current + "/" + max));
     }
