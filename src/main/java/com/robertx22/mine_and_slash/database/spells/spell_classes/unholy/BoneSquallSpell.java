@@ -108,8 +108,7 @@ public class BoneSquallSpell extends BaseSpell {
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Hlth2Phy.locName().getString()));
         TooltipUtils.addEmpty(list);
-        list.add(new SText("Expend your own health and send out a flurry"));
-        list.add(new SText("of bones to damage enemies around you: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 
@@ -133,7 +132,7 @@ public class BoneSquallSpell extends BaseSpell {
             int num = getCalculation(ctx).getCalculatedValue(Load.Unit(caster), ctx.spellsCap, ctx.ability);
 
             List<LivingEntity> entities = EntityFinder.start(caster, LivingEntity.class, caster.getPositionVector())
-                .radius(radius).searchFor(EntityFinder.SearchFor.ENEMIES)
+                .radius(radius)
                 .build();
 
             for (LivingEntity en : entities) {

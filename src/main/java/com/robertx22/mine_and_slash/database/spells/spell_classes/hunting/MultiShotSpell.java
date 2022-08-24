@@ -106,7 +106,7 @@ public class MultiShotSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Phy.locName().getString()));
 
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent("Shoots multiple arrows in an arc: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

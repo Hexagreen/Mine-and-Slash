@@ -1,5 +1,6 @@
 package com.robertx22.mine_and_slash.database.spells.spell_classes.divine;
 
+import com.robertx22.mine_and_slash.database.spells.spell_classes.SpellTooltips;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.BaseSpell;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.SpellCastContext;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.cast_types.SpellCastType;
@@ -64,7 +65,7 @@ public class DefendSpell extends BaseSpell {
         c.set(SC.ENERGY_COST, 0, 0);
         c.set(SC.MAGIC_SHIELD_COST, 0, 0);
         c.set(SC.CAST_TIME_TICKS, 0, 0);
-        c.set(SC.COOLDOWN_SECONDS, 46, 34);
+        c.set(SC.COOLDOWN_SECONDS, 44, 30);
         c.set(SC.DURATION_TICKS, 20 * 6, 20 * 6);
 
         c.setMaxLevel(8);
@@ -90,7 +91,7 @@ public class DefendSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Applies buff: "));
+        list.add(SpellTooltips.buff());
         list.addAll(DefendEffect.INSTANCE.GetTooltipStringWithNoExtraSpellInfo(info));
 
         return list;

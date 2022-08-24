@@ -109,7 +109,7 @@ public class ThrowFlamesSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Fir.locName().getString()));
 
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent("Strike the air in front of you, sending out fiery waves: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

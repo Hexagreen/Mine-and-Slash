@@ -36,7 +36,7 @@ public class AddRemoveTalentPotionItem extends BaseInstantPotion implements ISha
 
         if (player instanceof PlayerEntity) {
             Load.talents((PlayerEntity) player)
-                .addResetPoints(3);
+                .addResetPoints(1);
         }
     }
 

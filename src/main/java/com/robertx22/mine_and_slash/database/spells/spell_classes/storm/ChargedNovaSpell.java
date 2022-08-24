@@ -109,8 +109,8 @@ public class ChargedNovaSpell extends BaseSpell {
 
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Mana2Lit.locName().getString()));
         TooltipUtils.addEmpty(list);
-        list.add(new SText("Channel your mana into your blade to damage enemies"));
-        list.add(new SText("around you in a sweeping motion: "));
+        list.addAll(descLocName(""));
+
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 
@@ -134,7 +134,7 @@ public class ChargedNovaSpell extends BaseSpell {
             int num = getCalculation(ctx).getCalculatedValue(Load.Unit(caster), ctx.spellsCap, ctx.ability);
 
             List<LivingEntity> entities = EntityFinder.start(caster, LivingEntity.class, caster.getPositionVector())
-                .radius(radius).searchFor(EntityFinder.SearchFor.ENEMIES)
+                .radius(radius)
                 .build();
 
             for (LivingEntity en : entities) {

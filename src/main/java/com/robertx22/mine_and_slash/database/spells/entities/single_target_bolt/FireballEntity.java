@@ -55,7 +55,7 @@ public class FireballEntity extends BaseElementalBoltEntity {
 
         List<LivingEntity> entities = EntityFinder.start(
                 getCaster(), LivingEntity.class, entity.getPositionVector())
-                .radius(RADIUS).searchFor(EntityFinder.SearchFor.ENEMIES)
+                .radius(RADIUS)
                 .build();
 
         entities.forEach(x -> dealSpellDamageTo(x));

@@ -70,7 +70,7 @@ public class ChillingFieldEntity extends BaseCloudEntity {
 
                     List<LivingEntity> entities = EntityFinder.start(
                             getCaster(), LivingEntity.class, getPositionVector())
-                            .radius(RADIUS).searchFor(EntityFinder.SearchFor.ENEMIES)
+                            .radius(RADIUS)
                             .build();
 
                     entities.forEach(x -> {PotionEffectUtils.apply(FrostEffect.INSTANCE, getCaster(), x);});

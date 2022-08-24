@@ -71,7 +71,7 @@ public class DashSpell extends BaseSpell {
         c.set(SC.MAGIC_SHIELD_COST, 0, 0);
         c.set(SC.BASE_VALUE, 0, 0);
         c.set(SC.CAST_TIME_TICKS, 0, 0);
-        c.set(SC.COOLDOWN_SECONDS, 7, 4);
+        c.set(SC.COOLDOWN_SECONDS, 7, 2);
 
         c.setMaxLevel(4);
 
@@ -102,7 +102,7 @@ public class DashSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Dash in your current direction."));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

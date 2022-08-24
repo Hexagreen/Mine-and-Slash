@@ -106,7 +106,7 @@ public class SummonZombieSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Duration, Spells.Entity, Spells.Summon))));
 
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent("Summon a zombie that aids in combat."));
+        list.addAll(descLocName(""));
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 
         return list;

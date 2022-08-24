@@ -104,7 +104,7 @@ public class ThornBushSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Nat.locName().getString()));
 
         TooltipUtils.addEmpty(list);
-        list.add(new SText("Summons a bush that attacks enemies nearby: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

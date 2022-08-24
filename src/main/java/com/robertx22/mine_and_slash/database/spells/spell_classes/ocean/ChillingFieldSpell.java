@@ -102,8 +102,8 @@ public class ChillingFieldSpell extends BaseSpell {
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Mana2Fro.locName().getString()));
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent("Summon a field of frost, slowly damaging"));
-        list.add(new StringTextComponent("enemies inside and applying: " + FrostEffect.INSTANCE.locNameForLangFile()));
+        list.addAll(descLocName(""));
+        list.add(new StringTextComponent(FrostEffect.INSTANCE.locNameForLangFile()));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

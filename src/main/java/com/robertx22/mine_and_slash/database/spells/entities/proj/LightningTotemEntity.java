@@ -64,7 +64,7 @@ public class LightningTotemEntity extends EntityBaseProjectile {
             if (!world.isRemote) {
 
                 List<LivingEntity> entities = EntityFinder.start(getCaster(), LivingEntity.class, getPositionVector())
-                        .radius(radius()).searchFor(EntityFinder.SearchFor.ENEMIES)
+                        .radius(radius())
                         .build();
 
                 entities.forEach(x -> {
@@ -79,7 +79,7 @@ public class LightningTotemEntity extends EntityBaseProjectile {
                 });
             } else {
 
-                this.playSound(ModSounds.THUNDER.get(), 0.75f, 1.8f);
+                this.playSound(ModSounds.THUNDER.get(), 1f, 1.4f);
                 // TODO why isnt this being cast?
 
             }

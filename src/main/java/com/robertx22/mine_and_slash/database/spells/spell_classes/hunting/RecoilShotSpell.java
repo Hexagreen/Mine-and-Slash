@@ -131,7 +131,7 @@ public class RecoilShotSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Phy.locName().getString()));
 
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent("Shoot an arrow and quickly step back: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

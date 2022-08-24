@@ -141,7 +141,7 @@ public class WishSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area, Spells.Heal))));
 
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent("Heal allies around you instantly based on your max mana: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

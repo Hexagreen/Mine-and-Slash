@@ -106,7 +106,7 @@ public class BatteryFusiladeChainSynergy extends OnDamageDoneSynergy {
             int num = getCalcVal(ctx.source);
 
             List<LivingEntity> entities = EntityFinder.start(ctx.source, LivingEntity.class, ctx.target.getPositionVector())
-                    .radius(radius).searchFor(EntityFinder.SearchFor.ENEMIES)
+                    .radius(radius)
                     .build();
 
             ParticlePacketData pdata = new ParticlePacketData(ctx.target.getPosition()

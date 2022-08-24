@@ -105,8 +105,8 @@ public class ElectricalDischargeSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new SText("Discharge your mana, dealing 18% of nearby enemies'"));
-        list.add(new SText("remaining health and magic shield as lightning damage: "));
+        list.addAll(descLocName(""));
+
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

@@ -1,6 +1,7 @@
 package com.robertx22.mine_and_slash.database.spells.spell_classes.hunting;
 
 import com.robertx22.mine_and_slash.database.spells.entities.proj.WeakenTrapEntity;
+import com.robertx22.mine_and_slash.database.spells.spell_classes.SpellTooltips;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.BaseSpell;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.SpellCastContext;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.cast_types.SpellCastType;
@@ -107,16 +108,14 @@ public class WeakenTrapSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
+        list.addAll(descLocName(""));
 
-        list.add(new StringTextComponent("Throw out a trap that explodes, dealing"));
-        list.add(new StringTextComponent("nature DoT and weakening enemies caught"));
-        list.add(new StringTextComponent("in the blast: "));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Applies: "));
+        list.add(SpellTooltips.applyOnTarget());
         list.addAll(WeakenEffect.INSTANCE.GetTooltipStringWithNoExtraSpellInfo(info));
 
         return list;
