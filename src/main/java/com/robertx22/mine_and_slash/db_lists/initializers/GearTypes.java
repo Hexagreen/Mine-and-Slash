@@ -63,7 +63,7 @@ public class GearTypes implements ISlashRegistryInit {
                     add(Axe.INSTANCE);
                     add(CrossBow.INSTANCE);
                     add(Sword.INSTANCE);
-                    //add(Gauntlets.INSTANCE); //TODOHexa: Temporarily disabled due to crash with no prefix except.
+                    add(Gauntlets.INSTANCE);
                     add(Dagger.INSTANCE);
                     add(Trident.INSTANCE);
                     add(Wand.INSTANCE);
