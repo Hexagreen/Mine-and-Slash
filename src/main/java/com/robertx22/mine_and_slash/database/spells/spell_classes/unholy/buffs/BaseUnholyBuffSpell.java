@@ -50,7 +50,7 @@ public abstract class BaseUnholyBuffSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(CLOC.blank("mmorpg.unholybuffs.desc"));
+        list.add(CLOC.blank("mmorpg.spell.unholybuffs.desc"));
 
         list.addAll(getImmutableConfigs().potionEffect()
             .GetTooltipStringWithNoExtraSpellInfo(info));

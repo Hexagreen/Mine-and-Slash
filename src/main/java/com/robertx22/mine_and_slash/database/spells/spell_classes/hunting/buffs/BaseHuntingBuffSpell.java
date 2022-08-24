@@ -50,12 +50,12 @@ public abstract class BaseHuntingBuffSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(CLOC.blank("mmorpg.huntingbuffs.desc1"));
+        list.add(CLOC.blank("mmorpg.spell.huntingbuffs.desc1"));
 
         list.addAll(getImmutableConfigs().potionEffect()
             .GetTooltipStringWithNoExtraSpellInfo(info));
 
-        list.add(new StringTextComponent(TextFormatting.RED + CLOC.blank("mmorpg.huntingbuffs.desc1").getString()));
+        list.add(new StringTextComponent(TextFormatting.RED + CLOC.blank("mmorpg.spell.huntingbuffs.desc1").getString()));
 
         return list;
 
