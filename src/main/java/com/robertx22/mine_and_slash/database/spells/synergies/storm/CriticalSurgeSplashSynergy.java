@@ -1,5 +1,6 @@
 package com.robertx22.mine_and_slash.database.spells.synergies.storm;
 
+import com.robertx22.mine_and_slash.database.spells.SpellUtils;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.PreCalcSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.SC;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.storm.CriticalSurgeSpell;
@@ -40,13 +41,10 @@ public class CriticalSurgeSplashSynergy extends OnHitSynergy {
         list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocNameStr()+ " (Bolt)"));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocNameStr() + getRequiredAbility().getLocName().getString()));
 
+        TooltipUtils.addEmpty(list);
+        list.add(new StringTextComponent(TextFormatting.GRAY + "Bolt damage is a special damage type and is"));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "unaffected by spell damage modifiers."));
 
-        TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Bolt damage is a special damage type and is"));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "unaffected by spell damage modifiers."));
-        TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Bolt damage is a special damage type and is"));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "unaffected by spell damage modifiers."));
         TooltipUtils.addEmpty(list);
 
         list.addAll(descLocName(""));

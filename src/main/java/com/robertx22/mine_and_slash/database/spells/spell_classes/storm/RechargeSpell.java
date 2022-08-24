@@ -95,10 +95,11 @@ public class RechargeSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Buff, Spells.Duration, Spells.Self))));
 
         TooltipUtils.addEmpty(list);
+
         list.add(new StringTextComponent(TextFormatting.GRAY + "This spell's cooldown is unaffected by"));
         list.add(new StringTextComponent(TextFormatting.GRAY + "cooldown reduction."));
         TooltipUtils.addEmpty(list);
-
+        
         list.add(SpellTooltips.buff());
 
         list.addAll(RechargeEffect.INSTANCE.GetTooltipStringWithNoExtraSpellInfo(info));

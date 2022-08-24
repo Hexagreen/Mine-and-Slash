@@ -31,7 +31,6 @@ public final class BaseUniqueShield extends ShieldItem implements IEffectItem {
             list.add(new StringTextComponent(color() + Words.ShieldActiveDesc_3.locName().getString()));
         }
         return list;
-
     }
 
 }
