@@ -4,19 +4,16 @@ import com.robertx22.mine_and_slash.database.spells.SpellUtils;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.PreCalcSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.SC;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.storm.CriticalSurgeSpell;
-import com.robertx22.mine_and_slash.database.spells.spell_classes.storm.PowerSurgeSpell;
 import com.robertx22.mine_and_slash.database.spells.synergies.base.OnHitSynergy;
 import com.robertx22.mine_and_slash.packets.particles.ParticleEnum;
 import com.robertx22.mine_and_slash.packets.particles.ParticlePacketData;
 import com.robertx22.mine_and_slash.potion_effects.bases.PotionEffectUtils;
 import com.robertx22.mine_and_slash.potion_effects.shaman.CriticalSurgeEffect;
-import com.robertx22.mine_and_slash.potion_effects.shaman.PowerSurgeEffect;
 import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.saveclasses.spells.IAbility;
 import com.robertx22.mine_and_slash.uncommon.datasaving.Load;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.DamageEffect;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.EffectData;
-import com.robertx22.mine_and_slash.uncommon.effectdatas.interfaces.ICrittable;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.interfaces.WeaponTypes;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
 import com.robertx22.mine_and_slash.uncommon.localization.Spells;
@@ -41,15 +38,21 @@ public class CriticalSurgeSplashSynergy extends OnHitSynergy {
 
         addSpellName(list);
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocName()));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocName() + getRequiredAbility().getLocName().getString()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocNameStr()+ " (Bolt)"));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocNameStr() + getRequiredAbility().getLocName().getString()));
+
 
         TooltipUtils.addEmpty(list);
+        list.add(new StringTextComponent(TextFormatting.GRAY + "Bolt damage is a special damage type and is"));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "unaffected by spell damage modifiers."));
+        TooltipUtils.addEmpty(list);
+        list.add(new StringTextComponent(TextFormatting.GRAY + "Bolt damage is a special damage type and is"));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "unaffected by spell damage modifiers."));
+        TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("While Critical Surge is active,"));
-        list.add(new StringTextComponent("critical hits have chance to"));
-        list.add(new StringTextComponent("cause the target to send out a"));
-        list.add(new StringTextComponent("nova, dealing damage: "));
+        list.add(new StringTextComponent("While Critical Surge is active, critical"));
+        list.add(new StringTextComponent("hits have chance to cause the target to"));
+        list.add(new StringTextComponent("send out a nova, dealing bolt damage: "));
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 
@@ -64,9 +67,9 @@ public class CriticalSurgeSplashSynergy extends OnHitSynergy {
     @Override
     public PreCalcSpellConfigs getPreCalcConfig() {
         PreCalcSpellConfigs c = new PreCalcSpellConfigs();
-        c.set(SC.BASE_VALUE, 5, 12);
-        c.set(SC.CHANCE, 10, 30);
-        c.set(SC.RADIUS, 1.5F, 3F);
+        c.set(SC.BASE_VALUE, 5, 8);
+        c.set(SC.CHANCE, 5, 20);
+        c.set(SC.RADIUS, 1.5F, 2.5F);
         c.setMaxLevel(8);
         return c;
     }
@@ -80,7 +83,7 @@ public class CriticalSurgeSplashSynergy extends OnHitSynergy {
 
         if (PotionEffectUtils.has(ctx.source, CriticalSurgeEffect.INSTANCE)) {
 
-            if (ctx.isCriticalHit() && RandomUtils.roll(chance)) {
+            if (ctx.isCriticalHit() && RandomUtils.roll(chance) && ctx.getEffectType() == EffectData.EffectTypes.SPELL) {
 
                 float radius = getContext(ctx.source).getConfigFor(this)
                         .get(SC.RADIUS)
@@ -97,15 +100,17 @@ public class CriticalSurgeSplashSynergy extends OnHitSynergy {
                 pdata.radius = radius;
                 ParticleEnum.CHARGED_NOVA.sendToClients(ctx.source, pdata);
 
-                SoundUtils.playSound(ctx.target, SoundEvents.ENTITY_LIGHTNING_BOLT_IMPACT, 0.8F, 1.3F);
+                SpellUtils.summonLightningStrike(ctx.target);
+
+                SoundUtils.playSound(ctx.target, SoundEvents.ENTITY_LIGHTNING_BOLT_IMPACT, 0.75F, 1);
+
+                //SoundUtils.playSound(ctx.target, SoundEvents.ENTITY_LIGHTNING_BOLT_IMPACT, 0.8F, 1.3F);
 
                 for (LivingEntity en : entities) {
-                    if (en != ctx.target) {
-                        DamageEffect dmg = new DamageEffect(
-                                null, ctx.source, en, num, EffectData.EffectTypes.SPELL, WeaponTypes.None);
-                        dmg.element = Elements.Thunder;
-                        dmg.Activate();
-                    }
+                    DamageEffect dmg = new DamageEffect(
+                            null, ctx.source, en, num, EffectData.EffectTypes.BOLT, WeaponTypes.None);
+                    dmg.element = Elements.Thunder;
+                    dmg.Activate();
                 }
             }
         }

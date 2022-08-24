@@ -1,15 +1,12 @@
 package com.robertx22.mine_and_slash.database.spells.spell_classes.nature;
 
 import com.robertx22.mine_and_slash.database.spells.entities.single_target_bolt.PoisonBallEntity;
-import com.robertx22.mine_and_slash.database.spells.spell_classes.SpellTooltips;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.BaseSpell;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.SpellCastContext;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.cast_types.SpellCastType;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.ImmutableSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.PreCalcSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.SC;
-import com.robertx22.mine_and_slash.potion_effects.druid.ThornsEffect;
-import com.robertx22.mine_and_slash.potion_effects.ember_mage.BurnEffect;
 import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.saveclasses.spells.AbilityPlace;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
@@ -24,7 +21,6 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 
-import java.io.PipedReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -98,12 +94,16 @@ public class PoisonBallSpell extends BaseSpell {
 
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocNameStr()));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area, Spells.Duration, Spells.Pierce, Spells.Projectile))));
 
         TooltipUtils.addEmpty(list);
+        list.add(new StringTextComponent(TextFormatting.GRAY + "This spell's cooldown is unaffected by"));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "cooldown reduction."));
+        TooltipUtils.addEmpty(list);
 
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Nat.locName().getString()));
+
         TooltipUtils.addEmpty(list);
         list.addAll(descLocName(""));
 

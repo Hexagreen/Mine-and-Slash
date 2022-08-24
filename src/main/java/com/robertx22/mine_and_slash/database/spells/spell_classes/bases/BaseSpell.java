@@ -6,8 +6,6 @@ import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.
 import com.robertx22.mine_and_slash.database.spells.synergies.base.OnSpellCastSynergy;
 import com.robertx22.mine_and_slash.database.spells.synergies.base.Synergy;
 import com.robertx22.mine_and_slash.database.stats.types.resources.Energy;
-import com.robertx22.mine_and_slash.database.stats.types.resources.Health;
-import com.robertx22.mine_and_slash.database.stats.types.resources.MagicShield;
 import com.robertx22.mine_and_slash.database.stats.types.resources.Mana;
 import com.robertx22.mine_and_slash.db_lists.Rarities;
 import com.robertx22.mine_and_slash.mmorpg.MMORPG;
@@ -457,19 +455,21 @@ public abstract class BaseSpell implements ISlashRegistryEntry<BaseSpell>, ITool
         TooltipUtils.addEmpty(list);
 
         if (getCalculatedHealthCost(ctx) * 2 > 0.00) {
-            list.add(new StringTextComponent(TextFormatting.RED + Spells.Health_Cost.getLocName() + Math.round(getHealthCost(ctx) * 100) + "%" + " (" + Math.round(getCalculatedHealthCost(ctx)) + ")"));
+
+            list.add(new StringTextComponent(TextFormatting.RED + Spells.Health_Cost.getLocNameStr() + Math.round(getHealthCost(ctx) * 100) + "%" + " (" + Math.round(getCalculatedHealthCost(ctx)) + ")"));
         }
         if (getCalculatedMagicShieldCost(ctx) * 2 > 0.00) {
-            list.add(new StringTextComponent(TextFormatting.AQUA + Spells.Magic_Shield_Cost.getLocName() + Math.round(getMagicShieldCost(ctx) * 100) + "%" + " (" + Math.round(getCalculatedMagicShieldCost(ctx)) + ")"));
+            list.add(new StringTextComponent(TextFormatting.AQUA + Spells.Magic_Shield_Cost.getLocNameStr() + Math.round(getMagicShieldCost(ctx) * 100) + "%" + " (" + Math.round(getCalculatedMagicShieldCost(ctx)) + ")"));
+
         }
         if (getCalculatedManaCost(ctx) > 0) {
-            list.add(new StringTextComponent(TextFormatting.BLUE + Spells.Mana_Cost.getLocName() + getCalculatedManaCost(ctx)));
+            list.add(new StringTextComponent(TextFormatting.BLUE + Spells.Mana_Cost.getLocNameStr() + getCalculatedManaCost(ctx)));
         }
         if (getCalculatedEnergyCost(ctx) > 0) {
-            list.add(new StringTextComponent(TextFormatting.YELLOW + Spells.Energy_Cost.getLocName() + getCalculatedEnergyCost(ctx)));
+            list.add(new StringTextComponent(TextFormatting.YELLOW + Spells.Energy_Cost.getLocNameStr() + getCalculatedEnergyCost(ctx)));
         }
-        list.add(new StringTextComponent(TextFormatting.GREEN + Spells.Cooldown.getLocName() + getCooldownInSeconds(ctx) + "s"));
-        list.add(new StringTextComponent(TextFormatting.GREEN + Spells.Cast_Time.getLocName() + getUseDurationInSeconds(ctx) + "s"));
+        list.add(new StringTextComponent(TextFormatting.GREEN + Spells.Cooldown.getLocNameStr() + getCooldownInSeconds(ctx) + "s"));
+        list.add(new StringTextComponent(TextFormatting.GREEN + Spells.Cast_Time.getLocNameStr() + getUseDurationInSeconds(ctx) + "s"));
 
         TooltipUtils.addEmpty(list);
 
@@ -482,10 +482,10 @@ public abstract class BaseSpell implements ISlashRegistryEntry<BaseSpell>, ITool
 
         if (this.immutableConfigs.allowedAsRightClickOn() == AllowedAsRightClickOn.MAGE_WEAPON) {
             TooltipUtils.addEmpty(list);
-            list.add(new SText(TextFormatting.GRAY + Spells.Bind_On_Wands.getLocName()));
+            list.add(new SText(TextFormatting.GRAY + Spells.Bind_On_Wands.getLocNameStr()));
         } else if (this.immutableConfigs.allowedAsRightClickOn() == AllowedAsRightClickOn.MELEE_WEAPON) {
             TooltipUtils.addEmpty(list);
-            list.add(new SText(TextFormatting.GRAY + Spells.Bind_On_Melee.getLocName()));
+            list.add(new SText(TextFormatting.GRAY + Spells.Bind_On_Melee.getLocNameStr()));
         }
         TooltipUtils.addEmpty(list);
 

@@ -7,7 +7,6 @@ import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.cast_typ
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.ImmutableSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.PreCalcSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.SC;
-import com.robertx22.mine_and_slash.potion_effects.druid.ThornArmorEffect;
 import com.robertx22.mine_and_slash.potion_effects.druid.VenomLoadEffect;
 import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.saveclasses.spells.AbilityPlace;
@@ -66,7 +65,7 @@ public class VenomLoadSpell extends BaseSpell {
         c.set(SC.ENERGY_COST, 0, 0);
         c.set(SC.RADIUS, 2, 5);
         c.set(SC.MAGIC_SHIELD_COST, 0, 0);
-        c.set(SC.BASE_VALUE, 0, 0);
+        c.set(SC.BASE_VALUE, 0.25F, 0.25F);
         c.set(SC.HEALTH_ATTACK_SCALE_VALUE, 0.4F, 0.4F);
         c.set(SC.CAST_TIME_TICKS, 60, 20);
         c.set(SC.COOLDOWN_SECONDS, 60, 60);
@@ -92,7 +91,7 @@ public class VenomLoadSpell extends BaseSpell {
 
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocNameStr()));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area, Spells.Duration, Spells.Self, Spells.UniqueBuff))));
 
         TooltipUtils.addEmpty(list);

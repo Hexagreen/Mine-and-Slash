@@ -6,8 +6,6 @@ import com.robertx22.mine_and_slash.database.spells.spell_classes.ocean.Whirlpoo
 import com.robertx22.mine_and_slash.database.spells.synergies.base.OnDamageDoneSynergy;
 import com.robertx22.mine_and_slash.potion_effects.bases.PotionEffectUtils;
 import com.robertx22.mine_and_slash.potion_effects.ocean_mystic.ColdEssenceEffect;
-import com.robertx22.mine_and_slash.potion_effects.ocean_mystic.FrostEffect;
-import com.robertx22.mine_and_slash.potion_effects.ocean_mystic.ShiverEffect;
 import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.saveclasses.spells.IAbility;
 import com.robertx22.mine_and_slash.uncommon.datasaving.Load;
@@ -31,12 +29,12 @@ public class WhirlpoolShiverSynergy extends OnDamageDoneSynergy {
 
         addSpellName(list);
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocName()));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocName() + getRequiredAbility().getLocName().getString()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocNameStr()));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocNameStr() + getRequiredAbility().getLocName().getString()));
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent(Spells.HitApplySelfBuff.getLocName() + ColdEssenceEffect.INSTANCE.locNameForLangFile()));
+        list.add(new StringTextComponent(Spells.HitApplySelfBuff.getLocNameStr() + ColdEssenceEffect.INSTANCE.locNameForLangFile()));
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 
@@ -57,7 +55,7 @@ public class WhirlpoolShiverSynergy extends OnDamageDoneSynergy {
     public PreCalcSpellConfigs getPreCalcConfig() {
         PreCalcSpellConfigs c = new PreCalcSpellConfigs();
         c.set(SC.BASE_VALUE, 0, 0);
-        c.set(SC.CHANCE, 25, 50);
+        c.set(SC.CHANCE, 25, 40);
         c.setMaxLevel(4);
         return c;
     }

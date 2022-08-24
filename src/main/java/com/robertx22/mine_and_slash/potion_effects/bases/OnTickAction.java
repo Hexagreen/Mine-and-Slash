@@ -32,7 +32,7 @@ public class OnTickAction {
         List<ITextComponent> list = new ArrayList<>();
 
         if (tooltip != null) {
-            list.add(new StringTextComponent(TextFormatting.YELLOW + Spells.descOnTick01.getLocName() + effect.getTickRate(info.player) + Spells.descOnTick02.getLocName()));
+            list.add(new StringTextComponent(TextFormatting.YELLOW + Spells.descOnTick01.getLocNameStr() + effect.getTickRate(info.player) + Spells.descOnTick02.getLocNameStr()));
             list.addAll(tooltip.apply(info));
         }
 

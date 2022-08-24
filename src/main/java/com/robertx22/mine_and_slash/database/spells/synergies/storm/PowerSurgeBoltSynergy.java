@@ -3,19 +3,10 @@ package com.robertx22.mine_and_slash.database.spells.synergies.storm;
 import com.robertx22.mine_and_slash.database.spells.SpellUtils;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.PreCalcSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.SC;
-import com.robertx22.mine_and_slash.database.spells.spell_classes.nature.PoisonedWeaponsSpell;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.storm.PowerSurgeSpell;
-import com.robertx22.mine_and_slash.database.spells.synergies.base.OnBasicAttackSynergy;
-import com.robertx22.mine_and_slash.database.spells.synergies.base.OnDamageDoneSynergy;
 import com.robertx22.mine_and_slash.database.spells.synergies.base.OnHitSynergy;
-import com.robertx22.mine_and_slash.mmorpg.registers.common.ModSounds;
-import com.robertx22.mine_and_slash.packets.particles.ParticleEnum;
-import com.robertx22.mine_and_slash.packets.particles.ParticlePacketData;
 import com.robertx22.mine_and_slash.potion_effects.bases.PotionEffectUtils;
-import com.robertx22.mine_and_slash.potion_effects.druid.ThornsEffect;
-import com.robertx22.mine_and_slash.potion_effects.ember_mage.BurnEffect;
 import com.robertx22.mine_and_slash.potion_effects.shaman.PowerSurgeEffect;
-import com.robertx22.mine_and_slash.potion_effects.shaman.StaticEffect;
 import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.saveclasses.spells.IAbility;
 import com.robertx22.mine_and_slash.uncommon.datasaving.Load;
@@ -27,7 +18,6 @@ import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.RandomUtils;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.SoundUtils;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
-import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -44,14 +34,22 @@ public class PowerSurgeBoltSynergy extends OnHitSynergy {
 
         addSpellName(list);
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocName()));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocName() + getRequiredAbility().getLocName().getString()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocNameStr()+ " (Bolt)"));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocNameStr() + getRequiredAbility().getLocName().getString()));
 
+
+        TooltipUtils.addEmpty(list);
+        list.add(new StringTextComponent(TextFormatting.GRAY + "Bolt damage is a special damage type and is"));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "unaffected by spell damage modifiers."));
+        TooltipUtils.addEmpty(list);
+        list.add(new StringTextComponent(TextFormatting.GRAY + "Bolt damage is a special damage type and is"));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "unaffected by spell damage modifiers."));
         TooltipUtils.addEmpty(list);
 
         list.add(new StringTextComponent("While Power Surge is active, hits"));
         list.add(new StringTextComponent("have a chance of summoning a bolt"));
-        list.add(new StringTextComponent("of lightning on the enemy: "));
+        list.add(new StringTextComponent("of lightning on the enemy, dealing"));
+        list.add(new StringTextComponent("bolt damage: "));
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 
@@ -66,7 +64,7 @@ public class PowerSurgeBoltSynergy extends OnHitSynergy {
     @Override
     public PreCalcSpellConfigs getPreCalcConfig() {
         PreCalcSpellConfigs c = new PreCalcSpellConfigs();
-        c.set(SC.BASE_VALUE, 2, 7);
+        c.set(SC.BASE_VALUE, 3, 6);
         c.set(SC.CHANCE, 5F, 20F);
         c.setMaxLevel(8);
         return c;
@@ -83,17 +81,19 @@ public class PowerSurgeBoltSynergy extends OnHitSynergy {
 
         if (PotionEffectUtils.has(ctx.source, PowerSurgeEffect.INSTANCE)) {
 
-            if (RandomUtils.roll(chance)) {
+            if (RandomUtils.roll(chance) && ctx.getEffectType() == EffectData.EffectTypes.SPELL) {
 
                 int num = getPreCalcConfig().getCalc(Load.spells(ctx.source), this)
                         .getCalculatedValue(ctx.sourceData, Load.spells(ctx.source), this);
 
-                SoundUtils.playSound(ctx.target, SoundEvents.ENTITY_LIGHTNING_BOLT_IMPACT, 0.8F, 2);
+                //SoundUtils.playSound(ctx.target, SoundEvents.ENTITY_LIGHTNING_BOLT_IMPACT, 0.8F, 2);
 
                 SpellUtils.summonLightningStrike(ctx.target);
 
+                SoundUtils.playSound(ctx.target, SoundEvents.ENTITY_LIGHTNING_BOLT_IMPACT, 0.75F, 1);
+
                 DamageEffect dmg = new DamageEffect(
-                        null, ctx.source, ctx.target, num, EffectData.EffectTypes.SPELL, WeaponTypes.None);
+                        null, ctx.source, ctx.target, num, EffectData.EffectTypes.BOLT, WeaponTypes.None);
                 dmg.element = Elements.Thunder;
                 dmg.Activate();
 

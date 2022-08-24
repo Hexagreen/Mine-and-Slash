@@ -2,7 +2,6 @@ package com.robertx22.mine_and_slash.database.spells.synergies.unholy;
 
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.PreCalcSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.SC;
-import com.robertx22.mine_and_slash.database.spells.spell_classes.hunting.ImbueSpell;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.unholy.SoulShredSpell;
 import com.robertx22.mine_and_slash.database.spells.synergies.base.OnBasicAttackSynergy;
 import com.robertx22.mine_and_slash.potion_effects.bases.PotionEffectUtils;
@@ -31,8 +30,8 @@ public class SoulShredTetherSynergy extends OnBasicAttackSynergy {
 
         addSpellName(list);
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocName()));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocName() + getRequiredAbility().getLocName().getString()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocNameStr()));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocNameStr() + getRequiredAbility().getLocName().getString()));
 
         TooltipUtils.addEmpty(list);
 

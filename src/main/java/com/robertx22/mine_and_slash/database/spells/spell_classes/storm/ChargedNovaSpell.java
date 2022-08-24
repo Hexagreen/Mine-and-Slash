@@ -9,15 +9,10 @@ import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.SC;
 import com.robertx22.mine_and_slash.packets.particles.ParticleEnum;
 import com.robertx22.mine_and_slash.packets.particles.ParticlePacketData;
-import com.robertx22.mine_and_slash.potion_effects.bases.PotionEffectUtils;
-import com.robertx22.mine_and_slash.potion_effects.shaman.StaticEffect;
 import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.saveclasses.spells.AbilityPlace;
 import com.robertx22.mine_and_slash.uncommon.datasaving.Load;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.AttackSpellDamageEffect;
-import com.robertx22.mine_and_slash.uncommon.effectdatas.DamageEffect;
-import com.robertx22.mine_and_slash.uncommon.effectdatas.EffectData;
-import com.robertx22.mine_and_slash.uncommon.effectdatas.interfaces.WeaponTypes;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Masteries;
 import com.robertx22.mine_and_slash.uncommon.localization.SpellType;
@@ -76,7 +71,7 @@ public class ChargedNovaSpell extends BaseSpell {
         c.set(SC.ENERGY_COST, 3, 5);
         c.set(SC.MAGIC_SHIELD_COST, 0, 0);
         c.set(SC.BASE_VALUE, 2, 5);
-        c.set(SC.MANA_ATTACK_SCALE_VALUE, 0.06F, 0.16F);
+        c.set(SC.MANA_ATTACK_SCALE_VALUE, 0.07F, 0.14F);
         c.set(SC.CAST_TIME_TICKS, 0, 0);
         c.set(SC.COOLDOWN_SECONDS, 4, 2);
         c.set(SC.RADIUS, 2, 4);
@@ -106,8 +101,8 @@ public class ChargedNovaSpell extends BaseSpell {
 
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.AttackSpell.getLocName()));
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.ITALIC + Spells.AttackSpellDesc.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.AttackSpell.getLocNameStr()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.ITALIC + Spells.AttackSpellDesc.getLocNameStr()));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area))));
 
         TooltipUtils.addEmpty(list);
@@ -115,6 +110,7 @@ public class ChargedNovaSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Mana2Lit.locName().getString()));
         TooltipUtils.addEmpty(list);
         list.addAll(descLocName(""));
+
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 
@@ -146,8 +142,6 @@ public class ChargedNovaSpell extends BaseSpell {
                         this
                 );
                 dmg.Activate();
-                PotionEffectUtils.apply(StaticEffect.INSTANCE, caster, en);
-
             }
         }
     }
