@@ -50,9 +50,8 @@ public class CriticalSurgeSplashSynergy extends OnHitSynergy {
         list.add(new StringTextComponent(TextFormatting.GRAY + "unaffected by spell damage modifiers."));
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("While Critical Surge is active, critical"));
-        list.add(new StringTextComponent("hits have chance to cause the target to"));
-        list.add(new StringTextComponent("send out a nova, dealing bolt damage: "));
+        list.addAll(descLocName(""));
+
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 

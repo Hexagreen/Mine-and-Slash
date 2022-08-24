@@ -35,8 +35,9 @@ public class ThornArmorThornsSynergy extends OnBasicAttackSynergy {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("While Nature's Armor is active, attacks"));
-        list.add(new StringTextComponent("have a chance to apply: " + ThornsEffect.INSTANCE.locNameForLangFile()));
+        list.addAll(descLocName(""));
+        list.add(new StringTextComponent(ThornsEffect.INSTANCE.locNameForLangFile()));
+
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 

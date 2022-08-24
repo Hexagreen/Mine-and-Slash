@@ -46,10 +46,8 @@ public class PowerSurgeBoltSynergy extends OnHitSynergy {
         list.add(new StringTextComponent(TextFormatting.GRAY + "unaffected by spell damage modifiers."));
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("While Power Surge is active, hits"));
-        list.add(new StringTextComponent("have a chance of summoning a bolt"));
-        list.add(new StringTextComponent("of lightning on the enemy, dealing"));
-        list.add(new StringTextComponent("bolt damage: "));
+        list.addAll(descLocName(""));
+
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 

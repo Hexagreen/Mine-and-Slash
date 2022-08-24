@@ -38,7 +38,8 @@ public class RegenerateAoeSynergy extends OnSpellCastSynergy {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent( RegenerateEffect.INSTANCE.locNameForLangFile() + " is also applied to nearby allies."));
+        list.addAll(descLocName(""));
+        list.add(new StringTextComponent( RegenerateEffect.INSTANCE.locNameForLangFile()));
 
         return list;
     }

@@ -36,7 +36,7 @@ public class TidalWaveFrostSynergy extends OnAttackSpellDmgDoneSynergy {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("If the target is Chilled, deal extra damage: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 

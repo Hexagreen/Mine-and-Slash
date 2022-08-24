@@ -29,7 +29,7 @@ public class MagmaFlowerEnhancedSynergy extends Synergy {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Increase duration but reduce tick rate: "));
+        list.addAll(descLocName(""));
 
         return list;
     }

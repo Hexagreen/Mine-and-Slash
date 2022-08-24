@@ -52,11 +52,8 @@ public class BatteryFusiladeChainSynergy extends OnDamageDoneSynergy {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("If user has Lightning Essence, projectiles"));
-        list.add(new StringTextComponent("have a chance to release a small nova upon"));
-        list.add(new StringTextComponent("hitting an enemy, dealing bolt damage. The"));
-        list.add(new StringTextComponent("chance is multiplied by the caster's number"));
-        list.add(new StringTextComponent("of stacks of Lightning Essence: "));
+        list.addAll(descLocName(""));
+
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 
