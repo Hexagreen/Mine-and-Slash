@@ -157,7 +157,8 @@ public interface IAbility extends IGUID, ITooltipList {
 
             list.add(new SText(TextFormatting.YELLOW + Spells.EffAbilityLevel.getLocName() + getEffectiveAbilityLevel(ctx.spellsCap, ctx.data)));
 
-            list.add(new SText(getElement().format + Spells.Element.getLocName() + getElement().name()));
+            list.add(new SText(getElement().format + Spells.Element.getLocName() + getElement().dmgName));
+
 
 
             if (ctx.spellsCap.getAbilitiesData()

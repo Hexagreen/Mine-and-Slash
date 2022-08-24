@@ -2293,7 +2293,7 @@
 	"effect.mmorpg.silent_wind_effect.desc": "Reduces movement speed by 3%.",
 	"effect.mmorpg.exert.desc1": "Physical Spell Damage",
 	"effect.mmorpg.exert.desc2": "Hunting spell arrows explode on contact\nand deal half damage in a small area.",
-	"effect.mmorpg.judgement.desc1": "Lightning Spell Damage",
+	"effect.mmorpg.judgement.desc1": "Lightning Bolt Damage",
 	"effect.mmorpg.judgement.desc2": "Attack to add additional stacks.\nAt max stacks, consume the stacks\nto deal extra damage based on\nthe applicator's Weapon DMG:",
 	"effect.mmorpg.enrage.desc1": "Enemies with Enrage will continue\nto be taunted by the applicator\nwhile under its effects",
 	"effect.mmorpg.enrage.desc2": "Increases movement speed by 10%.",

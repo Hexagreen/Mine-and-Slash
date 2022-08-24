@@ -103,7 +103,10 @@ public class JudgementEffect extends BasePotionEffect implements IApplyStatPotio
         List<ITextComponent> list = new ArrayList<>();
 
         list.addAll(descLocName("1", TextFormatting.GRAY, TextFormatting.ITALIC));
-
+        TooltipUtils.addEmpty(list);
+        list.add(new StringTextComponent(TextFormatting.GRAY + "Bolt damage is a special damage type and is"));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "unaffected by spell damage modifiers."));
+        TooltipUtils.addEmpty(list);
         list.addAll(descLocName("2"));
 
         return list;
