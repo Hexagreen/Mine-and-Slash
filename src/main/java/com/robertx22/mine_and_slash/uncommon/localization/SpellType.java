@@ -30,10 +30,10 @@ public class SpellType {
             return new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.reqMelee.getLocNameStr());
 
         if(spellPredicate.equals(SpellPredicates.REQUIRE_STARTER))
-            return new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.reqMelee.getLocNameStr());
+            return new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.reqStarter.getLocNameStr());
 
         if(spellPredicate.equals(SpellPredicates.REQUIRE_LINKER))
-            return new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.reqMelee.getLocNameStr());
+            return new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.reqLinker.getLocNameStr());
 
         return new SText("Debug: See uncommon.localization.SpellType.getSpellPreText method");
     }
