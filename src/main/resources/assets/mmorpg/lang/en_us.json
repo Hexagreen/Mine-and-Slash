@@ -892,7 +892,7 @@
 	"mmorpg.word.bonesquall": "Bone Squall",
 	"mmorpg.word.electricaldischarge": "Electrical Discharge",
 	"mmorpg.word.recharge": "Recharge",
-	
+
 	"mmorpg.word.shieldactivedesc_1": "Hold for chance to reduce DMG fully.",
 	"mmorpg.word.shieldactivedesc_2": "On failed block, still reduce by half.",
 	"mmorpg.word.hammeraoedesc_1": "Deals half damage to enemies near the target.",
@@ -2178,8 +2178,8 @@
 	"biome.mmorpg.dungeon_biome": "Adventure Map",
 
 "_comment": " [CATEGORY]: BIOMES - NAMES",
-	
-	
+
+
 	"mmorpg.spell_desc.health_cost": "Health Cost: ",
 	"mmorpg.spell_desc.magic_shield_cost": "Magic Shield Cost: ",
 	"mmorpg.spell_desc.mana_cost": "Mana Cost: ",
@@ -2425,5 +2425,4 @@
 	"mmorpg.synergy.malevolent_offering_syn_1.desc": "Restores magic shield to nearby allies\n(does not restore caster's):",
 	"mmorpg.synergy.summon_skeletal_army_syn_1.desc": "Summon hits have a chance to heal the caster:",
 	"mmorpg.synergy.summon_zombie_syn_1.desc": "Summon hits have a chance to apply:"
-
 }
