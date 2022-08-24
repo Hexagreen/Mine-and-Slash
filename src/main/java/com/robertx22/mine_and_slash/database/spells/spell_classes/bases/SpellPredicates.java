@@ -13,7 +13,7 @@ import java.util.function.Predicate;
 public class SpellPredicates {
     private static Predicate<LivingEntity> SHOOTABLE_PRED = x -> {
         Item item = x.getHeldItemMainhand()
-            .getItem();
+                .getItem();
         return item instanceof ShootableItem;
     };
 
@@ -21,7 +21,7 @@ public class SpellPredicates {
         try {
             GearItemData data = Gear.Load(x.getHeldItemMainhand());
             return data != null && (data.GetBaseGearType()
-                .isMeleeWeapon() || data.GetBaseGearType().isMageWeapon());
+                    .isMeleeWeapon() || data.GetBaseGearType().isMageWeapon());
         } catch (Exception e) {
             return false;
         }
@@ -30,4 +30,3 @@ public class SpellPredicates {
     public static SpellPredicate REQUIRE_SHOOTABLE = new SpellPredicate(SHOOTABLE_PRED, new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + "Requires Ranged Weapon"));
     public static SpellPredicate REQUIRE_MELEE = new SpellPredicate(MELEE_PRED, new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + "Requires Melee Weapon"));
 }
-

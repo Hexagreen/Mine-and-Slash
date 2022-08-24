@@ -3,6 +3,7 @@ package com.robertx22.mine_and_slash.saveclasses.spells.calc;
 import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.ITooltipList;
 import com.robertx22.mine_and_slash.uncommon.capability.entity.EntityCap;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import info.loenwind.autosave.annotations.Storable;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -24,7 +25,7 @@ public abstract class BaseStatCalc implements ITooltipList {
 
         if (statname != null) {
             list.add(new StringTextComponent(
-                TextFormatting.RED + "Scales with " + (int) (multi * 100F) + "% " + eleStr + " ").appendSibling(
+                TextFormatting.RED + Spells.SpellScale.getLocName() + (int) (multi * 100F) + "% " + eleStr + " ").appendSibling(
                 statname)
                 .appendText(" (" + value + ")"));
         }

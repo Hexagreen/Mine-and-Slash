@@ -879,6 +879,22 @@
 	"mmorpg.word.bonesquall": "Bone Squall",
 	"mmorpg.word.electricaldischarge": "Electrical Discharge",
 	"mmorpg.word.recharge": "Recharge",
+	
+	"mmorpg.word.shieldactivedesc_1": "Hold for chance to reduce DMG fully.",
+	"mmorpg.word.shieldactivedesc_2": "On failed block, still reduce by half.",
+	"mmorpg.word.hammeraoedesc_1": "Deals half damage to enemies near the target.",
+	"mmorpg.word.hammeraoedesc_2": "Max Targets: 5",
+
+	"mmorpg.word.runeslotlist": "Runes: ",
+	"mmorpg.word.runeslotempty": "Rune: [Empty]",
+	
+	"mmorpg.word.remspellpotion": "Gives you 10 remove spell points. Remove points by right clicking on the spell.",
+	"mmorpg.word.remtalentpotion": "Gives you 1 remove talent point. Remove points by right clicking on the talent.",
+	"mmorpg.word.resetspellpotion": "Resets all your spell points.",
+	"mmorpg.word.resetstatpotion": "Removes all allocated stat points.",
+	"mmorpg.word.resettalentpotion": "Resets all your talent points.",
+	"mmorpg.word.currencyadds": "Adds ",
+	"mmorpg.word.currencyinstability": " Instability",
 
 "_comment": " [CATEGORY]: WORDS - NAMES",
 	"mmorpg.word.gives": "Gives",
@@ -2033,6 +2049,91 @@
 
 "_comment": " [CATEGORY]: BIOMES - NAMES",
 
-	"biome.mmorpg.dungeon_biome": "Adventure Map"
+	"biome.mmorpg.dungeon_biome": "Adventure Map",
+
+"_comment": " [CATEGORY]: BIOMES - NAMES",
+	
+	
+	"mmorpg.spell_desc.health_cost": "Health Cost: ",
+	"mmorpg.spell_desc.magic_shield_cost": "Magic Shield Cost: ",
+	"mmorpg.spell_desc.mana_cost": "Mana Cost: ",
+	"mmorpg.spell_desc.energy_cost": "Energy Cost: ",
+	"mmorpg.spell_desc.cooldown": "Cooldown: ",
+	"mmorpg.spell_desc.cast_time": "Cast Time: ",
+	"mmorpg.spell_desc.bind_on_wands": "Can be set as right-click on staves/wands.",
+	"mmorpg.spell_desc.bind_on_melee": "Can be set as right-click on melee weapons.",
+
+	"mmorpg.spell_desc.basevalue": "Base Value: ",
+
+	"mmorpg.spell_desc.spellscale": "Scales with ",
+
+	"mmorpg.spell_desc.affectstats": "Affects Stats: ",
+
+	"mmorpg.spell_desc.spellpotionduration": "Duration: ",
+	"mmorpg.spell_desc.spellpotionstack": "Max Stacks: ",
+
+	"mmorpg.spell_desc.effabilitylevel": "Effective Ability Level: ",
+	"mmorpg.spell_desc.element": "Element: ",
+	"mmorpg.spell_desc.needs": "Needs ",
+	"mmorpg.spell_desc.level": " Level: ",
+	"mmorpg.spell_desc.abilitystats": "Ability Stats:",
+	"mmorpg.spell_desc.affectspell": "Affects Spell: ",
+	"mmorpg.spell_desc.levelreq": "Lvl Req",
+
+	"mmorpg.spell_desc.spellability": "Ability ",
+	"mmorpg.spell_desc.spelltotalmastery": "Total Mastery ",
+
+	"mmorpg.spell_desc.reqranged": "Requires Ranged Weapon",
+	"mmorpg.spell_desc.reqmelee": "Requires Melee Weapon",
+	"mmorpg.spell_desc.modifies": "Modifies ",
+
+	"mmorpg.spell_desc.single_target_proj": "Throw a projectile, damaging first enemy hit: ",
+	"mmorpg.spell_desc.self_buff": "Applies buff to caster: ",
+
+	"mmorpg.spell_desc.attackspell": "Attack Spell",
+	"mmorpg.spell_desc.attackspelldesc": "Spell that also triggers on-attack effects.",
+	"mmorpg.spell_desc.summonspelldesc": "Summons also triggers on-attack effects.",
+	"mmorpg.spell_desc.normalspell": "Spell",
+	"mmorpg.spell_desc.synergy": "Synergy",
+	"mmorpg.spell_desc.hitapplyeffect": "Hits have a chance to apply: ",
+	"mmorpg.spell_desc.hitapplyselfbuff": "Hits have a chance to apply on self: ",
+
+	"mmorpg.spell_desc.duration": "Duration",
+	"mmorpg.spell_desc.projectile": "Projectile",
+	"mmorpg.spell_desc.channel": "Channel",
+	"mmorpg.spell_desc.area": "Area",
+	"mmorpg.spell_desc.buff": "Buff",
+	"mmorpg.spell_desc.storm": "Storm",
+	"mmorpg.spell_desc.entity": "Entity",
+	"mmorpg.spell_desc.debuff": "Debuff",
+	"mmorpg.spell_desc.heal": "Heal",
+	"mmorpg.spell_desc.pierce": "Pierce",
+	"mmorpg.spell_desc.melee": "Melee",
+	"mmorpg.spell_desc.self": "Self",
+	"mmorpg.spell_desc.bounce": "Bounce",
+	"mmorpg.spell_desc.chance": "Chance",
+	"mmorpg.spell_desc.taunt": "Taunt",
+	"mmorpg.spell_desc.uniquebuff": "Unique Buff",
+	"mmorpg.spell_desc.craft": "Craft",
+	"mmorpg.spell_desc.summon": "Summon",
+	"mmorpg.spell_desc.movement": "Movement",
+
+	"mmorpg.spell_desc.unlocksecondmastery": "You can unlock a second Mastery tree at level ",
+	"mmorpg.spell_desc.unlockthirdmastery": "You can unlock a third Mastery tree at level ",
+	"mmorpg.spell_desc.masterylevelcap": "Your total Mastery level cannot go past your max level.",
+
+	"mmorpg.spell_desc.scalewepatk": "Weapon Attack Damage",
+	"mmorpg.spell_desc.scaleeleatk": "Elemental Attack Damage",
+	"mmorpg.spell_desc.scalephyatk": "Physical Attack Damage",
+	"mmorpg.spell_desc.scalefireatk": "Fire Attack Damage",
+	"mmorpg.spell_desc.scalefrostatk": "Frost Attack Damage",
+	"mmorpg.spell_desc.scalelightatk": "Lightning Attack Damage",
+	"mmorpg.spell_desc.scalenatureatk": "Nature Attack Damage",
+	"mmorpg.spell_desc.scalearmor": "Armor",
+	"mmorpg.spell_desc.scalehealth": "Health",
+	"mmorpg.spell_desc.scaleenergy": "Energy",
+	"mmorpg.spell_desc.scalemana": "Mana",
+	"mmorpg.spell_desc.scalemagicshld": "Magic Shield"
+
 
 }
