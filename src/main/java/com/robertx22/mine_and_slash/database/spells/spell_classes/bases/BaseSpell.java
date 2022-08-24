@@ -457,10 +457,10 @@ public abstract class BaseSpell implements ISlashRegistryEntry<BaseSpell>, ITool
 
         if (getCalculatedHealthCost(ctx) * 2 > 0.00) {
 
-            list.add(new StringTextComponent(TextFormatting.RED + "Health Cost: " + Math.round(getHealthCost(ctx) * 100) + "%" + " (" + Math.round(getCalculatedHealthCost(ctx)) + ")"));
+            list.add(new StringTextComponent(TextFormatting.RED + Spells.Health_Cost.getLocName() + Math.round(getHealthCost(ctx) * 100) + "%" + " (" + Math.round(getCalculatedHealthCost(ctx)) + ")"));
         }
         if (getCalculatedMagicShieldCost(ctx) * 2 > 0.00) {
-            list.add(new StringTextComponent(TextFormatting.AQUA + "Magic Shield Cost: " + Math.round(getMagicShieldCost(ctx) * 100) + "%" + " (" + Math.round(getCalculatedMagicShieldCost(ctx)) + ")"));
+            list.add(new StringTextComponent(TextFormatting.AQUA + Spells.Magic_Shield_Cost.getLocName() + Math.round(getMagicShieldCost(ctx) * 100) + "%" + " (" + Math.round(getCalculatedMagicShieldCost(ctx)) + ")"));
 
         }
         if (getCalculatedManaCost(ctx) > 0) {
