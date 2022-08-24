@@ -20,8 +20,10 @@ import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.EntityFinder;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.RandomUtils;
+import com.robertx22.mine_and_slash.uncommon.utilityclasses.SoundUtils;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -38,14 +40,18 @@ public class BatteryFusiladeChainSynergy extends OnDamageDoneSynergy {
 
         addSpellName(list);
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocNameStr()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocNameStr() + " (Bolt)"));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocNameStr() + getRequiredAbility().getLocName().getString()));
-
+        TooltipUtils.addEmpty(list);
+        list.add(new StringTextComponent(TextFormatting.GRAY + "Bolt damage is a special damage type and is"));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "unaffected by spell damage modifiers."));
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Mana2Lit.locName().getString()));
+
         TooltipUtils.addEmpty(list);
 
         list.addAll(descLocName(""));
+
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 
@@ -54,18 +60,17 @@ public class BatteryFusiladeChainSynergy extends OnDamageDoneSynergy {
 
     @Override
     public void alterSpell(PreCalcSpellConfigs c) {
-        c.set(SC.MANA_COST, 2, 6);
+        c.set(SC.MANA_COST, 2, 5);
     }
 
     @Override
     public PreCalcSpellConfigs getPreCalcConfig() {
         PreCalcSpellConfigs c = new PreCalcSpellConfigs();
-        c.set(SC.MANA_COST, 2, 6);
         c.set(SC.BASE_VALUE, 0, 0);
         c.set(SC.MANA_ATTACK_SCALE_VALUE, 0.03F, 0.12F);
-        c.set(SC.CHANCE, 25, 60);
-        c.set(SC.RADIUS, 1F, 3F);
-        c.setMaxLevel(12);
+        c.set(SC.CHANCE, 10, 25);
+        c.set(SC.RADIUS, 2F, 3F);
+        c.setMaxLevel(8);
         return c;
     }
 
@@ -86,9 +91,9 @@ public class BatteryFusiladeChainSynergy extends OnDamageDoneSynergy {
         int stacks = PotionEffectUtils.getStacks(ctx.source, ThunderEssenceEffect.INSTANCE);
         float chance = getContext(ctx.source).getConfigFor(this)
                 .get(SC.CHANCE)
-                .get(Load.spells(ctx.source), this);
+                .get(Load.spells(ctx.source), this) * stacks;
 
-        if (stacks > 0 && RandomUtils.roll(chance)) {
+        if (stacks > 0 && RandomUtils.roll(chance) && ctx.getEffectType() == EffectData.EffectTypes.SPELL) {
             float radius = getContext(ctx.source).getConfigFor(this)
                     .get(SC.RADIUS)
                     .get(Load.spells(ctx.source), this);
@@ -104,13 +109,15 @@ public class BatteryFusiladeChainSynergy extends OnDamageDoneSynergy {
             pdata.radius = radius;
             ParticleEnum.CHARGED_NOVA.sendToClients(ctx.source, pdata);
 
+            SpellUtils.summonLightningStrike(ctx.target);
+
+            SoundUtils.playSound(ctx.target, SoundEvents.ENTITY_LIGHTNING_BOLT_IMPACT, 0.75F, 1);
+
             for (LivingEntity en : entities) {
-                if (en != ctx.target) {
-                    DamageEffect dmg = new DamageEffect(
-                            null, ctx.source, en, num, EffectData.EffectTypes.SPELL, WeaponTypes.None);
-                    dmg.element = Elements.Thunder;
-                    dmg.Activate();
-                }
+                DamageEffect dmg = new DamageEffect(
+                        null, ctx.source, en, num, EffectData.EffectTypes.BOLT, WeaponTypes.None);
+                dmg.element = Elements.Thunder;
+                dmg.Activate();
             }
         }
     }

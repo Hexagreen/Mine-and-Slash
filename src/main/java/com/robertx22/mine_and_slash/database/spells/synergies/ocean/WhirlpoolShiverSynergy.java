@@ -55,7 +55,7 @@ public class WhirlpoolShiverSynergy extends OnDamageDoneSynergy {
     public PreCalcSpellConfigs getPreCalcConfig() {
         PreCalcSpellConfigs c = new PreCalcSpellConfigs();
         c.set(SC.BASE_VALUE, 0, 0);
-        c.set(SC.CHANCE, 25, 50);
+        c.set(SC.CHANCE, 25, 40);
         c.setMaxLevel(4);
         return c;
     }

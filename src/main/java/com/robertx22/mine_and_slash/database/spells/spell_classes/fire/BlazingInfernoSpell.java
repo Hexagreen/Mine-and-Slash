@@ -106,6 +106,7 @@ public class BlazingInfernoSpell extends BaseSpell {
         TooltipUtils.addEmpty(list);
 
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Fir.locName().getString()));
+
         TooltipUtils.addEmpty(list);
         list.addAll(descLocName(""));
 

@@ -42,6 +42,7 @@ public class SpellBladeBurstSynergy extends OnBasicAttackSynergy {
 
         list.addAll(descLocName(""));
 
+
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 
         return list;
@@ -56,7 +57,7 @@ public class SpellBladeBurstSynergy extends OnBasicAttackSynergy {
     public PreCalcSpellConfigs getPreCalcConfig() {
         PreCalcSpellConfigs c = new PreCalcSpellConfigs();
         c.set(SC.BASE_VALUE, 0, 0);
-        c.set(SC.FIRE_ATTACK_SCALE_VALUE, 0.5F, 3.0F);
+        c.set(SC.FIRE_ATTACK_SCALE_VALUE, 1.0F, 3.5F);
         c.set(SC.RADIUS, 2.0F, 3.0F);
         c.setMaxLevel(8);
         return c;
