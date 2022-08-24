@@ -107,6 +107,7 @@ public class SummonZombieSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
         list.addAll(descLocName(""));
+
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 
         return list;
