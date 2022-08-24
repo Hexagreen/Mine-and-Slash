@@ -103,6 +103,7 @@ public class RockSlideSpell extends BaseSpell {
         TooltipUtils.addEmpty(list);
 
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Nat.locName().getString()));
+
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent("Summon a stone avalanche that damages enemies inside: "));
 

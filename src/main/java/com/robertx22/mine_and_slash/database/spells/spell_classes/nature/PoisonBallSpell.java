@@ -102,8 +102,12 @@ public class PoisonBallSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area, Spells.Duration, Spells.Pierce, Spells.Projectile))));
 
         TooltipUtils.addEmpty(list);
+        list.add(new StringTextComponent(TextFormatting.GRAY + "This spell's cooldown is unaffected by"));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "cooldown reduction."));
+        TooltipUtils.addEmpty(list);
 
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Nat.locName().getString()));
+
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent("Throw a projectile, damaging enemies in its path : "));
 

@@ -18,7 +18,6 @@ import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
 import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 
@@ -159,6 +158,7 @@ public interface IAbility extends IGUID, ITooltipList {
             list.add(new SText(TextFormatting.YELLOW + Spells.EffAbilityLevel.getLocName() + getEffectiveAbilityLevel(ctx.spellsCap, ctx.data)));
 
             list.add(new SText(getElement().format + Spells.Element.getLocName() + getElement().name()));
+
 
             if (ctx.spellsCap.getAbilitiesData()
                 .getSchoolPoints(this.getMastery()) < getSchoolPointsNeeded()) {

@@ -126,7 +126,7 @@ public class JudgementEffect extends BasePotionEffect implements IApplyStatPotio
             SoundUtils.playSound(target, SoundEvents.ENTITY_LIGHTNING_BOLT_IMPACT, 1, 1);
 
             int num = getCalc(source).getCalculatedValue(Load.Unit(caster), Load.spells(caster), this);
-            DamageEffect dmg = new DamageEffect(null, source, target, num, EffectData.EffectTypes.SPELL, WeaponTypes.None);
+            DamageEffect dmg = new DamageEffect(null, source, target, num, EffectData.EffectTypes.BOLT, WeaponTypes.None);
 
             dmg.element = Elements.Thunder;
             dmg.Activate();
