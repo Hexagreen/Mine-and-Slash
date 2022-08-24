@@ -28,11 +28,12 @@ public class MagicShieldEffect extends BaseDamageEffect {
 
     @Override
     public DamageEffect activate(DamageEffect effect, StatData data, Stat stat) {
+
         float dmgReduced = MathHelper.clamp(effect.number, 0, effect.targetData.getResources()
             .getMagicShield());
 
         // should prevent allies magic shield from getting hit
-        if (effect.source instanceof ServerPlayerEntity && effect.target instanceof ServerPlayerEntity) {
+        if (effect.source instanceof ServerPlayerEntity && effect.target instanceof ServerPlayerEntity && !effect.isSamePlayer()) {
             if (TeamUtils.areOnSameTeam((ServerPlayerEntity) effect.source, (ServerPlayerEntity) effect.target)) {
                 BlockEffect.applyKnockbackResist(effect.target);
                 dmgReduced = 0;

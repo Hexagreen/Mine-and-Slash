@@ -16,7 +16,7 @@ public class EleWepDmgEffect extends BaseDamageEffect {
 
     @Override
     public int GetPriority() {
-        return Priority.Second.priority;
+        return Priority.afterThis(WeaponDamageEffect.INSTANCE.GetPriority());
     }
 
     @Override
@@ -26,6 +26,9 @@ public class EleWepDmgEffect extends BaseDamageEffect {
 
     @Override
     public DamageEffect activate(DamageEffect effect, StatData data, Stat stat) {
+
+        //effect.wepMultiBonusEleDmg(data.getMultiplier());
+
         effect.number *= data.getMultiplier();
 
         return effect;
@@ -36,7 +39,8 @@ public class EleWepDmgEffect extends BaseDamageEffect {
 
         if ((effect.getEffectType() == EffectData.EffectTypes.BASIC_ATTACK || effect.getEffectType()
                 .equals(EffectData.EffectTypes.ATTACK_SPELL) || effect.getEffectType()
-                .equals(EffectData.EffectTypes.SUMMON_DMG))) {
+                .equals(EffectData.EffectTypes.SUMMON_DMG) || effect.getEffectType()
+                .equals(EffectData.EffectTypes.BONUS_ATTACK))) {
             if (stat instanceof EleWepDmg && effect.isElemental()) {
                 try {
                     EleWepDmg weapon = (EleWepDmg) stat;

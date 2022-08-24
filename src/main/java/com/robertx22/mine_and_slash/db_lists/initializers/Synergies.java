@@ -5,6 +5,8 @@ import com.robertx22.mine_and_slash.database.spells.synergies.fire.*;
 import com.robertx22.mine_and_slash.database.spells.synergies.hunting.*;
 import com.robertx22.mine_and_slash.database.spells.synergies.nature.*;
 import com.robertx22.mine_and_slash.database.spells.synergies.ocean.*;
+import com.robertx22.mine_and_slash.database.spells.synergies.physical.PowerFormRushSynergy;
+import com.robertx22.mine_and_slash.database.spells.synergies.physical.WisdomFormRushSynergy;
 import com.robertx22.mine_and_slash.database.spells.synergies.storm.*;
 import com.robertx22.mine_and_slash.database.spells.synergies.unholy.*;
 import com.robertx22.mine_and_slash.registry.ISlashRegistryInit;
@@ -82,9 +84,10 @@ public class Synergies implements ISlashRegistryInit {
         new HolySpearSynergy().registerToSlashRegistry();
         new SpellBladeBurstSynergy().registerToSlashRegistry();
         new ThunderstormEnhancedSynergy().registerToSlashRegistry();
-        //new ChargedNovaStaticSynergy().registerToSlashRegistry();
+        new ChargedNovaStaticSynergy().registerToSlashRegistry();
         new LightningTotemEnhancedSynergy().registerToSlashRegistry();
         new BlizzardFrostEssenceGenSynergy().registerToSlashRegistry();
+        new ArcticArmorSynergy().registerToSlashRegistry();
         new HeavyStrikeEnrageSynergy().registerToSlashRegistry();
         new WhirlwindEnhancedSynergy().registerToSlashRegistry();
         new WhirlwindEnrageSynergy().registerToSlashRegistry();
@@ -100,10 +103,13 @@ public class Synergies implements ISlashRegistryInit {
         new ChillingTouchCrippleSynergy().registerToSlashRegistry();
         new ChillingTouchHexSynergy().registerToSlashRegistry();
         new SummonZombieCrippleSynergy().registerToSlashRegistry();
+        new SummonArchonAOESynergy().registerToSlashRegistry();
         new SummonSkeletalMasterySynergy().registerToSlashRegistry();
         new AnimateScytheNecroticSynergy().registerToSlashRegistry();
         new LifeSiphonEssenceSynergy().registerToSlashRegistry();
         new MalevolentOfferingShrewdSynergy().registerToSlashRegistry();
+        new PowerFormRushSynergy().registerToSlashRegistry();
+        new WisdomFormRushSynergy().registerToSlashRegistry();
 
     }
 }

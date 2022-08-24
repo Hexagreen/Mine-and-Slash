@@ -16,6 +16,13 @@ import com.robertx22.mine_and_slash.database.spells.spell_classes.ocean.*;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.ocean.buffs.FrostShieldBuff;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.ocean.buffs.IceBladeBuff;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.ocean.buffs.NourishmentBuff;
+import com.robertx22.mine_and_slash.database.spells.spell_classes.ocean.buffs.PurityBuff;
+import com.robertx22.mine_and_slash.database.spells.spell_classes.physical.AsuraSpell;
+import com.robertx22.mine_and_slash.database.spells.spell_classes.physical.buffs.PowerFormSpell;
+import com.robertx22.mine_and_slash.database.spells.spell_classes.physical.buffs.WisdomFormSpell;
+import com.robertx22.mine_and_slash.database.spells.spell_classes.physical.finishers.*;
+import com.robertx22.mine_and_slash.database.spells.spell_classes.physical.linkers.*;
+import com.robertx22.mine_and_slash.database.spells.spell_classes.physical.strikes.*;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.storm.*;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.unholy.*;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.unholy.buffs.SpiritShroudSpell;
@@ -55,15 +62,19 @@ public class Spells implements ISlashRegistryInit {
                     add(FrozenOrbSpell.getInstance());
                     add(FrostShieldBuff.getInstance());
                     add(NourishmentBuff.getInstance());
+                    add(PurityBuff.getInstance());
                     add(IceBladeBuff.getInstance());
                     add(FreezeSpell.getInstance());
                     add(ChillingFieldSpell.getInstance());
                     add(FrostTotemSpell.getInstance());
+                    add(ArcticArmorSpell.getInstance());
+                    add(RimeBladeSpell.getInstance());
 
                     add(RockSlideSpell.getInstance());
                     add(NatureBalmSpell.getInstance());
                     add(GorgonsGazeSpell.getInstance());
                     add(ThornArmorSpell.getInstance());
+                    add(BlazingShellSpell.getInstance());
                     add(ThornBushSpell.getInstance());
                     add(PoisonedWeaponsSpell.getInstance());
                     add(PoisonBallSpell.getInstance());
@@ -101,6 +112,7 @@ public class Spells implements ISlashRegistryInit {
                     add(InfernoQuakeSpell.getInstance());
                     add(SteamCloudSpell.getInstance());
                     add(FirePowerSpell.getInstance());
+                    add(SummonArchonSpell.getInstance());
 
                     add(ArrowBarrageSpell.getInstance());
                     add(DoubleShotSpell.getInstance());
@@ -140,6 +152,26 @@ public class Spells implements ISlashRegistryInit {
                     add(HellfireCloakSpell.getInstance());
                     add(BoneSquallSpell.getInstance());
                     add(SummonSkeletalArmySpell.getInstance());
+
+                    // physical spells
+                    add(PiercingStrikeSpell.getInstance());
+                    add(TripleAttackLinkerSpell.getInstance());
+                    add(EarthenSmashFinisherSpell.getInstance());
+                    add(DebilitatingStrikeSpell.getInstance());
+                    add(GoadingStrikeSpell.getInstance());
+                    add(SweepingStrikeSpell.getInstance());
+                    add(ElementalStrikeSpell.getInstance());
+                    add(FlowingRiverLinkerSpell.getInstance());
+                    add(RagingDragonLinkerSpell.getInstance());
+                    add(RallyingSweepLinkerSpell.getInstance());
+                    add(SpiritDrainLinkerSpell.getInstance());
+                    add(AntiGravityFinisherSpell.getInstance());
+                    add(ElementalVengeanceFinisherSpell.getInstance());
+                    add(EmpoweringFinisher.getInstance());
+                    add(OmnislashFinisherSpell.getInstance());
+                    add(PowerFormSpell.getInstance());
+                    add(WisdomFormSpell.getInstance());
+                    add(AsuraSpell.getInstance());
 
                 }
             }

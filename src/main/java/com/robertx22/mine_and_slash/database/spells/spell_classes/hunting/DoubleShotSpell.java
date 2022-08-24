@@ -65,7 +65,7 @@ public class DoubleShotSpell extends BaseSpell {
         c.set(SC.ENERGY_COST, 2, 3);
         c.set(SC.MAGIC_SHIELD_COST, 0, 0);
         c.set(SC.BASE_VALUE, 0, 0);
-        c.set(SC.ATTACK_SCALE_VALUE, 1.8F, 3.0F);
+        c.set(SC.ATTACK_SCALE_VALUE, 1.75F, 2.5F);
         c.set(SC.PROJECTILE_COUNT, 1, 1);
         c.set(SC.SHOOT_SPEED, 3.0F, 3.0F);
         c.set(SC.CAST_TIME_TICKS, 10, 10);
@@ -104,7 +104,7 @@ public class DoubleShotSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Weapon DMG to Phys."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Weapon DMG to Phys DMG."));
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent("Shoots out two arrows while casting."));
         list.add(new StringTextComponent("Requires Bow/Crossbow to use: "));

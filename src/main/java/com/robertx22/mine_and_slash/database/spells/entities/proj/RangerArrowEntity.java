@@ -118,13 +118,13 @@ public class RangerArrowEntity extends EntityBaseProjectile {
             if (exert) {
 
                 List<LivingEntity> entities = EntityFinder.start(caster, LivingEntity.class, entity.getPositionVector())
-                        .radius(radius())
+                        .radius(radius()).searchFor(EntityFinder.SearchFor.ENEMIES)
                         .build();
 
                 for (LivingEntity en : entities) {
                     if (en != entity) {
                         SpellDamageEffect dmgAoe = this.getSetupSpellDamage(en);
-                        dmgAoe.number = (dmgAoe.number + add) / 2; //halves damage after adding imbue, if available
+                        dmgAoe.number = (dmgAoe.number + add) * 0.5F; //halves damage after adding imbue, if available
                         dmgAoe.Activate();
                     }
                 }

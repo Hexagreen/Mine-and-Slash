@@ -103,7 +103,7 @@ public class Dagger extends BaseWeapon implements ISpecificStatReq {
     @Override
     public List<PosStats> getPossiblePrimaryStats() {
         return Arrays.asList(
-            new PosStats(new PhysicalDamageFlat().size(StatMod.Size.LOW), new SpellDamageFlat()).weight(16000),
+            new PosStats(new PhysicalDamageFlat(), new SpellDamageFlat()).weight(16000),
                     new PosStats(new PhysicalDamageFlat().size(StatMod.Size.HALF), new ElementalAttackDamageFlat(Elements.Nature).size(StatMod.Size.HALF), new SpellDamageFlat()),
                     new PosStats(new PhysicalDamageFlat().size(StatMod.Size.HALF), new ElementalAttackDamageFlat(Elements.Fire).size(StatMod.Size.HALF), new SpellDamageFlat()),
                     new PosStats(new PhysicalDamageFlat().size(StatMod.Size.HALF), new ElementalAttackDamageFlat(Elements.Water).size(StatMod.Size.HALF), new SpellDamageFlat()),
@@ -113,7 +113,7 @@ public class Dagger extends BaseWeapon implements ISpecificStatReq {
 
     @Override
     public StatModsHolder getPossibleSecondaryStats() {
-        return new StatModsHolder(new CriticalDamageFlat(), new CriticalHitFlat());
+        return new StatModsHolder(new CriticalDamageFlat(), new CriticalHitFlat(), new SpellDamageFlat());
     }
 
     @Override

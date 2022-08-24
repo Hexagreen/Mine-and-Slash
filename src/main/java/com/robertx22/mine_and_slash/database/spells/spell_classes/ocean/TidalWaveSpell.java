@@ -65,7 +65,7 @@ public class TidalWaveSpell extends BaseSpell {
         c.set(SC.ENERGY_COST, 4, 6);
         c.set(SC.MAGIC_SHIELD_COST, 0, 0);
         c.set(SC.BASE_VALUE, 5, 10);
-        c.set(SC.ATTACK_SCALE_VALUE, 0.7F, 1.25F);
+        c.set(SC.ATTACK_SCALE_VALUE, 0.7F, 1.2F);
         c.set(SC.SHOOT_SPEED, 1.2F, 1.4F);
         c.set(SC.PROJECTILE_COUNT, 3, 5);
         c.set(SC.CAST_TIME_TICKS, 20, 20);
@@ -104,7 +104,7 @@ public class TidalWaveSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Weapon DMG to Frost."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Weapon DMG to Frost DMG."));
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent("Spew waves from your blade, damaging enemies: "));
 

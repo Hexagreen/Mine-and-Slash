@@ -67,7 +67,7 @@ public class PoisonBallSpell extends BaseSpell {
         c.set(SC.ENERGY_COST, 0, 0);
         c.set(SC.MAGIC_SHIELD_COST, 0, 0);
         c.set(SC.BASE_VALUE, 5, 10);
-        c.set(SC.ATTACK_SCALE_VALUE, 0.75F, 1.25F);
+        c.set(SC.ATTACK_SCALE_VALUE, 0.65F, 1.0F);
         c.set(SC.SHOOT_SPEED, 0.25F, 0.25F);
         c.set(SC.PROJECTILE_COUNT, 3, 3);
         c.set(SC.CAST_TIME_TICKS, 0, 0);
@@ -102,8 +102,11 @@ public class PoisonBallSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area, Spells.Duration, Spells.Pierce, Spells.Projectile))));
 
         TooltipUtils.addEmpty(list);
+        list.add(new StringTextComponent(TextFormatting.GRAY + "This spell's cooldown is unaffected by"));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "cooldown reduction."));
+        TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Weapon DMG to Nature."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Weapon DMG to Nature DMG."));
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent("Throw a projectile, damaging enemies in its path : "));
 
