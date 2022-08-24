@@ -1,5 +1,6 @@
 package com.robertx22.mine_and_slash.potion_effects.bases;
 
+import com.ibm.icu.util.BytesTrie;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.SpellCastContext;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.PreCalcSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.SC;
@@ -27,6 +28,7 @@ import net.minecraft.entity.ai.attributes.AbstractAttributeMap;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.EffectType;
+import net.minecraft.test.ITestCallback;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -353,4 +355,22 @@ public abstract class BasePotionEffect extends Effect implements ISlashRegistryE
         }
     }
 
+    public List<ITextComponent> descLocName(String descTag, TextFormatting... style) {
+        List<ITextComponent> desc = CLOC.longDesc("effect." + Ref.MODID + "." + GUID() + ".desc" + descTag);
+
+        List<ITextComponent> list = new ArrayList<>();
+
+        for (ITextComponent iTextComponent : desc) {
+            for(TextFormatting textStyle : style){
+                iTextComponent.applyTextStyle(textStyle);
+            }
+            list.add(iTextComponent);
+        }
+
+        return list;
+    }
+
+    public List<ITextComponent> descLocName(String descTag){
+        return descLocName(descTag, TextFormatting.RESET);
+    }
 }

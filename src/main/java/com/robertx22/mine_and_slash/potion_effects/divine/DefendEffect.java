@@ -17,6 +17,7 @@ import com.robertx22.mine_and_slash.potion_effects.bases.data.PotionStat;
 import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Masteries;
+import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.potion.EffectType;
@@ -86,7 +87,7 @@ public class DefendEffect extends BasePotionEffect implements IApplyStatPotion {
     @Override
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
         List<ITextComponent> list = new ArrayList<>();
-        list.add(new StringTextComponent(TextFormatting.AQUA + "Reduces movement speed by 20%."));
+        list.addAll(descLocName("", TextFormatting.AQUA));
         return list;
     }
 

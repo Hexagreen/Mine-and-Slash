@@ -160,7 +160,7 @@ public class AnimateScytheSpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Melee))));
 
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Health to Phys DMG."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + Words.Hlth2Phy.locName().getString()));
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent("Conjure an animated scythe using your own"));
         list.add(new StringTextComponent("health to attack enemies twice in front of you: "));

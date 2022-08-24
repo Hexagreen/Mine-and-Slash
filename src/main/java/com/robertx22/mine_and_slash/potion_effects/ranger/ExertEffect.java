@@ -70,9 +70,8 @@ public class ExertEffect extends BasePotionEffect {
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "Physical Spell Damage"));
-        list.add(new SText(TextFormatting.GREEN + "Hunting spell arrows explode on contact"));
-        list.add(new SText(TextFormatting.GREEN + "and deal half damage in a small area."));
+        list.addAll(descLocName("1", TextFormatting.GRAY, TextFormatting.ITALIC));
+        list.addAll(descLocName("2", TextFormatting.GREEN));
 
         list.addAll(getCalc(info.player)
             .GetTooltipString(info, Load.spells(info.player), this));

@@ -21,6 +21,7 @@ import com.robertx22.mine_and_slash.uncommon.effectdatas.SpellDamageEffect;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.interfaces.WeaponTypes;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
 import com.robertx22.mine_and_slash.uncommon.localization.Spells;
+import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.EntityFinder;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.RandomUtils;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
@@ -45,7 +46,7 @@ public class BatteryFusiladeChainSynergy extends OnDamageDoneSynergy {
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocName() + getRequiredAbility().getLocName().getString()));
 
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Mana to Lightning DMG."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + Words.Mana2Lit.locName().getString()));
         TooltipUtils.addEmpty(list);
 
         list.add(new StringTextComponent("If user has Lightning Essence, projectiles"));

@@ -27,6 +27,7 @@ import com.robertx22.mine_and_slash.uncommon.datasaving.Load;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Masteries;
 import com.robertx22.mine_and_slash.uncommon.interfaces.data_items.IRarity;
+import com.robertx22.mine_and_slash.uncommon.localization.CLOC;
 import com.robertx22.mine_and_slash.uncommon.localization.SpellType;
 import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import com.robertx22.mine_and_slash.uncommon.localization.Spells;
@@ -494,6 +495,23 @@ public abstract class BaseSpell implements ISlashRegistryEntry<BaseSpell>, ITool
 
         return list;
 
+    }
+
+    public List<ITextComponent> descLocName(String descTag, SText style) {
+        List<ITextComponent> desc = CLOC.longDesc(Ref.MODID + "." + GUID() + ".desc_" + descTag);
+
+        List<ITextComponent> list = new ArrayList<>();
+
+        for (ITextComponent iTextComponent : desc) {
+            list.add(style.appendSibling(iTextComponent));
+        }
+
+        return list;
+    }
+
+    public List<ITextComponent> descLocName(String descTag){
+        SText normalText = new SText("");
+        return descLocName(descTag, normalText);
     }
 
 }

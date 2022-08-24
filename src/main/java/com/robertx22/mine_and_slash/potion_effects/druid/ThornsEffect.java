@@ -119,7 +119,7 @@ public class ThornsEffect extends BasePotionEffect implements IApplyStatPotion {
     @Override
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
         List<ITextComponent> list = new ArrayList<>();
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "Nature DoT Damage"));
+        list.addAll(descLocName("", TextFormatting.GRAY, TextFormatting.ITALIC));
         return list;
     }
 

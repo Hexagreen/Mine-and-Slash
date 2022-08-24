@@ -97,9 +97,9 @@ public class PetrifyEffect extends BasePotionEffect implements IOnBasicAttackedP
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
 
         List<ITextComponent> list = new ArrayList<>();
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "Nature Spell Damage"));
-        list.add(new StringTextComponent(TextFormatting.AQUA + "Petrifies the enemy, preventing movement."));
-        list.add(new StringTextComponent("Next attack deals extra damage but breaks this effect: "));
+        list.addAll(descLocName("1", TextFormatting.GRAY, TextFormatting.ITALIC));
+        list.addAll(descLocName("2", TextFormatting.AQUA));
+        list.addAll(descLocName("3"));
         list.addAll(getCalc(info.player).GetTooltipString(info, Load.spells(info.player), this));
 
         return list;

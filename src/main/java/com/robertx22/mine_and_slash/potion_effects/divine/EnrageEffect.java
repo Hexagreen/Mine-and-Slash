@@ -17,7 +17,9 @@ import com.robertx22.mine_and_slash.potion_effects.bases.data.PotionStat;
 import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Masteries;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.ParticleUtils;
+import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -103,10 +105,11 @@ public class EnrageEffect extends BasePotionEffect implements IApplyStatPotion {
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "Taunt"));
-        list.add(new StringTextComponent("Enemies with Enrage will continue to be taunted by"));
-        list.add(new StringTextComponent("the applicator while under its effects."));
-        list.add(new StringTextComponent(TextFormatting.AQUA + "Increases movement speed by 10%."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Taunt.getLocName()));
+
+        list.addAll(descLocName("1"));
+
+        list.addAll(descLocName("2", TextFormatting.AQUA));
         return list;
 
     }

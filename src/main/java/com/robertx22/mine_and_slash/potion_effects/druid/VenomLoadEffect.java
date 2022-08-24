@@ -136,10 +136,9 @@ public class VenomLoadEffect extends BasePotionEffect implements IApplyStatPotio
     @Override
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
         List<ITextComponent> list = new ArrayList<>();
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "Nature DoT Damage"));
-        list.add(new StringTextComponent(TextFormatting.RED + "Warning! This effect can kill you."));
-        list.add(new StringTextComponent("Deal nature damage to self and deal quarter that amount"));
-        list.add(new StringTextComponent("to nearby enemies."));
+        list.addAll(descLocName("1", TextFormatting.GRAY, TextFormatting.ITALIC));
+        list.addAll(descLocName("2", TextFormatting.RED));
+        list.addAll(descLocName("3"));
         return list;
     }
 

@@ -109,7 +109,7 @@ public class SummonZombieSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Weapon DMG to Phys."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Phy.locName().getString()));
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent("Summon a zombie that aids in combat."));
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));

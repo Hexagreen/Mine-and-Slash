@@ -888,9 +888,9 @@
 
 	"mmorpg.word.runeslotlist": "Runes: ",
 	"mmorpg.word.runeslotempty": "Rune: [Empty]",
-	
+
 	"mmorpg.word.remspellpotion": "Gives you 10 remove spell points. Remove points by right clicking on the spell.",
-	"mmorpg.word.remtalentpotion": "Gives you 1 remove talent point. Remove points by right clicking on the talent.",
+	"mmorpg.word.remtalentpotion": "Gives you 3 remove talent points. Remove points by right clicking on the talent.",
 	"mmorpg.word.resetspellpotion": "Resets all your spell points.",
 	"mmorpg.word.resetstatpotion": "Removes all allocated stat points.",
 	"mmorpg.word.resettalentpotion": "Resets all your talent points.",
@@ -2048,13 +2048,6 @@
 
 "_comment": " [CATEGORY]: MISC - LORE LINES",
 
-"_comment": " [CATEGORY]: BIOMES - NAMES",
-
-	"biome.mmorpg.dungeon_biome": "Adventure Map",
-
-"_comment": " [CATEGORY]: BIOMES - NAMES",
-	
-	
 	"mmorpg.spell_desc.health_cost": "Health Cost: ",
 	"mmorpg.spell_desc.magic_shield_cost": "Magic Shield Cost: ",
 	"mmorpg.spell_desc.mana_cost": "Mana Cost: ",
@@ -2136,5 +2129,6 @@
 	"mmorpg.spell_desc.scalemana": "Mana",
 	"mmorpg.spell_desc.scalemagicshld": "Magic Shield"
 
+	"biome.mmorpg.dungeon_biome": "Adventure Map"
 
 }

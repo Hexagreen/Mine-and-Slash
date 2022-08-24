@@ -104,7 +104,7 @@ public class ArrowTotemSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Weapon DMG to Phys."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Phy.locName().getString()));
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent("Summons a totem that fires arrows at the"));
         list.add(new StringTextComponent("closest enemy: "));
