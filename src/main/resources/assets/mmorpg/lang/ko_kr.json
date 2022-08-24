@@ -818,7 +818,7 @@
 	"mmorpg.word.type": "종류",
 	"mmorpg.word.unidentified": "Unidentified",
 	"mmorpg.word.unholy": "Unholy",
-	"mmorpg.word.physical": "Force",
+	"mmorpg.word.physical": "무투",
 	"mmorpg.word.unique_gear": "고유 장비",
 	"mmorpg.word.unique_stats": "고유 능력치",
 	"mmorpg.word.uniquecrate": "Pharaoh Crate",
@@ -2187,7 +2187,7 @@
 	"mmorpg.spell_desc.unlockthirdmastery": "3차 마스터리를 개방하려면 다음 레벨이 되어야 합니다: ",
 	"mmorpg.spell_desc.masterylevelcap": "총합 마스터리 레벨은 자신의 레벨을 넘을 수 없습니다.",
 
-	"mmorpg.spell_desc.scalewepatk": "무기 공격력",
+	"mmorpg.spell_desc.scaleatk": "공격력",
 	"mmorpg.spell_desc.scaleeleatk": "속성 공력력",
 	"mmorpg.spell_desc.scalephyatk": "물리 공격력",
 	"mmorpg.spell_desc.scalefireatk": "화염 속성 공격력",

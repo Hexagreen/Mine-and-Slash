@@ -2250,7 +2250,7 @@
 	"mmorpg.spell_desc.unlockthirdmastery": "You can unlock a third Mastery tree at level ",
 	"mmorpg.spell_desc.masterylevelcap": "Your total Mastery level cannot go past your max level.",
 
-	"mmorpg.spell_desc.scalewepatk": "Weapon Attack Damage",
+	"mmorpg.spell_desc.scaleatk": "Attack Damage",
 	"mmorpg.spell_desc.scaleeleatk": "Elemental Attack Damage",
 	"mmorpg.spell_desc.scalephyatk": "Physical Attack Damage",
 	"mmorpg.spell_desc.scalefireatk": "Fire Attack Damage",
