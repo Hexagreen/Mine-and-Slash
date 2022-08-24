@@ -2,11 +2,11 @@ package com.robertx22.mine_and_slash.items.reset_potions;
 
 import com.robertx22.mine_and_slash.advacements.PlayerLevelTrigger;
 import com.robertx22.mine_and_slash.database.currency.base.IShapedRecipe;
+import com.robertx22.mine_and_slash.items.SimpleMatItem;
 import com.robertx22.mine_and_slash.items.reset_potions.bases.BaseInstantPotion;
 import com.robertx22.mine_and_slash.mmorpg.registers.common.ModItems;
 import com.robertx22.mine_and_slash.uncommon.capability.entity.EntityCap;
 import com.robertx22.mine_and_slash.uncommon.datasaving.Load;
-import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -16,17 +16,15 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 
-public class AddRemoveTalentPotionItem extends BaseInstantPotion implements IShapedRecipe {
+public class ResetAllPotionItem extends BaseInstantPotion implements IShapedRecipe {
 
-    public AddRemoveTalentPotionItem() {
+    public ResetAllPotionItem() {
         super();
     }
 
     @Override
     public ITextComponent tooltip() {
-
-        ITextComponent comp = new StringTextComponent(Words.remTalentPotion.locName().getString());
-
+        ITextComponent comp = new StringTextComponent("Resets your stat, spell, and talent points.");
         return comp;
 
     }
@@ -35,31 +33,35 @@ public class AddRemoveTalentPotionItem extends BaseInstantPotion implements ISha
     public void onFinish(ItemStack stack, World world, LivingEntity player, EntityCap.UnitData unitdata) {
 
         if (player instanceof PlayerEntity) {
+            Load.statPoints((PlayerEntity) player)
+                .resetStats();
+            Load.spells((PlayerEntity) player)
+                    .reset();
             Load.talents((PlayerEntity) player)
-                .addResetPoints(3);
+                    .reset();
         }
     }
 
     @Override
     public String GUID() {
-        return "alchemy/instant/misc/remove_talent";
+        return "alchemy/instant/misc/reset_all";
     }
 
     @Override
     public String locNameForLangFile() {
-        return "Potion of Single Talent Reset";
+        return "Potion of All Reset";
     }
 
     @Override
     public ShapedRecipeBuilder getRecipe() {
-        return shaped(ModItems.ADD_RESET_TALENTS.get())
-            .key('t', ModItems.ORB_OF_TRANSMUTATION.get())
-            .key('v', Items.IRON_NUGGET)
-            .key('b', Items.GLASS_BOTTLE)
-            .key('c', Items.COAL)
-            .patternLine("cvc")
-            .patternLine("vtv")
-            .patternLine("cbc")
+        return shaped(ModItems.RESET_ALL.get())
+            .key('t', ModItems.RESET_SPELLS.get())
+            .key('v', ModItems.RESET_STATS.get())
+            .key('b', ModItems.RESET_TALENTS.get())
+                .key('l', Items.LAPIS_LAZULI)
+            .patternLine(" v ")
+            .patternLine("ltl")
+            .patternLine(" b ")
             .addCriterion("player_level", new PlayerLevelTrigger.Instance(5));
     }
 
