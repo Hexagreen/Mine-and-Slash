@@ -49,6 +49,7 @@ public class BatteryFusiladeChainSynergy extends OnDamageDoneSynergy {
         list.add(new StringTextComponent(TextFormatting.GRAY + "unaffected by spell damage modifiers."));
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Mana2Lit.locName().getString()));
+
         TooltipUtils.addEmpty(list);
 
         list.add(new StringTextComponent("If user has Lightning Essence, projectiles"));
