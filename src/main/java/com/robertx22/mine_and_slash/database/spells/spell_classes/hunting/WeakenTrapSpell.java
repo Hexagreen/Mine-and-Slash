@@ -99,7 +99,7 @@ public class WeakenTrapSpell extends BaseSpell {
 
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocNameStr()));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area, Spells.Debuff, Spells.Duration, Spells.Entity))));
 
         TooltipUtils.addEmpty(list);
@@ -109,6 +109,7 @@ public class WeakenTrapSpell extends BaseSpell {
         TooltipUtils.addEmpty(list);
 
         list.addAll(descLocName(""));
+
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

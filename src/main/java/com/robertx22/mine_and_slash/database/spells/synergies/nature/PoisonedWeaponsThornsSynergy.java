@@ -32,8 +32,8 @@ public class PoisonedWeaponsThornsSynergy extends OnBasicAttackSynergy {
 
         addSpellName(list);
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocName()));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocName() + getRequiredAbility().getLocName().getString()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocNameStr()));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocNameStr() + getRequiredAbility().getLocName().getString()));
 
         TooltipUtils.addEmpty(list);
 
@@ -53,7 +53,7 @@ public class PoisonedWeaponsThornsSynergy extends OnBasicAttackSynergy {
     @Override
     public PreCalcSpellConfigs getPreCalcConfig() {
         PreCalcSpellConfigs c = new PreCalcSpellConfigs();
-        c.set(SC.BASE_VALUE, 2, 11);
+        c.set(SC.BASE_VALUE, 4, 11);
         c.setMaxLevel(8);
         return c;
     }

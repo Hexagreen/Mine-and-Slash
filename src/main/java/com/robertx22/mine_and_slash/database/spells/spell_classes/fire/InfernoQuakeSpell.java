@@ -14,7 +14,6 @@ import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.saveclasses.spells.AbilityPlace;
 import com.robertx22.mine_and_slash.uncommon.datasaving.Load;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.AttackSpellDamageEffect;
-import com.robertx22.mine_and_slash.uncommon.effectdatas.SpellDamageEffect;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Masteries;
 import com.robertx22.mine_and_slash.uncommon.localization.SpellType;
@@ -86,6 +85,7 @@ public class InfernoQuakeSpell extends BaseSpell {
         c.set(SC.SHOOT_SPEED, 0.8F, 1.4F);
         c.set(SC.CAST_TIME_TICKS, 0, 0);
         c.set(SC.COOLDOWN_SECONDS, 7, 4);
+        c.set(SC.RADIUS, 6, 6);
 
         c.setMaxLevel(12);
 
@@ -102,13 +102,14 @@ public class InfernoQuakeSpell extends BaseSpell {
 
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.AttackSpell.getLocName()));
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.ITALIC + Spells.AttackSpellDesc.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.AttackSpell.getLocNameStr()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.ITALIC + Spells.AttackSpellDesc.getLocNameStr()));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area, Spells.Melee))));
 
         TooltipUtils.addEmpty(list);
 
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Fir.locName().getString()));
+
         TooltipUtils.addEmpty(list);
         list.addAll(descLocName(""));
 
@@ -126,6 +127,10 @@ public class InfernoQuakeSpell extends BaseSpell {
     @Override
     public void castExtra(SpellCastContext ctx) {
 
+        float RADIUS = ctx.getConfigFor(this)
+                .get(SC.RADIUS)
+                .get(ctx.spellsCap, this);
+
         if (ctx.caster instanceof PlayerEntity) {
             PlayerEntity player = (PlayerEntity) ctx.caster;
             player.spawnSweepParticles();
@@ -136,9 +141,9 @@ public class InfernoQuakeSpell extends BaseSpell {
         World world = caster.world;
 
         List<LivingEntity> entities = EntityFinder.start(caster, LivingEntity.class, caster.getPositionVector())
-                .radius(3)
-                .distance(5)
-                .finder(EntityFinder.Finder.IN_FRONT)
+                .radius(RADIUS * 0.5F)
+                .distance(RADIUS)
+                .finder(EntityFinder.Finder.IN_FRONT).searchFor(EntityFinder.SearchFor.ENEMIES)
                 .build();
 
         int num = ctx.getConfigFor(this)

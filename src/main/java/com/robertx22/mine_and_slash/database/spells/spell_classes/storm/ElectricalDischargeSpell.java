@@ -2,7 +2,6 @@ package com.robertx22.mine_and_slash.database.spells.spell_classes.storm;
 
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.BaseSpell;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.SpellCastContext;
-import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.SpellPredicates;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.cast_types.SpellCastType;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.ImmutableSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.PreCalcSpellConfigs;
@@ -13,10 +12,7 @@ import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.saveclasses.spells.AbilityPlace;
 import com.robertx22.mine_and_slash.uncommon.capability.entity.EntityCap;
 import com.robertx22.mine_and_slash.uncommon.datasaving.Load;
-import com.robertx22.mine_and_slash.uncommon.effectdatas.DamageEffect;
-import com.robertx22.mine_and_slash.uncommon.effectdatas.EffectData;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.SpellDamageEffect;
-import com.robertx22.mine_and_slash.uncommon.effectdatas.interfaces.WeaponTypes;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Masteries;
 import com.robertx22.mine_and_slash.uncommon.localization.SpellType;
@@ -76,7 +72,7 @@ public class ElectricalDischargeSpell extends BaseSpell {
         c.set(SC.MAGIC_SHIELD_COST, 0, 0);
         c.set(SC.BASE_VALUE, 0, 0);
         c.set(SC.CAST_TIME_TICKS, 0, 0);
-        c.set(SC.COOLDOWN_SECONDS, 9, 6);
+        c.set(SC.COOLDOWN_SECONDS, 10, 7);
         c.set(SC.RADIUS, 3, 5);
         c.set(SC.TIMES_TO_CAST, 1, 1);
 
@@ -104,12 +100,13 @@ public class ElectricalDischargeSpell extends BaseSpell {
 
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocNameStr()));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area))));
 
         TooltipUtils.addEmpty(list);
 
         list.addAll(descLocName(""));
+
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 
@@ -137,7 +134,7 @@ public class ElectricalDischargeSpell extends BaseSpell {
             for (LivingEntity en : entities) {
 
                 EntityCap.UnitData data = Load.Unit(en);
-                int num = (int) (data.getUnit().getCurrentEffectiveHealth(en, data) * 0.20F);
+                int num = (int) (data.getUnit().getCurrentEffectiveHealth(en, data) * 0.18F);
 
                 SpellDamageEffect dmg = new SpellDamageEffect(ctx.caster, en, num, ctx.data, Load.Unit(en), this);
                 dmg.Activate();

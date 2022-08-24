@@ -2,10 +2,7 @@ package com.robertx22.mine_and_slash.uncommon.localization;
 
 import com.robertx22.mine_and_slash.mmorpg.Ref;
 import com.robertx22.mine_and_slash.uncommon.interfaces.IAutoLocName;
-import net.minecraft.util.text.ITextComponent;
 
-import java.util.Iterator;
-import java.util.List;
 import java.util.Locale;
 
 public enum Spells implements IAutoLocName {
@@ -135,7 +132,7 @@ public enum Spells implements IAutoLocName {
         return localization;
     }
 
-    public String getLocName() {
+    public String getLocNameStr() {
         return CLOC.blank(Ref.MODID + ".spell_desc." + formattedGUID()).getString();
     }
 }

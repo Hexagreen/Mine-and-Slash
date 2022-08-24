@@ -8,7 +8,6 @@ import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.PreCalcSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.SC;
 import com.robertx22.mine_and_slash.mmorpg.registers.common.ParticleRegister;
-import com.robertx22.mine_and_slash.potion_effects.druid.RegenerateEffect;
 import com.robertx22.mine_and_slash.potion_effects.shaman.RechargeEffect;
 import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.saveclasses.spells.AbilityPlace;
@@ -63,13 +62,13 @@ public class RechargeSpell extends BaseSpell {
     public PreCalcSpellConfigs getPreCalcConfig() {
         PreCalcSpellConfigs c = new PreCalcSpellConfigs();
         c.set(SC.HEALTH_COST, 0, 0);
-        c.set(SC.MANA_COST, 4, 6);
+        c.set(SC.MANA_COST, 6, 15);
         c.set(SC.ENERGY_COST, 0, 0);
         c.set(SC.MAGIC_SHIELD_COST, 0, 0);
         c.set(SC.CAST_TIME_TICKS, 20, 20);
         c.set(SC.COOLDOWN_SECONDS, 120, 120);
         c.set(SC.CDR_EFFICIENCY, 0, 0);
-        c.set(SC.DURATION_TICKS, 20 * 60, 20 * 120);
+        c.set(SC.DURATION_TICKS, 20 * 60, 20 * 60);
         c.set(SC.TICK_RATE, 20, 20);
         c.set(SC.BASE_VALUE, 0, 0);
         c.set(SC.MANA_ATTACK_SCALE_VALUE, 0.01F, 0.04F);
@@ -92,11 +91,16 @@ public class RechargeSpell extends BaseSpell {
 
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocNameStr()));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Buff, Spells.Duration, Spells.Self))));
 
         TooltipUtils.addEmpty(list);
+        list.add(new StringTextComponent(TextFormatting.GRAY + "This spell's cooldown is unaffected by"));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "cooldown reduction."));
+        TooltipUtils.addEmpty(list);
+
         list.add(SpellTooltips.buff());
+
         list.addAll(RechargeEffect.INSTANCE.GetTooltipStringWithNoExtraSpellInfo(info));
 
         return list;

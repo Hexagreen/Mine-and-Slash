@@ -6,8 +6,6 @@ import com.robertx22.mine_and_slash.database.spells.spell_classes.ocean.Blizzard
 import com.robertx22.mine_and_slash.database.spells.synergies.base.OnDamageDoneSynergy;
 import com.robertx22.mine_and_slash.potion_effects.bases.PotionEffectUtils;
 import com.robertx22.mine_and_slash.potion_effects.ocean_mystic.FrostEffect;
-import com.robertx22.mine_and_slash.potion_effects.ocean_mystic.FrozenEffect;
-import com.robertx22.mine_and_slash.potion_effects.ocean_mystic.ShiverEffect;
 import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.saveclasses.spells.IAbility;
 import com.robertx22.mine_and_slash.uncommon.datasaving.Load;
@@ -31,12 +29,12 @@ public class BlizzardFrostEssenceGenSynergy extends OnDamageDoneSynergy {
 
         addSpellName(list);
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocName()));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocName() + getRequiredAbility().getLocName().getString()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocNameStr()));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocNameStr() + getRequiredAbility().getLocName().getString()));
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent(Spells.HitApplyEffect.getLocName() + FrostEffect.INSTANCE.locNameForLangFile()));
+        list.add(new StringTextComponent(Spells.HitApplyEffect.getLocNameStr() + FrostEffect.INSTANCE.locNameForLangFile()));
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 

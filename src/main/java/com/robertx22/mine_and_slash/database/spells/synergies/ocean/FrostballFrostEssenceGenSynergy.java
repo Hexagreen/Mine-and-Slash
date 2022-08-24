@@ -29,12 +29,12 @@ public class FrostballFrostEssenceGenSynergy extends OnDamageDoneSynergy {
 
         addSpellName(list);
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocName()));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocName() + getRequiredAbility().getLocName().getString()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocNameStr()));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocNameStr() + getRequiredAbility().getLocName().getString()));
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent(Spells.HitApplySelfBuff.getLocName() + ColdEssenceEffect.INSTANCE.locNameForLangFile()));
+        list.add(new StringTextComponent(Spells.HitApplySelfBuff.getLocNameStr() + ColdEssenceEffect.INSTANCE.locNameForLangFile()));
 
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 
@@ -50,7 +50,7 @@ public class FrostballFrostEssenceGenSynergy extends OnDamageDoneSynergy {
     public PreCalcSpellConfigs getPreCalcConfig() {
         PreCalcSpellConfigs c = new PreCalcSpellConfigs();
         c.set(SC.BASE_VALUE, 0, 0);
-        c.set(SC.CHANCE, 25, 50);
+        c.set(SC.CHANCE, 25, 40);
         c.setMaxLevel(4);
         return c;
     }
