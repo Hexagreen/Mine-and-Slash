@@ -7,9 +7,7 @@ import info.loenwind.autosave.annotations.Store;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.text.TextFormatting;
-import org.lwjgl.system.CallbackI;
 
-import javax.xml.soap.Text;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;

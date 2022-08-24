@@ -15,6 +15,8 @@ import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.saveclasses.spells.AbilityPlace;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Masteries;
+import com.robertx22.mine_and_slash.uncommon.localization.SpellType;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
 import net.minecraft.util.SoundEvent;
@@ -23,7 +25,9 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 
+import javax.tools.Tool;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SnareTrapSpell extends BaseSpell {
@@ -99,16 +103,17 @@ public class SnareTrapSpell extends BaseSpell {
 
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Spell"));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "Area, Debuff, Duration, Entity"));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area, Spells.Debuff, Spells.Duration, Spells.Entity))));
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Weapon DMG to Phys DMG."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Phy.locName().getString()));
 
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Traps must be set on the ground for at least 1s"));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "before activating."));
+
+        list.add(new StringTextComponent(TextFormatting.GRAY + Words.HunterTrapsDesc.locName().getString()));
+
         TooltipUtils.addEmpty(list);
 
         list.add(new StringTextComponent("Throw out a trap that explodes, dealing"));

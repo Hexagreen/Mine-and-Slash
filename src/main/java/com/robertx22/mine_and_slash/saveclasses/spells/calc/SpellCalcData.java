@@ -15,6 +15,7 @@ import com.robertx22.mine_and_slash.saveclasses.spells.StatScaling;
 import com.robertx22.mine_and_slash.uncommon.capability.entity.EntityCap;
 import com.robertx22.mine_and_slash.uncommon.capability.player.PlayerSpellCap;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
 import info.loenwind.autosave.annotations.Factory;
 import info.loenwind.autosave.annotations.Storable;
@@ -50,7 +51,7 @@ public class SpellCalcData {
 
         List<Stat> list = new ElementalAttackDamage(Elements.Nature).generateAllSingleVariations();
         list.add(PhysicalDamage.getInstance());
-        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.GOLD + "Weapon Attack Damage")));
+        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.GOLD + Spells.ScaleWepAtk.getLocName())));
 
         data.baseValue = base;
 
@@ -61,7 +62,7 @@ public class SpellCalcData {
         SpellCalcData data = new SpellCalcData();
 
         List<Stat> list = new ElementalAttackDamage(Elements.Nature).generateAllSingleVariations();
-        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.GOLD + "Elemental Attack Damage")));
+        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.GOLD + Spells.ScaleEleAtk.getLocName())));
 
         data.baseValue = base;
 
@@ -73,7 +74,7 @@ public class SpellCalcData {
 
         List<Stat> list = new ArrayList<>();
         list.add(PhysicalDamage.getInstance());
-        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.GOLD + "Physical Attack Damage")));
+        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.GOLD + Spells.ScalePhyAtk.getLocName())));
 
         data.baseValue = base;
 
@@ -85,7 +86,7 @@ public class SpellCalcData {
 
         List<Stat> list = new ArrayList<>();
         list.add(new ElementalAttackDamage(Elements.Fire));
-        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.RED + "Fire Attack Damage")));
+        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.RED + Spells.ScaleFireAtk.getLocName())));
 
         data.baseValue = base;
 
@@ -97,7 +98,7 @@ public class SpellCalcData {
 
         List<Stat> list = new ArrayList<>();
         list.add(new ElementalAttackDamage(Elements.Water));
-        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.AQUA + "Frost Attack Damage")));
+        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.AQUA + Spells.ScaleWaterAtk.getLocName())));
 
         data.baseValue = base;
 
@@ -109,7 +110,7 @@ public class SpellCalcData {
 
         List<Stat> list = new ArrayList<>();
         list.add(new ElementalAttackDamage(Elements.Thunder));
-        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.YELLOW + "Lightning Attack Damage")));
+        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.YELLOW + Spells.ScaleThunderAtk.getLocName())));
 
         data.baseValue = base;
 
@@ -121,7 +122,7 @@ public class SpellCalcData {
 
         List<Stat> list = new ArrayList<>();
         list.add(new ElementalAttackDamage(Elements.Nature));
-        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.DARK_GREEN + "Nature Attack Damage")));
+        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.DARK_GREEN + Spells.ScaleNatureAtk.getLocName())));
 
         data.baseValue = base;
 
@@ -133,7 +134,7 @@ public class SpellCalcData {
 
         List<Stat> list = new ArrayList<>();
         list.add(Armor.getInstance());
-        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.GOLD + "Armor")));
+        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.GOLD + Spells.ScaleArmor.getLocName())));
 
         data.baseValue = base;
 
@@ -145,7 +146,7 @@ public class SpellCalcData {
 
         List<Stat> list = new ArrayList<>();
         list.add(Health.getInstance());
-        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.RED + "Health")));
+        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.RED + Spells.ScaleHealth.getLocName())));
 
         data.baseValue = base;
 
@@ -157,7 +158,7 @@ public class SpellCalcData {
 
         List<Stat> list = new ArrayList<>();
         list.add(Energy.getInstance());
-        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.YELLOW + "Energy")));
+        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.YELLOW + Spells.ScaleEnergy.getLocName())));
 
         data.baseValue = base;
 
@@ -169,7 +170,7 @@ public class SpellCalcData {
 
         List<Stat> list = new ArrayList<>();
         list.add(Mana.getInstance());
-        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.BLUE + "Mana")));
+        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.BLUE + Spells.ScaleMana.getLocName())));
 
         data.baseValue = base;
 
@@ -181,7 +182,7 @@ public class SpellCalcData {
 
         List<Stat> list = new ArrayList<>();
         list.add(MagicShield.getInstance());
-        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.AQUA + "Magic Shield")));
+        data.mergedScalingValues.add(new MergedScalingStatsCalc(list, attack, new SText(TextFormatting.AQUA + Spells.ScaleMagicShld.getLocName())));
 
         data.baseValue = base;
 
@@ -257,7 +258,7 @@ public class SpellCalcData {
 
             if (baseValue > 0) {
                 list.add(new StringTextComponent(
-                    TextFormatting.RED + "Base Value: " + getCalculatedBaseValue(spells, ability, info.unitdata)));
+                    TextFormatting.RED + Spells.BaseValue.getLocName() + getCalculatedBaseValue(spells, ability, info.unitdata)));
             }
         }
 

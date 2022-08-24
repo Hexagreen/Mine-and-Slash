@@ -15,6 +15,8 @@ import com.robertx22.mine_and_slash.uncommon.datasaving.Load;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.AttackSpellDamageEffect;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Masteries;
+import com.robertx22.mine_and_slash.uncommon.localization.SpellType;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.EntityFinder;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.SoundUtils;
@@ -31,6 +33,7 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ChillingTouchSpell extends BaseSpell {
@@ -152,13 +155,13 @@ public class ChillingTouchSpell extends BaseSpell {
 
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Attack Spell"));
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.ITALIC + "Spell that also triggers on-attack effects."));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "Melee"));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.AttackSpell.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.ITALIC + Spells.AttackSpellDesc.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Melee))));
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Weapon DMG to Frost."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Fro.locName().getString()));
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent("Attack enemies in front of you: "));
 

@@ -17,7 +17,7 @@ import java.util.function.Predicate;
 public class SpellPredicates {
     private static Predicate<LivingEntity> SHOOTABLE_PRED = x -> {
         Item item = x.getHeldItemMainhand()
-            .getItem();
+                .getItem();
         return item instanceof ShootableItem;
     };
 
@@ -25,7 +25,7 @@ public class SpellPredicates {
         try {
             GearItemData data = Gear.Load(x.getHeldItemMainhand());
             return data != null && (data.GetBaseGearType()
-                .isMeleeWeapon() || data.GetBaseGearType().isMageWeapon());
+                    .isMeleeWeapon() || data.GetBaseGearType().isMageWeapon());
         } catch (Exception e) {
             return false;
         }

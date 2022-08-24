@@ -1,6 +1,5 @@
 package com.robertx22.mine_and_slash.database.spells.spell_classes.hunting;
 
-import com.robertx22.mine_and_slash.database.spells.entities.proj.SnareTrapEntity;
 import com.robertx22.mine_and_slash.database.spells.entities.summons.SpiritWolfPetEntity;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.BaseSpell;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.SpellCastContext;
@@ -9,15 +8,14 @@ import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.PreCalcSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.SC;
 import com.robertx22.mine_and_slash.potion_effects.bases.PotionEffectUtils;
-import com.robertx22.mine_and_slash.potion_effects.necromancer.SummonedZombieEffect;
-import com.robertx22.mine_and_slash.potion_effects.ranger.SnareEffect;
 import com.robertx22.mine_and_slash.potion_effects.ranger.SummonedWolfEffect;
 import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.saveclasses.spells.AbilityPlace;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Masteries;
+import com.robertx22.mine_and_slash.uncommon.localization.SpellType;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.localization.Words;
-import com.robertx22.mine_and_slash.uncommon.utilityclasses.NumberUtils;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -25,8 +23,8 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 
-import javax.xml.soap.Text;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class HuntingWolfSpell extends BaseSpell {
@@ -103,13 +101,14 @@ public class HuntingWolfSpell extends BaseSpell {
 
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Summon Attack"));
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.ITALIC + "Summons also triggers on-attack effects."));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "Duration, Entity, Summon"));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.AttackSpell.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.ITALIC + Spells.SummonSpellDesc.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Duration, Spells.Entity, Spells.Summon))));
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Weapon DMG to Phys DMG."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Phy.locName().getString()));
+
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent("Summon a hunting wolf that aids in combat."));
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));

@@ -116,7 +116,7 @@ public class CorrosionEffect extends BasePotionEffect implements IApplyStatPotio
     @Override
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
         List<ITextComponent> list = new ArrayList<>();
-        list.add(new StringTextComponent(TextFormatting.AQUA + "Reduces movement speed by 10%."));
+        list.addAll(descLocName("", TextFormatting.AQUA));
         return list;
     }
 

@@ -21,6 +21,7 @@ import com.robertx22.mine_and_slash.uncommon.capability.entity.EntityCap;
 import com.robertx22.mine_and_slash.uncommon.capability.player.PlayerSpellCap;
 import com.robertx22.mine_and_slash.uncommon.datasaving.Load;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Masteries;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.GuiUtils;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
@@ -507,9 +508,9 @@ public class SpellSchoolScreen extends BaseScreen implements INamedScreen, IAler
                     });
 
                 if (data.getLevel() < Masteries.LVL_TO_UNLOCK_2ND_SCHOOL) {
-                    list.add(new SText(TextFormatting.AQUA + "" + TextFormatting.ITALIC + "You can unlock a second Mastery tree at level " + Masteries.LVL_TO_UNLOCK_2ND_SCHOOL + "."));
+                    list.add(new SText(TextFormatting.AQUA + "" + TextFormatting.ITALIC + Spells.UnlockSecondMastery.getLocName() + Masteries.LVL_TO_UNLOCK_2ND_SCHOOL + "."));
                 } else if (maxLevelIs120Plus && data.getLevel() < Masteries.LVL_TO_UNLOCK_3RD_SCHOOL) {
-                    list.add(new SText(TextFormatting.AQUA + "" + TextFormatting.ITALIC + "You can unlock a third Mastery tree at level " + Masteries.LVL_TO_UNLOCK_3RD_SCHOOL + "."));
+                    list.add(new SText(TextFormatting.AQUA + "" + TextFormatting.ITALIC + Spells.UnlockThirdMastery.getLocName() + Masteries.LVL_TO_UNLOCK_3RD_SCHOOL + "."));
                 }
 
                 TooltipUtils.abilityLevel(list, spells.getAbilitiesData()
@@ -522,7 +523,7 @@ public class SpellSchoolScreen extends BaseScreen implements INamedScreen, IAler
 
                 if (spells.getAbilitiesData()
                         .getTotalSchoolPoints() >= data.getLevel()) {
-                    list.add(new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + "Your total Mastery level cannot go past your max level."));
+                    list.add(new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.MasteryLevelCap.getLocName()));
                 }
 
                 GuiUtils.renderTooltip(list, mouseX, mouseY);

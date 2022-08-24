@@ -77,7 +77,7 @@ public class QuickChargeEffect extends BasePotionEffect implements IApplyStatPot
     @Override
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
         List<ITextComponent> list = new ArrayList<>();
-        list.add(new StringTextComponent("Reduces cooldowns but increases mana cost."));
+        list.addAll(descLocName(""));
         return list;
     }
 

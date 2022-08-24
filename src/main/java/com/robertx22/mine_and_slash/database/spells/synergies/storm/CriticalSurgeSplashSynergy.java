@@ -19,6 +19,7 @@ import com.robertx22.mine_and_slash.uncommon.effectdatas.EffectData;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.interfaces.ICrittable;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.interfaces.WeaponTypes;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.EntityFinder;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.RandomUtils;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.SoundUtils;
@@ -40,8 +41,8 @@ public class CriticalSurgeSplashSynergy extends OnHitSynergy {
 
         addSpellName(list);
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Synergy (Bolt)"));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "Modifies Critical Surge"));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocName() + getRequiredAbility().getLocName().getString()));
 
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent(TextFormatting.GRAY + "Bolt damage is a special damage type and is"));

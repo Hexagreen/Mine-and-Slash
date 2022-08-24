@@ -361,7 +361,42 @@ public enum Words implements IAutoLocName {
 
     World_Type("World Type"),
 
-    Repair_Station("Repair Station");
+    Repair_Station("Repair Station"),
+
+    ShieldActiveDesc_1("Hold for chance to reduce DMG fully."),
+    ShieldActiveDesc_2("On failed block, still reduce by half."),
+    ShieldActiveDesc_3("Hits against will consume energy."),
+
+    HammerAOEDesc_1("Deals half damage to enemies near the target."),
+    HammerAOEDesc_2("Max Targets: 5"),
+
+    RuneSlotList("Runes: "),
+    RuneSlotEmpty("Rune: [Empty]"),
+
+    Wep2Phy("Converts Weapon DMG to Phys DMG."),
+    Wep2Fro("Converts Weapon DMG to Frost DMG."),
+    Wep2Fir("Converts Weapon DMG to Fire DMG."),
+    Wep2Lit("Converts Weapon DMG to Lightning DMG."),
+    Wep2Nat("Converts Weapon DMG to Nature DMG."),
+    Mana2Fro("Converts Mana to Frost DMG."),
+    Mana2Lit("Converts Mana to Lightning DMG."),
+    Hlth2Phy("Converts Health to Phys."),
+    Arm2Phy("Converts Armor to Phys."),
+    MShld2Fro("Converts Magic Shield to Frost DMG."),
+    MShld2Phy("Converts Magic Shield to Phys DMG."),
+
+    FrostTotemDesc("Explosion AOE is half of the totem's detection AOE."),
+    HunterTrapsDesc("Traps must be Set on the Ground for at Least 1s before Activating."),
+    ChainLightningDesc("Spell Cannot Bounce to the Same Target Twice."),
+
+    remSpellPotion("Gives you 10 remove spell points. Remove points by right clicking on the spell."),
+    remTalentPotion("Gives you 3 remove talent points. Remove points by right clicking on the talent."),
+    resetSpellPotion("Resets all your spell points."),
+    resetStatPotion("Removes all allocated stat points."),
+    resetTalentPotion("Resets all your talent points."),
+    resetAllPotion(""),
+    currencyAdds("Adds "),
+    currencyInstability(" Instability");
 
     private String localization = "";
 

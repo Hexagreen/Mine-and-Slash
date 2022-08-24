@@ -134,8 +134,8 @@ public class CrippleEffect extends BasePotionEffect implements IApplyStatPotion 
     @Override
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
         List<ITextComponent> list = new ArrayList<>();
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "Frost DoT Damage"));
-        list.add(new StringTextComponent(TextFormatting.AQUA + "Reduces movement speed by 7%."));
+        list.addAll(descLocName("1", TextFormatting.GRAY, TextFormatting.ITALIC));
+        list.addAll(descLocName("2", TextFormatting.AQUA));
         return list;
 
     }

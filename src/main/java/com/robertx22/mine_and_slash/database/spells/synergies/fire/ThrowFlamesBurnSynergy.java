@@ -17,6 +17,8 @@ import com.robertx22.mine_and_slash.uncommon.effectdatas.DamageEffect;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.EffectData;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.SpellDamageEffect;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.interfaces.WeaponTypes;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
+import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.particles.ParticleTypes;
@@ -44,11 +46,11 @@ public class ThrowFlamesBurnSynergy extends OnAttackSpellDmgDoneSynergy {
 
         addSpellName(list);
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Synergy"));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "Modifies Meteoric Strike"));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocName() + getRequiredAbility().getLocName().getString()));
 
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Weapon DMG to Fire."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Fir.locName().getString()));
         TooltipUtils.addEmpty(list);
 
         list.add(new StringTextComponent("Consumes a Burn stack on the target to"));

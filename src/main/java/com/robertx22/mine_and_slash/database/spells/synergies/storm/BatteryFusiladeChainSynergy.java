@@ -17,6 +17,8 @@ import com.robertx22.mine_and_slash.uncommon.effectdatas.EffectData;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.SpellDamageEffect;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.interfaces.WeaponTypes;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
+import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.EntityFinder;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.RandomUtils;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.SoundUtils;
@@ -39,15 +41,12 @@ public class BatteryFusiladeChainSynergy extends OnDamageDoneSynergy {
 
         addSpellName(list);
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Synergy (Bolt)"));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "Modifies Battery Fusillade"));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocName() + getRequiredAbility().getLocName().getString()));
 
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Bolt damage is a special damage type and is"));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "unaffected by spell damage modifiers."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + Words.Mana2Lit.locName().getString()));
 
-        TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Mana to Lightning DMG."));
         TooltipUtils.addEmpty(list);
 
         list.add(new StringTextComponent("If user has Lightning Essence, projectiles"));
