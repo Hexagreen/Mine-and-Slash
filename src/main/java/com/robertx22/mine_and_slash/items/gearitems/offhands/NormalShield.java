@@ -80,6 +80,7 @@ public class NormalShield extends ShieldItem implements IEffectItem, IAutoLocNam
             list.add(new StringTextComponent(color() + Words.ShieldActiveDesc_2.locName().getString()));
             list.add(new StringTextComponent(color() + Words.ShieldActiveDesc_3.locName().getString()));
 
+
         }
         return list;
     }
