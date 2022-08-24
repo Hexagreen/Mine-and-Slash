@@ -29,6 +29,12 @@ public class SpellType {
         if(spellPredicate.equals(SpellPredicates.REQUIRE_MELEE))
             return new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.reqMelee.getLocNameStr());
 
+        if(spellPredicate.equals(SpellPredicates.REQUIRE_STARTER))
+            return new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.reqMelee.getLocNameStr());
+
+        if(spellPredicate.equals(SpellPredicates.REQUIRE_LINKER))
+            return new SText(TextFormatting.RED + "" + TextFormatting.ITALIC + Spells.reqMelee.getLocNameStr());
+
         return new SText("Debug: See uncommon.localization.SpellType.getSpellPreText method");
     }
 }

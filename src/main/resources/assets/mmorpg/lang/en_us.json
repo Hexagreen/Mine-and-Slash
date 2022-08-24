@@ -2211,6 +2211,8 @@
 
 	"mmorpg.spell_desc.reqranged": "Requires Ranged Weapon",
 	"mmorpg.spell_desc.reqmelee": "Requires Melee Weapon",
+	"mmorpg.spell_desc.reqstarter": "Requires Combo Starter Effect",
+	"mmorpg.spell_desc.reqlinker": "Requires Combo Extension Effect",
 	"mmorpg.spell_desc.modifies": "Modifies ",
 
 	"mmorpg.spell_desc.single_target_proj": "Throw a projectile, damaging first enemy hit: ",

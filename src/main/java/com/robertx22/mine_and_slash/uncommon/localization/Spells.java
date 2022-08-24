@@ -57,6 +57,8 @@ public enum Spells implements IAutoLocName {
     // bases.SpellPredicates.java
     reqRanged("Requires Ranged Weapon"),
     reqMelee("Requires Melee Weapon"),
+    reqStarter("Requires Combo Starter Effect"),
+    reqLinker("Requires Combo Extension Effect"),
 
     // SpellTooltips.java
     Single_Target_Proj("Throw a projectile, damaging first enemy hit: "),
