@@ -6,10 +6,7 @@ import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
 import net.minecraft.util.text.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class CLOC {
 
