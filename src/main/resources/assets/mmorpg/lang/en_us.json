@@ -889,6 +889,22 @@
 	"mmorpg.word.runeslotlist": "Runes: ",
 	"mmorpg.word.runeslotempty": "Rune: [Empty]",
 
+	"mmorpg.word.wep2phy": "Converts Weapon DMG to Phys DMG.",
+	"mmorpg.word.wep2fro": "Converts Weapon DMG to Frost DMG.",
+	"mmorpg.word.wep2fir": "Converts Weapon DMG to Fire DMG.",
+	"mmorpg.word.wep2lit": "Converts Weapon DMG to Lightning DMG.",
+	"mmorpg.word.wep2nat": "Converts Weapon DMG to Nature DMG.",
+	"mmorpg.word.mana2fro": "Converts Mana to Frost DMG.",
+	"mmorpg.word.mana2lit": "Converts Mana to Lightning DMG.",
+	"mmorpg.word.hlth2phy": "Converts Health to Phys.",
+	"mmorpg.word.arm2phy": "Converts Armor to Phys.",
+	"mmorpg.word.mshld2fro": "Converts Magic Shield to Frost DMG.",
+	"mmorpg.word.mshld2phy": "Converts Magic Shield to Phys DMG.",
+
+	"mmorpg.word.frosttotemdesc": "Explosion AOE is half of the totem's detection AOE.",
+	"mmorpg.word.huntertrapsdesc": "Traps must be Set on the Ground for at Least 1s before Activating.",
+	"mmorpg.word.chainlightningdesc": "Spell Cannot Bounce to the Same Target Twice.",
+
 	"mmorpg.word.remspellpotion": "Gives you 10 remove spell points. Remove points by right clicking on the spell.",
 	"mmorpg.word.remtalentpotion": "Gives you 3 remove talent points. Remove points by right clicking on the talent.",
 
