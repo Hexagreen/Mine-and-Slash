@@ -15,6 +15,6 @@ public class SpellTooltips {
     }
 
     public static ITextComponent applyOnTarget(){
-        return new StringTextComponent(Spells.Target_Buff.getLocName());
+        return new StringTextComponent(Spells.Target_Buff.getLocNameStr());
     }
 }

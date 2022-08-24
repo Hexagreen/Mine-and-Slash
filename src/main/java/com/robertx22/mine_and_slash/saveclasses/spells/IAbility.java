@@ -158,8 +158,7 @@ public interface IAbility extends IGUID, ITooltipList {
             list.add(new SText(TextFormatting.YELLOW + Spells.EffAbilityLevel.getLocNameStr() + getEffectiveAbilityLevel(ctx.spellsCap, ctx.data)));
 
             list.add(new SText(getElement().format + Spells.Element.getLocNameStr() + getElement().dmgName));
-
-
+            
 
             if (ctx.spellsCap.getAbilitiesData()
                 .getSchoolPoints(this.getMastery()) < getSchoolPointsNeeded()) {

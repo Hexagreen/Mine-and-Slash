@@ -1,6 +1,5 @@
 package com.robertx22.mine_and_slash.database.spells.synergies.storm;
 
-import com.robertx22.mine_and_slash.database.spells.SpellUtils;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.PreCalcSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.SC;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.storm.BatteryFusiladeSpell;
@@ -40,7 +39,6 @@ public class BatteryFusiladeChainSynergy extends OnDamageDoneSynergy {
         List<ITextComponent> list = new ArrayList<>();
 
         addSpellName(list);
-
 
         list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocNameStr() + " (Bolt)"));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocNameStr() + getRequiredAbility().getLocName().getString()));
