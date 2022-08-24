@@ -23,7 +23,7 @@ public class BonusDodgeAffix extends BeneficialMapAffix {
 
     @Override
     public float lootMulti() {
-        return 1.4F;
+        return 1.35F;
     }
 
 }

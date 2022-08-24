@@ -99,7 +99,7 @@ public class Axe extends BaseWeapon implements ISpecificStatReq {
     @Override
     public List<PosStats> getPossiblePrimaryStats() {
         return Arrays.asList(
-                new PosStats(new PhysicalDamageFlat().size(StatMod.Size.QUARTER_MORE)).weight(26000),
+                new PosStats(new PhysicalDamageFlat().size(StatMod.Size.HALF_MORE)).weight(26000),
                 new PosStats(new PhysicalDamageFlat().size(StatMod.Size.LOW), new ElementalAttackDamageFlat(Elements.Nature).size(StatMod.Size.LOW)),
                 new PosStats(new PhysicalDamageFlat().size(StatMod.Size.LOW), new ElementalAttackDamageFlat(Elements.Fire).size(StatMod.Size.LOW)),
                 new PosStats(new PhysicalDamageFlat().size(StatMod.Size.LOW), new ElementalAttackDamageFlat(Elements.Water).size(StatMod.Size.LOW)),
@@ -109,7 +109,7 @@ public class Axe extends BaseWeapon implements ISpecificStatReq {
 
     @Override
     public StatModsHolder getPossibleSecondaryStats() {
-        return new StatModsHolder(new CriticalDamageFlat(), new CriticalHitFlat());
+        return new StatModsHolder(new CriticalDamageFlat(), new CriticalHitFlat(), new PhysicalDamagePercent());
     }
 
     @Override

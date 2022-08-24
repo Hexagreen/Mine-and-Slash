@@ -8,12 +8,17 @@ import com.robertx22.mine_and_slash.saveclasses.item_classes.GearItemData;
 import com.robertx22.mine_and_slash.uncommon.datasaving.Gear;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.DamageEffect;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.EffectData;
+import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
+
+import java.util.Map;
 
 public class WeaponDamageEffect extends BaseDamageEffect {
 
+    public static WeaponDamageEffect INSTANCE = new WeaponDamageEffect();
+
     @Override
     public int GetPriority() {
-        return Priority.First.priority;
+        return Priority.afterThis(PhysicalToHighestEle.INSTANCE.GetPriority());
     }
 
     @Override
@@ -23,7 +28,11 @@ public class WeaponDamageEffect extends BaseDamageEffect {
 
     @Override
     public DamageEffect activate(DamageEffect effect, StatData data, Stat stat) {
+
+        //effect.wepMultiBonusEleDmg(data.getMultiplier());
+
         effect.number *= data.getMultiplier();
+
         return effect;
     }
 
@@ -32,7 +41,8 @@ public class WeaponDamageEffect extends BaseDamageEffect {
 
         if ((effect.getEffectType() == EffectData.EffectTypes.BASIC_ATTACK || effect.getEffectType()
                 .equals(EffectData.EffectTypes.ATTACK_SPELL) || effect.getEffectType()
-                .equals(EffectData.EffectTypes.SUMMON_DMG))) {
+                .equals(EffectData.EffectTypes.SUMMON_DMG) || effect.getEffectType()
+                .equals(EffectData.EffectTypes.BONUS_ATTACK))) {
             if (stat instanceof WeaponDamage) {
                 try {
                     WeaponDamage weapon = (WeaponDamage) stat;

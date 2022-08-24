@@ -1,3 +1,115 @@
+3.15.0:
+- NEW MASTERY TREE: Physical - utilize the unique brawler-type spells in this tree to deal tremendous damage or support your allies. The physical tree has 4 main types of spells: Strikes, Linkers, Finishers, and Buffs. Strikes, Linkers, and Finishers are all attack spells. Use a Strike to gain a Combo Starter effect, which is required and expended upon use by Linker attack spells. Similarly, Linker attack spells will gain you a Combo Linker effect, which is required and expended by Finishers. Use the different types of Strikeks, Linkers, and Finishers to "build your own combo" and create your own truly unique playstyle! For example, for an elemental combo, you might start with Elemental Strike (all elements) -> Raging Dragon Linker (fire/lightning) -> Elemental Vengeance Finisher (all elements, big AOE)! Look below for more combo examples... The possibilities are endless! Buffs are straight forward, there are two types of buffs: Empower and Wisdom. Empower grants an increase in damage, whereas Wisdom grants increased regeneration and cast speed. There are ways to provide these to yourself and your allies! Two unique things about the Physical tree is that (almost) all spells only cost energy, and are not affected by cooldown reduction. However, these short cooldown attack spells can still be used in rapid succession. Be sure to mix them up!
+- Support your allies with Goading Strike (AOE taunt) -> Flowing River Linker (frost, heal allies) -> Earthen Smash Finisher (AOE nature, increase ally defenses).
+- Go for big physical damage with Piercing Strike (lowers def) -> Rallying Sweep Linker (AOE, increase ally speed and damage) -> Sweeping Strike (AOE) -> Triple Attack Linker (3x hits) -> Omnislash Finisher (high physical burst).
+- Apply Spell Blade + Flame Blade and take advantage of the on-attack effects, and use Piercing Strike -> Triple Attack Linker -> Omnislash Finisher.
+- NEW WEAPON TYPE: Gauntlets - once implemented in a beta version, this item type was quickly scrapped as it was logistically difficult to show how a player might "wield" a gauntlet in Minecraft... However, with the new Physical tree, it just made sense to implement it to the best of my ability. These quick-acting weapons can really leave a mark on your opponents. They attack as fast as daggers and do more damage at the expense of more energy!
+- Summon targeting AI now prioritizes mobs that hurt them > nearest mob > mobs that hurt the caster > mobs hurt by the caster, INSTEAD of mobs that hurt the caster > mobs hurt by the caster > mobs that hurt them > nearest mob. This should alleviate summons ganging up on a sole enemy (not prevent outright though). This will also give more functionality to Chilling Touch synergy.
+
+3.14.11:
+- Added a Reset All command which resets stats, spells, and talents at once. Useful for testing builds.
+- Add Remove Talent Potion now gives you 3 removal points rather than 1.
+- Added a new craftable Reset All potion that uses 1 of each reset potion.
+- Renamed Lucky to Prosperous, and Luck to Lucky. The core stat Luck remains unchanged.
+- Reduced sources of lifesteal and spellsteal stats.
+- Reduced potency of critical damage stats substantially. Critical hit remains untouched.
+- Increased physical damage of weapons when they only roll physical damage so they're more in line with multi-element weapons.
+- Reduced the attack scaling of attack spells to compensate for the increase in physical damage of weapons.
+- Since Elemental Attack Damage is already taken into account when using attack spells and summons in their scaling, it will no longer be added "additionally" to the attack when damage is dealt. No more double dipping for free.
+- Due to changes to Ele Atk DMG, reworked Physical Dispersion a bit to implement a failsafe in case the player uses a physical spell. It will check the player's ele atk dmg stat instead.
+- Physical Damage gained as X element now works similarly to Physical Dispersion. You gain the elemental damage at the end of the calculation now - it will also work on spells.
+- Weapon Damage and Elemental Weapon Damage now properly apply after the fact.
+- As a result of the above changes, Spell Blade no longer provides "Physical Damage Gained as Fire Damage" since it would no longer synergize with the Spell Blade synergy. Instead, it now provides "Physical Damage Converted to Fire Attack Damage" similar to how Poisoned Weapons works. This will result in a substantial reduction in Spell Blade damage, but was how the spell was originally meant to function.
+- Due to the Spell Blade "nerf", Flame Blade has been buffed a bit to compensate.
+- New Ocean Spell: Purity - provides yourself and nearby allies elemental resistances.
+- New Ocean Spell: Arctic Armor - provides yourself with damage reduction at the expense of mana and energy regeneration.
+- New Ocean Synergy (Arctic Armor): Rejuvenating Armor - while Arctic Armor is active, (all) hits have a chance of applying Cold Essence on self.
+- New Ocean Attack Spell: Rime Blade - hits in an AOE in front of the user similar to Inferno Quake. Damage is converted to Frost. Using the spell also fires  frost projectiles in front of the caster, each dealing half the damage as spell damage.
+- Ice Blade no longer provides Frost Attack Damage but rather Physical Damage Gained as Frost Damage.
+- Ocean buffs have double in duration and the cooldown for them is now 10 seconds, more inline with other buff spells. I still want them to be shorter duration because my goal is for players to "manage" the Ocean buffs rather than setting it and leaving it. This is in part due to the sheer quantity of buffs Ocean has. These changes do not affect Frost Shield.
+- Reduced the cast time to Frost Shield to be in line with the other Ocean buffs.
+- Increased the cooldown of Frost Shield slightly.
+- New Fire Summon Spell: Summon Archon - summon an archon that attacks enemies. Periodically, the summon will also recover nearby allies' mana. The base value of the mana recovered is the same as the summon's damage.
+- New Fire Synergy (Summon Archon): Incendiary Touch - gives ALL summons a chance to deal AOE fire spell damage on attack.
+- New Fire Spell: Blazing Shell - converts a portion of your armor into magic shield and also provides fire thorns.
+- Chain Lightning no longer targets armor stands.
+- Raised the floor but lowered the ceiling for Charged Sweep mana scaling.
+- Lightning Totem now has a base tick rate of 20 instead of going from 40 -> 20.
+- Lightning Totem radius now scales up to 4 by max level instead of 3.
+- Lightning Totem can no longer fire multiple totems and is capped at 1.
+- Lightning Totem base damage has doubled.
+- Lightning Totem static synergy chance has been reduced at max level.
+- Static Field cooldown has increased by 1 second.
+- Static Field now deals 18% instead of 20% of remaining enemy health.
+- Lowered Voltaic Blast chance and base damage slightly.
+- Increased Stray Current base value slightly.
+- Lightning Spear bolt synergy damage floor has increased but ceiling has decreased.
+- Lowered the cost of Quick Charge slightly.
+- Increased the mana cost of Recharge.
+- Recharge duration is now a flat 60 seconds.
+- Increased Lightning Dash cooldown by 20%.
+- Lowered the critical hit chance from Critical Surge from 5% to 4%, but increased spell damage from 7% to 8% base.
+- Increased lightning attack damage of Power Surge by about 30%.
+- Lowered mana cost increase of Battery Fusilade's synergy slightly.
+- Lowered Battery Fusilade's synergy's max level from 12 to 8.
+- Increased Battery Fusilade's synergy's radius at lower levels.
+- Battery Fusilade's synergy chance to trigger has been reduced, but now scales depending on how many Lightning Essence the caster currently has. At max stacks, the chance is higher than what it was before.
+- Synergies of Battery Fusilade, Critical Surge, and Power Surge, as well as the Divine Judgment effect are now properly classified as "Bolt" damage types, similar to how Lightning Spear bolt synergy is classified. This means that these will not be modified by spell damage (elemental still works though). To make it more clear, these synergy and effect tooltips have been updated, and a lightning bolt sound and visual will be played when these trigger. Additionally, the synergies will no longer trigger themselves (eg. Voltaic Blast used to be able to trigger itself as long as the damage was a critical hit. Now, this is no longer possible).
+- Voltaic Blast and Overload now deal their extra AOE damage to the target struck as well, instead of only nearby enemies.
+- Static Discharge synergy has returned (synergy of Charged Sweep), which gives a chance to apply Static effect on hit.
+- Charged Sweep no longer applies Static 100% of the time.
+- Lowered the attack scaling of Plague from 16% to 15% at max level.
+- Changed Venom Load to give increased DoT damage as well as spell damage.
+- Defend now gives 35% instead of 50% damage reduction at max level, and puts a 15% move speed debuff on the caster.
+- Increased Unholy Meditation heal values.
+- Increased Summon HP slightly.
+- Summon Zombie and Summon Skeletal Army no longer scale with weapon damage.
+- Summon Zombie and Summon Skeletal Army base damage values have been increased tremendously to compensate for their lack of brains.
+- Summon Hunting Wolf no longer has a base value and only scales with weapon damage. The rate at which it scales has been increased.
+- Summons now move 33% faster.
+- Tried to make summons more aggressive, they should now target everything but players, other summons/tamed, passive golems, and ageable entities. Please let me know if I've missed anything on the blacklist.
+- Summons taunting on hit should be more consistent now, and can only occur every 3 seconds.
+- Charge, Healing Aura, Inferno Quake, Gorgon's Gaze, Arctic Blast, and Soul Shred are now properly tagged as Area spells and display their "radius" which is actually the distance in front of the caster. Increased Area stats should now properly affect these spells.
+- Mob base damage has increased slightly.
+- Lowered mob armor slightly.
+- Increased mob health in team dungeons.
+- Fixed an issue where team dungeons were giving a 3x multiplier on exp instead of 2x.
+- Reduced the armor penalty of Avatar.
+- Vampire gives a smaller multi on lifesteal now. The rest of it remains unchanged.
+- Reduced Warlock DoT steal and DoT damage.
+- Warlock penalty has been reduced from -25% to -20% health and magic shield.
+- Added some sources of armor pen to the tree.
+- Mana should no longer take damage when player has Mana Battery and a teammate hits them.
+- Fixed a bug where if you were on a team or in a party, you couldn't hit yourself. Which also should fix Venom Load not being able to kill the user.
+- AOE spells now specifically look for enemies only.
+- Fixed some instances of "Water" and "Thunder" to "Frost" and "Lightning".
+- Implemented a fix where if you die multiple times at once somehow, you will only lose EXP once.
+
+3.14.10:
+- Nature's Avatar has been reworked and renamed to just Avatar. Instead of converting everything into nature damage, it now gives Physical Dispersion, dodge, and some penalties to health and armor.
+- Increased the spell damage penalty on Pacifist.
+- Cleaned up some tooltip stuff for Berserker's Impartiality and Reckless Blows.
+- Reduced the defensive penalty of Reckless Blows.
+- Fixed a bug regarding EXP share and the level penalty.
+- Fixed a bug where Purifying Flames judgment synergy required the mob to already have at least one stack of judgment before applying judgment. This is no longer the case.
+- Fixed a bug where Bleed was actually doing 8% of your phys instead of 10% like it says in the tooltip.
+- Lowered innate mob resistances.
+- Increased damage reduction from Defend from 25% to 50%.
+- Significantly increased Defend's cooldown.
+- Block now costs energy ONLY when actively blocking (regardless of fail or success). Currently, blocking is too strong and a bit braindead. By incorporating energy cost, players will have to actively balance their energy and think about when they should actually block.
+- Thorns no longer drains energy.
+- Fixed an issue where effects such as burn and plague were capped at over-level 13 instead of 16.
+- Sources of block chance have been reduced.
+- Vitality now provides about 33% less energy regen than it did previously.
+- Lowered elemental attack damage map mob affix to about 18% of what it was before.
+- Enrage now gives half as much physical damage as it did previously.
+- Removed the map affix that adds mob elemental attack damage and physical dispersion.
+- Replaced the above map affix with one that gives "gain xx% of physical damage as 'insert element'al damage".
+- Added a new all elemental penetration map affix for mobs.
+- Added a new health regen map affix for mobs.
+- Fixed some mislabelled health and magic shield costs in the spell tooltips showing double what they should have.
+- Mobs should no longer randomly one shot players when using Enrage effect since it has been nerfed, and most mob sources of physical dispersion stat have been removed. Enrage was effectively doubling and sometimes tripling mob damage at max stats, and all of that physical damage was being converted to an element...
+
 3.14.8:
 - Changed how weapon damage stat and elemental weapon damage stat work. Before, they would check if the damage effect had the same weapon type as the stat. However, most damage sources such as spells don't have an explicit weapon type. So these weapon damage stats would only apply to basic attacks. I've changed it so that it applies as long as the damage effect is of the attack type (basic attacks, attack spells, summon attacks), AND if the player is holding a weapon of the same type. Eg. if you're holding a bow, anytime you perform an attack, you will get your bow weapon damage bonus applied.
 - Lowered Talent weapon damage node values from 8% to 6%. Elemental weapon damage remains the same. I kept increasing it slowly over time thinking that it wasn't good enough, turns out it just never worked as intended. It would be way overtuned (probably) if I didn't reduce it again.

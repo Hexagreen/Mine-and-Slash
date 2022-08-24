@@ -109,7 +109,7 @@ public class BlazingInfernoSpell extends BaseSpell {
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Weapon DMG to Fire."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "Converts Weapon DMG to Fire DMG."));
         TooltipUtils.addEmpty(list);
         list.add(new SText("Damage enemies around you: "));
 
@@ -135,7 +135,7 @@ public class BlazingInfernoSpell extends BaseSpell {
             int num = getCalculation(ctx).getCalculatedValue(Load.Unit(caster), ctx.spellsCap, ctx.ability);
 
             List<LivingEntity> entities = EntityFinder.start(caster, LivingEntity.class, caster.getPositionVector())
-                .radius(radius)
+                .radius(radius).searchFor(EntityFinder.SearchFor.ENEMIES)
                 .build();
 
             for (LivingEntity en : entities) {

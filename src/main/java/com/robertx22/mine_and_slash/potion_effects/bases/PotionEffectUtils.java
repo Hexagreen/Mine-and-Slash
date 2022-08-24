@@ -60,7 +60,10 @@ public class PotionEffectUtils {
         EffectInstance newInstance = new EffectInstance(effect, duration, extraData.getStacks(), false, false, true);
         //System.out.println("6. New Instance : " + newInstance);
 
-        boolean nonMasteryEffects = effect != BleedPotion.INSTANCE && effect != WeakenCurseEffect.INSTANCE && effect != MobChillEffect.INSTANCE && effect != PowerChargeEffect.INSTANCE && effect != FortitudeChargeEffect.INSTANCE;
+        boolean nonMasteryEffects = effect != BleedPotion.INSTANCE && effect != WeakenCurseEffect.INSTANCE
+                && effect != MobChillEffect.INSTANCE && effect != PowerChargeEffect.INSTANCE
+                && effect != FortitudeChargeEffect.INSTANCE && effect != SummonTauntEffect.INSTANCE;
+
         if (instance == null) {
 
             extraData.casterLvl = casterData.getLevel();
@@ -144,6 +147,20 @@ public class PotionEffectUtils {
 
         }
         return 0;
+
+    }
+
+    public static LivingEntity getCaster(LivingEntity en, BasePotionEffect effect) {
+
+        EffectInstance instance = en.getActivePotionEffect(effect);
+        ExtraPotionData extraData;
+
+        if (instance != null) {
+            extraData = PotionDataSaving.getData(instance);
+            return extraData.getCaster(en.world);
+        } else {
+            return null;
+        }
 
     }
 }

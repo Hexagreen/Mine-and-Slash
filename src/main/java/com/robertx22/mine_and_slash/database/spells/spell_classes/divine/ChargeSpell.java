@@ -77,9 +77,10 @@ public class ChargeSpell extends BaseSpell {
         c.set(SC.ENERGY_COST, 5, 8);
         c.set(SC.MAGIC_SHIELD_COST, 0, 0);
         c.set(SC.BASE_VALUE, 2, 8);
-        c.set(SC.PHYSICAL_ATTACK_SCALE_VALUE, 1.4F, 2.5F);
+        c.set(SC.PHYSICAL_ATTACK_SCALE_VALUE, 1.4F, 2.0F);
         c.set(SC.CAST_TIME_TICKS, 0, 0);
         c.set(SC.COOLDOWN_SECONDS, 13, 6);
+        c.set(SC.RADIUS, 12, 12);
 
         c.setMaxLevel(12);
 
@@ -107,7 +108,7 @@ public class ChargeSpell extends BaseSpell {
 
         list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.AttackSpell.getLocName()));
         list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.ITALIC + Spells.AttackSpellDesc.getLocName()));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area, Spells.Debuff, Spells.Taunt))));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area, Spells.Movement))));
 
         TooltipUtils.addEmpty(list);
 
@@ -143,6 +144,11 @@ public class ChargeSpell extends BaseSpell {
 
     @Override
     public void castExtra(SpellCastContext ctx) {
+
+        float RADIUS = ctx.getConfigFor(this)
+                .get(SC.RADIUS)
+                .get(ctx.spellsCap, this);
+
         LivingEntity caster = ctx.caster;
         World world = ctx.caster.world;
 
@@ -160,9 +166,10 @@ public class ChargeSpell extends BaseSpell {
         int num = getCalculation(ctx).getCalculatedValue(Load.Unit(caster), ctx.spellsCap, ctx.ability);
 
         List<LivingEntity> entities = EntityFinder.start(caster, LivingEntity.class, caster.getPositionVector())
-            .radius(3)
-            .distance(12)
+            .radius(RADIUS * 0.25F)
+            .distance(RADIUS)
             .finder(EntityFinder.Finder.IN_FRONT)
+                .searchFor(EntityFinder.SearchFor.ENEMIES)
             .build();
 
         entities.forEach(x -> {
