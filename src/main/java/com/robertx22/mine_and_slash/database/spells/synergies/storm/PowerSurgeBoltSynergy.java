@@ -52,6 +52,9 @@ public class PowerSurgeBoltSynergy extends OnHitSynergy {
         list.add(new StringTextComponent(TextFormatting.GRAY + "Bolt damage is a special damage type and is"));
         list.add(new StringTextComponent(TextFormatting.GRAY + "unaffected by spell damage modifiers."));
         TooltipUtils.addEmpty(list);
+        list.add(new StringTextComponent(TextFormatting.GRAY + "Bolt damage is a special damage type and is"));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "unaffected by spell damage modifiers."));
+        TooltipUtils.addEmpty(list);
 
         list.add(new StringTextComponent("While Power Surge is active, hits"));
         list.add(new StringTextComponent("have a chance of summoning a bolt"));

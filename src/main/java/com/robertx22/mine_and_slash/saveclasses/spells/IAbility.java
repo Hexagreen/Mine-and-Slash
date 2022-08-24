@@ -160,6 +160,7 @@ public interface IAbility extends IGUID, ITooltipList {
             list.add(new SText(getElement().format + Spells.Element.getLocName() + getElement().dmgName));
 
 
+
             if (ctx.spellsCap.getAbilitiesData()
                 .getSchoolPoints(this.getMastery()) < getSchoolPointsNeeded()) {
                 list.add(new SText(TextFormatting.RED + Spells.Needs.getLocName()).appendSibling(getMastery().getFullName()

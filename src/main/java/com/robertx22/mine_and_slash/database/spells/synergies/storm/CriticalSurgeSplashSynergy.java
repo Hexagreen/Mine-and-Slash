@@ -49,6 +49,9 @@ public class CriticalSurgeSplashSynergy extends OnHitSynergy {
         list.add(new StringTextComponent(TextFormatting.GRAY + "Bolt damage is a special damage type and is"));
         list.add(new StringTextComponent(TextFormatting.GRAY + "unaffected by spell damage modifiers."));
         TooltipUtils.addEmpty(list);
+        list.add(new StringTextComponent(TextFormatting.GRAY + "Bolt damage is a special damage type and is"));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "unaffected by spell damage modifiers."));
+        TooltipUtils.addEmpty(list);
 
         list.add(new StringTextComponent("While Critical Surge is active, critical"));
         list.add(new StringTextComponent("hits have chance to cause the target to"));

@@ -103,6 +103,7 @@ public class ArrowStormSpell extends BaseSpell {
         TooltipUtils.addEmpty(list);
 
         list.add(new StringTextComponent(TextFormatting.GRAY + Words.Wep2Phy.locName().getString()));
+
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent("Summons an arrow storm, dealing damage with each arrow: "));
 
