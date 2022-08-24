@@ -128,7 +128,7 @@ public abstract class CurrencyItem extends Item implements IAddsInstability, ISl
 
         if (this instanceof IAddsInstability && ModConfig.INSTANCE.Server.ENABLE_CURRENCY_ITEMS_INSTABILITY_SYSTEM.get()) {
             tooltip.add(Styles.REDCOMP()
-                .appendText("Adds " + this.instabilityAddAmount() + " Instability"));
+                .appendText(Words.currencyAdds.locName().getString() + this.instabilityAddAmount() + Words.currencyInstability.locName().getString()));
         }
         TooltipUtils.addEmpty(tooltip);
 

@@ -7,6 +7,7 @@ import com.robertx22.mine_and_slash.items.reset_potions.bases.BaseInstantPotion;
 import com.robertx22.mine_and_slash.mmorpg.registers.common.ModItems;
 import com.robertx22.mine_and_slash.uncommon.capability.entity.EntityCap;
 import com.robertx22.mine_and_slash.uncommon.datasaving.Load;
+import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -24,7 +25,7 @@ public class ResetTalentsPotionItem extends BaseInstantPotion implements IShaped
 
     @Override
     public ITextComponent tooltip() {
-        ITextComponent comp = new StringTextComponent("Resets all your talent points.");
+        ITextComponent comp = new StringTextComponent(Words.resetTalentPotion.locName().getString());
         return comp;
 
     }

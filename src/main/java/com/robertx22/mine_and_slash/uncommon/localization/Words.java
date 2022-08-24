@@ -361,7 +361,23 @@ public enum Words implements IAutoLocName {
 
     World_Type("World Type"),
 
-    Repair_Station("Repair Station");
+    Repair_Station("Repair Station"),
+
+    ShieldActiveDesc_1("Hold for chance to reduce DMG fully."),
+    ShieldActiveDesc_2("On failed block, still reduce by half."),
+    HammerAOEDesc_1("Deals half damage to enemies near the target."),
+    HammerAOEDesc_2("Max Targets: 5"),
+
+    RuneSlotList("Runes: "),
+    RuneSlotEmpty("Rune: [Empty]"),
+
+    remSpellPotion("Gives you 10 remove spell points. Remove points by right clicking on the spell."),
+    remTalentPotion("Gives you 1 remove talent point. Remove points by right clicking on the talent."),
+    resetSpellPotion("Resets all your spell points."),
+    resetStatPotion("Removes all allocated stat points."),
+    resetTalentPotion("Resets all your talent points."),
+    currencyAdds("Adds "),
+    currencyInstability(" Instability");
 
     private String localization = "";
 

@@ -5,6 +5,7 @@ import com.robertx22.mine_and_slash.mmorpg.Ref;
 import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.Rarity;
 import com.robertx22.mine_and_slash.uncommon.interfaces.IAutoLocName;
 import com.robertx22.mine_and_slash.uncommon.interfaces.IGearItem;
+import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -74,9 +75,10 @@ public class NormalShield extends ShieldItem implements IEffectItem, IAutoLocNam
         list.add(new StringTextComponent(
             color() + "" + TextFormatting.BOLD + "[Active]: " + TextFormatting.RESET + color() + "Block"));
         if (moreInfo) {
-            list.add(new StringTextComponent(color() + "Hold for chance to reduce DMG fully."));
-            list.add(new StringTextComponent(color() + "On failed block, still reduce by half."));
-            list.add(new StringTextComponent(color() + "Hits against will consume energy."));
+
+            list.add(new StringTextComponent(color() + Words.ShieldActiveDesc_1.locName().getString()));
+            list.add(new StringTextComponent(color() + Words.ShieldActiveDesc_2.locName().getString()));
+
         }
         return list;
     }

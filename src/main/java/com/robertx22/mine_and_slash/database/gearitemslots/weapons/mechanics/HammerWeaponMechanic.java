@@ -5,6 +5,7 @@ import com.robertx22.mine_and_slash.onevent.entity.damage.DamageEventData;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.DamageEffect;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.EffectData;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.interfaces.WeaponTypes;
+import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.EntityFinder;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.text.ITextComponent;
@@ -19,8 +20,8 @@ public class HammerWeaponMechanic extends WeaponMechanic {
     @Override
     public List<ITextComponent> tooltipDesc() {
         return Arrays.asList(
-            new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Deals half damage to enemies near the target."),
-            new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Max Targets: 5")
+            new StringTextComponent(TextFormatting.LIGHT_PURPLE + Words.HammerAOEDesc_1.locName().getString()),
+            new StringTextComponent(TextFormatting.LIGHT_PURPLE + Words.HammerAOEDesc_2.locName().getString())
         );
     }
 
