@@ -182,6 +182,11 @@ public class DamageEffect extends EffectData implements IArmorReducable, IPenetr
         }
         return false;
     }
+
+    public boolean isSamePlayer() {
+        return source == target;
+    }
+
     public void cancelDamage() {
         this.canceled = true;
         if (event != null) {
@@ -255,7 +260,7 @@ public class DamageEffect extends EffectData implements IArmorReducable, IPenetr
             return;
         }
 
-        if (areBothPlayers()) { // let same player hit self
+        if (areBothPlayers() && !isSamePlayer()) { // let same player hit self
             if (TeamUtils.areOnSameTeam((ServerPlayerEntity) source, (ServerPlayerEntity) target)) {
                 BlockEffect.applyKnockbackResist(target);
                 return;
@@ -355,11 +360,6 @@ public class DamageEffect extends EffectData implements IArmorReducable, IPenetr
 
             dmg += getEventDmg() * ModConfig.INSTANCE.Server.NON_MOD_DAMAGE_MULTI.get()
                 .floatValue();
-
-            if (areBothPlayers()) {
-                dmg *= 0.25f;
-            }
-
 
             if (event != null) {
                 event.setAmount(dmg);
