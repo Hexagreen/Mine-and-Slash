@@ -38,6 +38,7 @@ public class ThornArmorThornsSynergy extends OnBasicAttackSynergy {
         list.addAll(descLocName(""));
         list.add(new StringTextComponent(ThornsEffect.INSTANCE.locNameForLangFile()));
 
+
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 
         return list;

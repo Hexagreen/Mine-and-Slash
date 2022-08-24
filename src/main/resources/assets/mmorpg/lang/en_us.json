@@ -913,7 +913,8 @@
 	"mmorpg.word.chainlightningdesc": "Spell Cannot Bounce to the Same Target Twice.",
 
 	"mmorpg.word.remspellpotion": "Gives you 10 remove spell points. Remove points by right clicking on the spell.",
-	"mmorpg.word.remtalentpotion": "Gives you 3 remove talent point. Remove points by right clicking on the talent.",
+	"mmorpg.word.remtalentpotion": "Gives you 3 remove talent points. Remove points by right clicking on the talent.",
+
 	"mmorpg.word.resetspellpotion": "Resets all your spell points.",
 	"mmorpg.word.resetstatpotion": "Removes all allocated stat points.",
 	"mmorpg.word.resettalentpotion": "Resets all your talent points.",
@@ -2343,5 +2344,4 @@
 	"mmorpg.synergy.malevolent_offering_syn_1.desc": "Restores magic shield to nearby allies\n(does not restore caster's):",
 	"mmorpg.synergy.summon_skeletal_army_syn_1.desc": "Summon hits have a chance to heal the caster:",
 	"mmorpg.synergy.summon_zombie_syn_1.desc": "Summon hits have a chance to apply:"
-
 }
