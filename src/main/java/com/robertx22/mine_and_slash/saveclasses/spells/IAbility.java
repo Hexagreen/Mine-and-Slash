@@ -155,15 +155,15 @@ public interface IAbility extends IGUID, ITooltipList {
 
             TooltipUtils.abilityLevel(list, ctx.spellsCap.getLevelOf(this), getMaxSpellLevelNormal());
 
-            list.add(new SText(TextFormatting.YELLOW + Spells.EffAbilityLevel.getLocName() + getEffectiveAbilityLevel(ctx.spellsCap, ctx.data)));
+            list.add(new SText(TextFormatting.YELLOW + Spells.EffAbilityLevel.getLocNameStr() + getEffectiveAbilityLevel(ctx.spellsCap, ctx.data)));
 
-            list.add(new SText(getElement().format + Spells.Element.getLocName() + getElement().dmgName));
+            list.add(new SText(getElement().format + Spells.Element.getLocNameStr() + getElement().dmgName));
 
 
             if (ctx.spellsCap.getAbilitiesData()
                 .getSchoolPoints(this.getMastery()) < getSchoolPointsNeeded()) {
-                list.add(new SText(TextFormatting.RED + Spells.Needs.getLocName()).appendSibling(getMastery().getFullName()
-                    .appendText(Spells.Level.getLocName() + getSchoolPointsNeeded())));
+                list.add(new SText(TextFormatting.RED + Spells.Needs.getLocNameStr()).appendSibling(getMastery().getFullName()
+                    .appendText(Spells.Level.getLocNameStr() + getSchoolPointsNeeded())));
             }
 
             list.add(new SText(""));
@@ -171,7 +171,7 @@ public interface IAbility extends IGUID, ITooltipList {
             if (!Screen.hasShiftDown()) {
                 list.add(new SText(TextFormatting.BLUE + "").appendSibling(Words.Press_Shift_For_More_Info.locName()));
             } else {
-                list.add(new SText(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.BOLD).appendText(Spells.AbilityStats.getLocName()));
+                list.add(new SText(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.BOLD).appendText(Spells.AbilityStats.getLocNameStr()));
 
                 list.addAll(ctx.getConfigFor(this)
                     .GetTooltipString(info, ctx));
@@ -180,7 +180,7 @@ public interface IAbility extends IGUID, ITooltipList {
                     Synergy s = (Synergy) this;
 
                     list.add(new SText(""));
-                    list.add(new SText(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.BOLD + Spells.AffectSpell.getLocName()));
+                    list.add(new SText(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.BOLD + Spells.AffectSpell.getLocNameStr()));
 
                     list.addAll(s.getConfigsAffectingSpell()
                         .GetTooltipString(info, ctx));

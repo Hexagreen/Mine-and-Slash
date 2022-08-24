@@ -1,7 +1,6 @@
 package com.robertx22.mine_and_slash.database.spells.spell_classes.unholy;
 
 import com.robertx22.mine_and_slash.database.spells.entities.cloud.HellFireEntity;
-import com.robertx22.mine_and_slash.database.spells.entities.cloud.SteamCloudEntity;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.BaseSpell;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.SpellCastContext;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.cast_types.SpellCastType;
@@ -95,13 +94,12 @@ public class HellfireCloakSpell extends BaseSpell {
 
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocNameStr()));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area, Spells.Duration, Spells.Storm))));
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Summon a powerful fire storm that follows you"));
-        list.add(new StringTextComponent("and damages nearby enemies for a while: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

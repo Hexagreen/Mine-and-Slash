@@ -22,6 +22,7 @@ import com.robertx22.mine_and_slash.uncommon.enumclasses.Masteries;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.ParticleUtils;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.SoundUtils;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
+import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.potion.EffectInstance;
@@ -34,7 +35,9 @@ import net.minecraft.util.text.TextFormatting;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class JudgementEffect extends BasePotionEffect implements IApplyStatPotion, IOnBasicAttackedPotion {
 
@@ -99,16 +102,12 @@ public class JudgementEffect extends BasePotionEffect implements IApplyStatPotio
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "Lightning Bolt Damage"));
-
+        list.addAll(descLocName("1", TextFormatting.GRAY, TextFormatting.ITALIC));
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent(TextFormatting.GRAY + "Bolt damage is a special damage type and is"));
         list.add(new StringTextComponent(TextFormatting.GRAY + "unaffected by spell damage modifiers."));
         TooltipUtils.addEmpty(list);
-
-        list.add(new StringTextComponent("Attack to add additional stacks. At max stacks,"));
-        list.add(new StringTextComponent("consume the stacks to deal bolt damage based"));
-        list.add(new StringTextComponent("on the applicator's Weapon DMG: "));
+        list.addAll(descLocName("2"));
 
         return list;
 

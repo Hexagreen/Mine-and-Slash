@@ -1,7 +1,6 @@
 package com.robertx22.mine_and_slash.database.spells.spell_classes.ocean;
 
 import com.robertx22.mine_and_slash.database.spells.entities.proj.FrostTotemEntity;
-import com.robertx22.mine_and_slash.database.spells.entities.proj.LightningTotemEntity;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.BaseSpell;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.SpellCastContext;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.cast_types.SpellCastType;
@@ -98,16 +97,14 @@ public class FrostTotemSpell extends BaseSpell {
 
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocNameStr()));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area, Spells.Duration, Spells.Entity, Spells.Projectile))));
 
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Explosion AOE is half of the totem's detection AOE."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + Words.FrostTotemDesc.locName().getString()));
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Summons a totem that fires a glacial blast at the"));
-        list.add(new StringTextComponent("nearest enemy that explodes upon contact, dealing"));
-        list.add(new StringTextComponent("frost damage: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

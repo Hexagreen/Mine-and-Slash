@@ -73,7 +73,7 @@ public class FirePowerEffect extends BasePotionEffect implements IApplyStatPotio
     @Override
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
         List<ITextComponent> list = new ArrayList<>();
-        list.add(new StringTextComponent("Increases spell damage."));
+        list.addAll(descLocName(""));
         return list;
     }
 

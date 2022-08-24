@@ -83,7 +83,7 @@ public class SilentWindEffect extends BasePotionEffect implements IApplyStatPoti
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent("Reduces movement speed by 3%."));
+        list.addAll(descLocName(""));
 
         return list;
 

@@ -7,10 +7,7 @@ import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.PreCalcSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.SC;
 import com.robertx22.mine_and_slash.potion_effects.bases.PotionEffectUtils;
-import com.robertx22.mine_and_slash.potion_effects.ember_mage.SpellBladeEffect;
 import com.robertx22.mine_and_slash.potion_effects.necromancer.NecroticTetherEffect;
-import com.robertx22.mine_and_slash.potion_effects.ranger.HunterInstinctEffect;
-import com.robertx22.mine_and_slash.potion_effects.ranger.WoundsEffect;
 import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.saveclasses.spells.AbilityPlace;
 import com.robertx22.mine_and_slash.uncommon.datasaving.Load;
@@ -101,14 +98,13 @@ public class BloodTetherSpell extends BaseSpell {
 
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocNameStr()));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Buff, Spells.Self))));
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Applies buff (can apply more than"));
-        list.add(new StringTextComponent("once at a time): " + NecroticTetherEffect.INSTANCE
-                .locNameForLangFile()));
+        list.addAll(descLocName(""));
+        list.add(new StringTextComponent(NecroticTetherEffect.INSTANCE.locNameForLangFile()));
 
         return list;
 

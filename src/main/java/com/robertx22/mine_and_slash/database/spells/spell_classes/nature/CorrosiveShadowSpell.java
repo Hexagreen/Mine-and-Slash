@@ -21,7 +21,6 @@ import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.EntityFinder;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.SoundUtils;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
-import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.util.SoundEvent;
@@ -103,15 +102,14 @@ public class CorrosiveShadowSpell extends BaseSpell {
 
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocNameStr()));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area, Spells.Debuff, Spells.Duration, Spells.Taunt))));
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Draw the attention of nearby enemies by provoking them."));
-        list.add(new SText("Also curses enemies around you with: "));
+        list.addAll(descLocName("1"));
         list.addAll(CorrosionEffect.INSTANCE.GetTooltipStringWithNoExtraSpellInfo(info));
-        list.add(new StringTextComponent(TextFormatting.RED + "Only one Curse debuff is allowed at a time!"));
+        list.addAll(descLocName("2", TextFormatting.RED));
 
         return list;
 

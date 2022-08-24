@@ -24,7 +24,9 @@ public class AddRemoveTalentPotionItem extends BaseInstantPotion implements ISha
 
     @Override
     public ITextComponent tooltip() {
+
         ITextComponent comp = new StringTextComponent(Words.remTalentPotion.locName().getString());
+
         return comp;
 
     }

@@ -1,6 +1,7 @@
 package com.robertx22.mine_and_slash.potion_effects.bases;
 
 import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -31,7 +32,7 @@ public class OnTickAction {
         List<ITextComponent> list = new ArrayList<>();
 
         if (tooltip != null) {
-            list.add(new StringTextComponent(TextFormatting.YELLOW + "Effect occurs every " + effect.getTickRate(info.player) + " ticks."));
+            list.add(new StringTextComponent(TextFormatting.YELLOW + Spells.descOnTick01.getLocNameStr() + effect.getTickRate(info.player) + Spells.descOnTick02.getLocNameStr()));
             list.addAll(tooltip.apply(info));
         }
 

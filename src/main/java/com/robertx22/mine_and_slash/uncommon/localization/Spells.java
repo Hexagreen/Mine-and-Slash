@@ -2,10 +2,7 @@ package com.robertx22.mine_and_slash.uncommon.localization;
 
 import com.robertx22.mine_and_slash.mmorpg.Ref;
 import com.robertx22.mine_and_slash.uncommon.interfaces.IAutoLocName;
-import net.minecraft.util.text.ITextComponent;
 
-import java.util.Iterator;
-import java.util.List;
 import java.util.Locale;
 
 public enum Spells implements IAutoLocName {
@@ -64,10 +61,12 @@ public enum Spells implements IAutoLocName {
     // SpellTooltips.java
     Single_Target_Proj("Throw a projectile, damaging first enemy hit: "),
     Self_Buff("Applies buff to caster: "),
+    Target_Buff("Applies: "),
 
     // General Spell Tooltip
     AttackSpell("Attack Spell"),
     AttackSpellDesc("Spell that also triggers on-attack effects."),
+    SummonAttack("Summon Attack"),
     SummonSpellDesc("Summons also triggers on-attack effects."),
     NormalSpell("Spell"),
     Synergy("Synergy"),
@@ -101,7 +100,10 @@ public enum Spells implements IAutoLocName {
     UnlockThirdMastery("You can unlock a third Mastery tree at level "),
     MasteryLevelCap("Your total Mastery level cannot go past your max level."),
 
-    ;
+    descOnTick01("Effect occurs every"),
+    descOnTick02(" ticks.");
+
+
 
     private String localization = "";
 
@@ -130,7 +132,7 @@ public enum Spells implements IAutoLocName {
         return localization;
     }
 
-    public String getLocName() {
+    public String getLocNameStr() {
         return CLOC.blank(Ref.MODID + ".spell_desc." + formattedGUID()).getString();
     }
 }

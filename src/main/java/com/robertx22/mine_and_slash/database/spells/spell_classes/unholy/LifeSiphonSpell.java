@@ -1,8 +1,6 @@
 package com.robertx22.mine_and_slash.database.spells.spell_classes.unholy;
 
-import com.robertx22.mine_and_slash.database.spells.entities.single_target_bolt.FrostballEntity;
 import com.robertx22.mine_and_slash.database.spells.entities.single_target_bolt.LifeSiphonEntity;
-import com.robertx22.mine_and_slash.database.spells.spell_classes.SpellTooltips;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.BaseSpell;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.SpellCastContext;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.cast_types.SpellCastType;
@@ -96,13 +94,12 @@ public class LifeSiphonSpell extends BaseSpell {
 
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocName()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocNameStr()));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Channel, Spells.Duration, Spells.Heal, Spells.Projectile, Spells.Self))));
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Throw a projectile, damaging first enemy hit"));
-        list.add(new StringTextComponent("and healing the caster: "));
+        list.addAll(descLocName(""));
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 

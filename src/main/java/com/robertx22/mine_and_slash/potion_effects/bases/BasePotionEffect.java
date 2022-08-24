@@ -1,5 +1,6 @@
 package com.robertx22.mine_and_slash.potion_effects.bases;
 
+
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.SpellCastContext;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.PreCalcSpellConfigs;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.configs.SC;
@@ -18,7 +19,6 @@ import com.robertx22.mine_and_slash.uncommon.interfaces.IAutoLocName;
 import com.robertx22.mine_and_slash.uncommon.localization.CLOC;
 import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
-import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.entity.Entity;
@@ -27,6 +27,7 @@ import net.minecraft.entity.ai.attributes.AbstractAttributeMap;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.EffectType;
+
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -172,7 +173,7 @@ public abstract class BasePotionEffect extends Effect implements ISlashRegistryE
 
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent(
-            TextFormatting.LIGHT_PURPLE + Spells.SpellPotionStack.getLocName() + TextFormatting.DARK_PURPLE + getMaxStacks()));
+            TextFormatting.LIGHT_PURPLE + Spells.SpellPotionStack.getLocNameStr() + TextFormatting.DARK_PURPLE + getMaxStacks()));
 
         return list;
 
@@ -183,7 +184,7 @@ public abstract class BasePotionEffect extends Effect implements ISlashRegistryE
 
         TooltipUtils.addEmpty(list);
         list.add(new StringTextComponent(
-            TextFormatting.GOLD + Spells.SpellPotionDuration.getLocName() + TextFormatting.YELLOW + getDurationInSeconds(info.player) + "s"));
+            TextFormatting.GOLD + Spells.SpellPotionDuration.getLocNameStr() + TextFormatting.YELLOW + getDurationInSeconds(info.player) + "s"));
 
         return list;
 
@@ -353,4 +354,22 @@ public abstract class BasePotionEffect extends Effect implements ISlashRegistryE
         }
     }
 
+    public List<ITextComponent> descLocName(String descTag, TextFormatting... style) {
+        List<ITextComponent> desc = CLOC.longDesc("effect." + Ref.MODID + "." + GUID() + ".desc" + descTag);
+
+        List<ITextComponent> list = new ArrayList<>();
+
+        for (ITextComponent iTextComponent : desc) {
+            for(TextFormatting textStyle : style){
+                iTextComponent.applyTextStyle(textStyle);
+            }
+            list.add(iTextComponent);
+        }
+
+        return list;
+    }
+
+    public List<ITextComponent> descLocName(String descTag){
+        return descLocName(descTag, TextFormatting.RESET);
+    }
 }
