@@ -14,6 +14,7 @@ import com.robertx22.mine_and_slash.potion_effects.bases.PotionEffectUtils;
 import com.robertx22.mine_and_slash.potion_effects.druid.RegenerateEffect;
 import com.robertx22.mine_and_slash.potion_effects.physical.EmpowerEffect;
 import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.EntityFinder;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
 import net.minecraft.entity.LivingEntity;
@@ -35,12 +36,12 @@ public class PowerFormRushSynergy extends OnSpellCastSynergy {
 
         addSpellName(list);
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Synergy"));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "Modifies Power Form"));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Synergy.getLocNameStr()));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + Spells.Modifies.getLocNameStr() + getRequiredAbility().getLocName().getString()));
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent( EmpowerEffect.INSTANCE.locNameForLangFile() + " is also applied to nearby allies."));
+        list.add(new StringTextComponent( EmpowerEffect.INSTANCE.locNameForLangFile() + Spells.AlsoApplyAlly.getLocNameStr()));
 
         return list;
     }

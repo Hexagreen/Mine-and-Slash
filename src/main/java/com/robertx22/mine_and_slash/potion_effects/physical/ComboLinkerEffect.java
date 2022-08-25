@@ -91,7 +91,7 @@ public class ComboLinkerEffect extends BasePotionEffect implements IApplyStatPot
     @Override
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
         List<ITextComponent> list = new ArrayList<>();
-        list.add(new StringTextComponent(TextFormatting.RED + "Required for Combo Finishers!"));
+        list.addAll(descLocName("", TextFormatting.RED));
         return list;
 
     }

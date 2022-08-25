@@ -91,7 +91,7 @@ public class ComboStarterEffect extends BasePotionEffect implements IApplyStatPo
     @Override
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
         List<ITextComponent> list = new ArrayList<>();
-        list.add(new StringTextComponent(TextFormatting.RED + "Required for Combo Extensions!"));
+        list.addAll(descLocName("", TextFormatting.RED));
         return list;
 
     }

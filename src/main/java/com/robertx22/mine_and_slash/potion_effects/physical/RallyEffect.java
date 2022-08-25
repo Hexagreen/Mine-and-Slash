@@ -94,7 +94,7 @@ public class RallyEffect extends BasePotionEffect implements IApplyStatPotion {
     @Override
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
         List<ITextComponent> list = new ArrayList<>();
-        list.add(new StringTextComponent(TextFormatting.AQUA + "Increases movement speed by 8%."));
+        list.addAll(descLocName("", TextFormatting.AQUA));
         return list;
 
     }

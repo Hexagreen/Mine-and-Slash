@@ -83,6 +83,8 @@ public enum Spells implements IAutoLocName {
     Bolt(" (Bolt)"),
     BoltDesc("Bolt damage is a special damage type and is\nunaffected by spell damage modifiers."),
     HighLevMoreStack("Higher levels apply more stacks."),
+    GenerateEffect("Finishing this spell generates: "),
+    ExpendEffect("Finishing this spell expends: "),
 
     // Spell Types
     Duration("Duration"),
@@ -104,6 +106,9 @@ public enum Spells implements IAutoLocName {
     Craft("Craft"),
     Summon("Summon"),
     Movement("Movement"),
+    SelfDebuff("Debuff (Self)"),
+    Scaling("Scaling"),
+
     Modifies("Modifies "),
 
     // gui.screens.spell_schools.SpellSchoolScreen.java
@@ -113,7 +118,8 @@ public enum Spells implements IAutoLocName {
 
     descOnTick01("Effect occurs every"),
     descOnTick02(" ticks."),
-    ArchonSyn("Modifies All Summons")
+    ArchonSyn("Modifies All Summons"),
+    AlsoApplyAlly(" is also applied to nearby allies.")
     ;
 
 

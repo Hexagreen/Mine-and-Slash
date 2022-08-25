@@ -92,7 +92,7 @@ public class DebilitatedEffect extends BasePotionEffect implements IApplyStatPot
     @Override
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
         List<ITextComponent> list = new ArrayList<>();
-        list.add(new StringTextComponent(TextFormatting.AQUA + "Reduces movement speed by 8%."));
+        list.addAll(descLocName("", TextFormatting.AQUA));
         return list;
 
     }

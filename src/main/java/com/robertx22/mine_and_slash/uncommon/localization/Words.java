@@ -386,6 +386,9 @@ public enum Words implements IAutoLocName {
     Arm2Phy("Converts Armor to Phys."),
     MShld2Fro("Converts Magic Shield to Frost DMG."),
     MShld2Phy("Converts Magic Shield to Phys DMG."),
+    Wep2RndEle("Converts Weapon DMG to a Random Element DMG."),
+    Wep2FirLit("Converts Weapon DMG to Fire/Lightning DMG."),
+    Wep2EachEle("Converts Weapon DMG to Each Elemental DMG."),
 
     FrostTotemDesc("Explosion AOE is half of the totem's detection AOE."),
     HunterTrapsDesc("Traps must be Set on the Ground for at Least 1s before Activating."),
