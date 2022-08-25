@@ -1,5 +1,6 @@
 package com.robertx22.mine_and_slash.database.spells.spell_classes.fire;
 
+import com.mojang.datafixers.types.templates.Sum;
 import com.robertx22.mine_and_slash.database.spells.entities.summons.ArchonPetEntity;
 import com.robertx22.mine_and_slash.database.spells.entities.summons.ZombiePetEntity;
 import com.robertx22.mine_and_slash.database.spells.spell_classes.bases.BaseSpell;
@@ -14,6 +15,8 @@ import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.saveclasses.spells.AbilityPlace;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Masteries;
+import com.robertx22.mine_and_slash.uncommon.localization.SpellType;
+import com.robertx22.mine_and_slash.uncommon.localization.Spells;
 import com.robertx22.mine_and_slash.uncommon.localization.Words;
 import com.robertx22.mine_and_slash.uncommon.utilityclasses.TooltipUtils;
 import net.minecraft.util.SoundEvent;
@@ -100,19 +103,15 @@ public class SummonArchonSpell extends BaseSpell {
 
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "Summon Attack"));
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.ITALIC + "Summons also triggers on-attack effects."));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "Area, Duration, Entity, Summon"));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.SummonAttack.getLocNameStr()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.ITALIC + Spells.SummonSpellDesc.getLocNameStr()));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Spells.Area, Spells.Duration, Spells.Entity, Spells.Summon)));
 
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent(TextFormatting.GRAY + "This spell's cooldown is unaffected by"));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "cooldown reduction."));
+        list.addAll(Spells.NotAffectCooldown.longDesc(TextFormatting.GRAY));
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent("Summon an archon that aids in combat. The archon"));
-        list.add(new StringTextComponent("periodically recovers nearby allies' mana. The"));
-        list.add(new StringTextComponent("base value of the recovered mana is the same as"));
-        list.add(new StringTextComponent("the summon's damage: "));
+        list.addAll(descLocName(""));
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 
         return list;

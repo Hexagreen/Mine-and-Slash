@@ -90,11 +90,11 @@ public class NaturesGiftSpell extends BaseSpell {
         List<ITextComponent> list = new ArrayList<>();
 
         list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocNameStr()));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area, Spells.Buff, Spells.Duration))));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Spells.Area, Spells.Buff, Spells.Duration)));
 
         TooltipUtils.addEmpty(list);
 
-        list.addAll(descLocName(""));
+        list.add(new StringTextComponent(Spells.Ally_Buff.getLocNameStr()));
         list.addAll(NaturesGiftEffect.INSTANCE.GetTooltipStringWithNoExtraSpellInfo(info));
 
         return list;

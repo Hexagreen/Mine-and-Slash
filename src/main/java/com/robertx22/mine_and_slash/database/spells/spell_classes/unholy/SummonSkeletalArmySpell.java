@@ -104,7 +104,7 @@ public class SummonSkeletalArmySpell extends BaseSpell {
         list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.SummonAttack.getLocNameStr()));
 
         list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + "" + TextFormatting.ITALIC + Spells.SummonSpellDesc.getLocNameStr()));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Channel, Spells.Duration, Spells.Entity, Spells.Summon))));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Spells.Channel, Spells.Duration, Spells.Entity, Spells.Summon)));
 
         TooltipUtils.addEmpty(list);
         list.addAll(descLocName(""));

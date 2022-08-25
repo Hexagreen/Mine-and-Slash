@@ -97,7 +97,7 @@ public class ChainLightningSpell extends BaseSpell {
         List<ITextComponent> list = new ArrayList<>();
 
         list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocNameStr()));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Bounce, Spells.Chance, Spells.Duration, Spells.Projectile))));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Spells.Bounce, Spells.Chance, Spells.Duration, Spells.Projectile)));
 
         TooltipUtils.addEmpty(list);
         list.add(new SText(TextFormatting.GRAY + Words.ChainLightningDesc.locName().getString()));

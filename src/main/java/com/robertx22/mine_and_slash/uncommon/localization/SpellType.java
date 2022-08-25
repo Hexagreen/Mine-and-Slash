@@ -6,18 +6,16 @@ import com.robertx22.mine_and_slash.uncommon.wrappers.SText;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
 public class SpellType {
-    public static String getSpellTypeStr(List<Spells> spellTypes) {
+    public static String getSpellTypeStr(Spells... spellTypes) {
         String typeStr = "";
-        Iterator<Spells> itr = spellTypes.iterator();
-
-        typeStr = typeStr.concat(itr.next().getLocNameStr());
-
-        while(itr.hasNext()) {
-            typeStr = typeStr.concat(", ").concat(itr.next().getLocNameStr());
+        for(Spells put : spellTypes){
+            if(spellTypes[0] == put) typeStr = typeStr.concat(put.getLocNameStr());
+            else typeStr = typeStr.concat(", ").concat(put.getLocNameStr());
         }
         return typeStr;
     }

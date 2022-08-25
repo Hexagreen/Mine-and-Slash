@@ -2,7 +2,11 @@ package com.robertx22.mine_and_slash.uncommon.localization;
 
 import com.robertx22.mine_and_slash.mmorpg.Ref;
 import com.robertx22.mine_and_slash.uncommon.interfaces.IAutoLocName;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextFormatting;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public enum Spells implements IAutoLocName {
@@ -64,6 +68,7 @@ public enum Spells implements IAutoLocName {
     Single_Target_Proj("Throw a projectile, damaging first enemy hit: "),
     Self_Buff("Applies buff to caster: "),
     Target_Buff("Applies: "),
+    Ally_Buff("Applies buff to nearby allies: "),
 
     // General Spell Tooltip
     AttackSpell("Attack Spell"),
@@ -74,6 +79,10 @@ public enum Spells implements IAutoLocName {
     Synergy("Synergy"),
     HitApplyEffect("Hits have a chance to apply: "),
     HitApplySelfBuff("Hits have a chance to apply on self: "),
+    NotAffectCooldown("This spell's cooldown is unaffected by\ncooldown reduction."),
+    Bolt(" (Bolt)"),
+    BoltDesc("Bolt damage is a special damage type and is\nunaffected by spell damage modifiers."),
+    HighLevMoreStack("Higher levels apply more stacks."),
 
     // Spell Types
     Duration("Duration"),
@@ -103,7 +112,9 @@ public enum Spells implements IAutoLocName {
     MasteryLevelCap("Your total Mastery level cannot go past your max level."),
 
     descOnTick01("Effect occurs every"),
-    descOnTick02(" ticks.");
+    descOnTick02(" ticks."),
+    ArchonSyn("Modifies All Summons")
+    ;
 
 
 
@@ -136,5 +147,20 @@ public enum Spells implements IAutoLocName {
 
     public String getLocNameStr() {
         return CLOC.blank(Ref.MODID + ".spell_desc." + formattedGUID()).getString();
+    }
+
+    public List<ITextComponent> longDesc(TextFormatting... style) {
+        List<ITextComponent> desc = CLOC.longDesc(Ref.MODID + ".spell_desc." + formattedGUID());
+
+        List<ITextComponent> list = new ArrayList<>();
+
+        for (ITextComponent iTextComponent : desc) {
+            for(TextFormatting textStyle : style){
+                iTextComponent.applyTextStyle(textStyle);
+            }
+            list.add(iTextComponent);
+        }
+
+        return list;
     }
 }

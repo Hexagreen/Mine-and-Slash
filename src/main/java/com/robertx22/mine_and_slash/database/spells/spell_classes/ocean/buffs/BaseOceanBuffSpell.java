@@ -46,11 +46,11 @@ public abstract class BaseOceanBuffSpell extends BaseSpell {
         List<ITextComponent> list = new ArrayList<>();
 
         list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocNameStr()));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area, Spells.Buff))));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Spells.Area, Spells.Buff)));
 
         TooltipUtils.addEmpty(list);
 
-        list.add(CLOC.blank("mmorpg.spell.oceonbuffs.desc"));
+        list.add(new StringTextComponent(Spells.Ally_Buff.getLocNameStr()));
 
         list.addAll(getImmutableConfigs().potionEffect()
             .GetTooltipStringWithNoExtraSpellInfo(info));

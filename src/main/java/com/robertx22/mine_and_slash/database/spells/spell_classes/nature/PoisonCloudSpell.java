@@ -101,11 +101,11 @@ public class PoisonCloudSpell extends BaseSpell {
         List<ITextComponent> list = new ArrayList<>();
 
         list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocNameStr()));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Area, Spells.Channel, Spells.Debuff))));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Spells.Area, Spells.Channel, Spells.Debuff)));
 
         TooltipUtils.addEmpty(list);
 
-        list.add(new StringTextComponent(TextFormatting.GRAY + "Higher levels apply more stacks."));
+        list.add(new StringTextComponent(TextFormatting.GRAY + Spells.HighLevMoreStack.getLocNameStr()));
         TooltipUtils.addEmpty(list);
         list.addAll(descLocName(""));
         list.add(new SText(ThornsEffect.INSTANCE.locNameForLangFile()));

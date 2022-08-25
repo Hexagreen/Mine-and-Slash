@@ -895,6 +895,7 @@
 
 	"mmorpg.word.shieldactivedesc_1": "Hold for chance to reduce DMG fully.",
 	"mmorpg.word.shieldactivedesc_2": "On failed block, still reduce by half.",
+	"mmorpg.word.shieldactivedesc_3": "Hits against will consume energy.",
 	"mmorpg.word.hammeraoedesc_1": "Deals half damage to enemies near the target.",
 	"mmorpg.word.hammeraoedesc_2": "Max Targets: 5",
 
@@ -2218,6 +2219,7 @@
 	"mmorpg.spell_desc.single_target_proj": "Throw a projectile, damaging first enemy hit: ",
 	"mmorpg.spell_desc.self_buff": "Applies buff to caster: ",
 	"mmorpg.spell_desc.target_buff": "Applies: ",
+	"mmorpg.spell_desc.ally_buff": "Applies buff to nearby allies: ",
 
 	"mmorpg.spell_desc.attackspell": "Attack Spell",
 	"mmorpg.spell_desc.attackspelldesc": "Spell that also triggers on-attack effects.",
@@ -2227,6 +2229,10 @@
 	"mmorpg.spell_desc.synergy": "Synergy",
 	"mmorpg.spell_desc.hitapplyeffect": "Hits have a chance to apply: ",
 	"mmorpg.spell_desc.hitapplyselfbuff": "Hits have a chance to apply on self: ",
+	"mmorpg.spell_desc.notaffectcooldown": "This spell's cooldown is unaffected by\ncooldown reduction.",
+	"mmorpg.spell_desc.bolt": " (Bolt)",
+	"mmorpg.spell_desc.boltdesc": "Bolt damage is a special damage type and is\nunaffected by spell damage modifiers.",
+	"mmorpg.spell_desc.highlevmorestack": "Higher levels apply more stacks.",
 
 	"mmorpg.spell_desc.duration": "Duration",
 	"mmorpg.spell_desc.projectile": "Projectile",
@@ -2267,6 +2273,7 @@
 
 	"mmorpg.spell_desc.descontick01": "Effect occurs every",
 	"mmorpg.spell_desc.descontick02": " ticks.",
+	"mmorpg.spell_desc.archonsyn":  "Modifies All Summons",
 
 	"effect.mmorpg.frost.desc": "Reduces movement speed by 10%.",
 	"effect.mmorpg.nourishment_effect.desc": "You must be near full hunger to regenerate!",
@@ -2320,7 +2327,6 @@
 	"mmorpg.spell.blazing_inferno.desc": "Damage enemies around you:",
 	"mmorpg.spell.fireball.desc": "Send forth an uncontrollable flame\nthat explodes upon contact,\ndealing fire damage in an area:",
 	"mmorpg.spell.fire_bombs.desc": "Throw out fire bombs\nthat explode when near mobs:",
-	"mmorpg.spell.fire_power.desc": "Applies buff to nearby allies:",
 	"mmorpg.spell.flame_blitz.desc": "Rapidly strikes enemies directly in front of you:",
 	"mmorpg.spell.inferno_quake.desc": "Damage enemies in front of you:",
 	"mmorpg.spell.magma_flower.desc": "Summons a flower that damages nearby enemies:",
@@ -2345,7 +2351,6 @@
 	"mmorpg.spell.gorgons_gaze.desc": "Damages all enemies in front of you and turn them into stone:",
 	"mmorpg.spell.mortality_sap.desc1": "Draw the attention of nearby enemies by provoking them.\nAlso curses enemies around you with:",
 	"mmorpg.spell.mortality_sap.desc2": "Only one Curse debuff is allowed at a time!",
-	"mmorpg.spell.natures_gift.desc": "Applies buff to nearby allies:",
 	"mmorpg.spell.poison_ball.desc": "Throw a projectile, damaging enemies in its path:",
 	"mmorpg.spell.poison_cloud.desc": "Applies to enemies around you:",
 	"mmorpg.spell.rock_slide.desc": "Summon a stone avalanche that damages enemies inside:",
@@ -2369,7 +2374,6 @@
 	"mmorpg.spell.electrical_discharge.desc": "Discharge your mana, dealing 20% of nearby enemies'\nremaining health and magic shield as lightning damage:",
 	"mmorpg.spell.lightning_totem.desc": "Summons a totem that periodically damages nearby enemies:",
 	"mmorpg.spell.power_surge.desc": "Only one Surge buff is allowed at a time!",
-	"mmorpg.spell.quick_charge.desc": "Applies buff to nearby allies:",
 	"mmorpg.spell.thunder_spear.desc": "Shoot out a crackling spear of lightning,\ndamaging all enemies in its wake:",
 	"mmorpg.spell.thunder_storm.desc": "Summons a cloud of lightning,\ndamaging all enemies inside:",
 	"mmorpg.spell.animate_scythe.desc": "Conjure an animated scythe using your own health\nto attack enemies twice in front of you:",
@@ -2384,6 +2388,9 @@
 	"mmorpg.spell.summon_skeletal_army.desc": "Summon a skeletal army to aid in combat.",
 	"mmorpg.spell.summon_zombie.desc": "Summon a zombie that aids in combat.",
 	"mmorpg.spell.unholy_meditation.desc": "Replenish your health, magic shield, and mana through meditation:",
+	"mmorpg.spell.rime_blade.desc": "Damage enemies in front of you.\nAlso fire icy projectiles which deal half the damage as spell damage:",
+	"mmorpg.spell.summon_archon.desc": "Summon an archon that aids in combat.\nThe archon periodically recovers nearby allies' mana.\nThe base value of the recovered mana is the same as the summon's damage:",
+	"mmorpg.spell.blessing.desc": "Applies buff to nearby allies:",
 
 	"mmorpg.spell.divinebuffs.desc1": "Applies Aura buff to all nearby allies:",
 	"mmorpg.spell.divinebuffs.desc2": "Only one Aura buff is allowed at a time!",
@@ -2391,8 +2398,6 @@
 	"mmorpg.spell.firebuffs.desc2": "Only one Blood buff is allowed at a time!",
 	"mmorpg.spell.huntingbuffs.desc1": "Applies Wind buff to nearby allies:",
 	"mmorpg.spell.huntingbuffs.desc2": "Only one Wind buff is allowed at a time!",
-	"mmorpg.spell.oceonbuffs.desc": "Applies buff to nearby allies:",
-	"mmorpg.spell.unholybuffs.desc": "Applies buff to nearby allies: ",
 
 	"mmorpg.synergy.ground_slam_syn_1.desc": "Deals extra damage to targets\naffected by Judgment:",
 	"mmorpg.synergy.holy_flower_syn_1.desc": "Cleanses a negative effect with each heal.",
@@ -2426,5 +2431,7 @@
 	"mmorpg.synergy.life_siphon_syn_1.desc": "Hits recover magic shield:",
 	"mmorpg.synergy.malevolent_offering_syn_1.desc": "Restores magic shield to nearby allies\n(does not restore caster's):",
 	"mmorpg.synergy.summon_skeletal_army_syn_1.desc": "Summon hits have a chance to heal the caster:",
-	"mmorpg.synergy.summon_zombie_syn_1.desc": "Summon hits have a chance to apply:"
+	"mmorpg.synergy.summon_zombie_syn_1.desc": "Summon hits have a chance to apply:",
+	"mmorpg.synergy.arctic_armor_syn_1.desc": "While Arctic Armor is active,\nhits have a chance to apply on self:",
+	"mmorpg.synergy.summon_archon_syn_1.desc": "Summon hits have a chance to deal\nfire spell damage in a small AOE:"
 }

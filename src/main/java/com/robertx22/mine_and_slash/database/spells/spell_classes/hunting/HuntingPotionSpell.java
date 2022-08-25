@@ -92,11 +92,10 @@ public class HuntingPotionSpell extends BaseSpell {
         List<ITextComponent> list = new ArrayList<>();
 
         list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocNameStr()));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Arrays.asList(Spells.Heal, Spells.Self))));
+        list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Spells.Heal, Spells.Self)));
 
         TooltipUtils.addEmpty(list);
-        list.add(new StringTextComponent(TextFormatting.GRAY + "This spell's cooldown is unaffected by"));
-        list.add(new StringTextComponent(TextFormatting.GRAY + "cooldown reduction."));
+        list.addAll(Spells.NotAffectCooldown.longDesc(TextFormatting.GRAY));
         TooltipUtils.addEmpty(list);
 
         list.addAll(descLocName(""));
