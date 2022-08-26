@@ -79,7 +79,7 @@ public class SoulShredEffect extends BasePotionEffect implements IOnBasicAttacke
     @Override
     public List<PotionStat> getPotionStats() {
         List<PotionStat> list = new ArrayList<>();
-        list.add(new PotionStat(-20, Armor.getInstance()));
+        list.add(new PotionStat(-15, Armor.getInstance()));
         return list;
     }
 

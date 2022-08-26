@@ -42,7 +42,6 @@ public class SpellBladeBurstSynergy extends OnBasicAttackSynergy {
 
         list.addAll(descLocName(""));
 
-
         list.addAll(getCalc(Load.spells(info.player)).GetTooltipString(info, Load.spells(info.player), this));
 
         return list;
