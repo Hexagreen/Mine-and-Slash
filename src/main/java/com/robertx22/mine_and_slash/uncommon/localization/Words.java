@@ -402,7 +402,7 @@ public enum Words implements IAutoLocName {
     resetSpellPotion("Resets all your spell points."),
     resetStatPotion("Removes all allocated stat points."),
     resetTalentPotion("Resets all your talent points."),
-    resetAllPotion(""),
+    resetAllPotion("Resets your stat, spell, and talent points."),
     currencyAdds("Adds "),
     currencyInstability(" Instability");
 

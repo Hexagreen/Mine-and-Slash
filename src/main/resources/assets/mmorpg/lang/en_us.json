@@ -932,6 +932,7 @@
 	"mmorpg.word.resetspellpotion": "Resets all your spell points.",
 	"mmorpg.word.resetstatpotion": "Removes all allocated stat points.",
 	"mmorpg.word.resettalentpotion": "Resets all your talent points.",
+	"mmorpg.word.resetallpotion": "Resets your stat, spell, and talent points.",
 	"mmorpg.word.currencyadds": "Adds ",
 	"mmorpg.word.currencyinstability": " Instability",
 
