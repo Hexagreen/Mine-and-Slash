@@ -82,9 +82,6 @@ public class SilentWindEffect extends BasePotionEffect implements IApplyStatPoti
     @Override
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
         List<ITextComponent> list = new ArrayList<>();
-
-        list.addAll(descLocName(""));
-
         return list;
 
     }

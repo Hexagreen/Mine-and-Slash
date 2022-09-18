@@ -89,8 +89,6 @@ public class WindWalkEffect extends BasePotionEffect implements IApplyStatPotion
     public List<ITextComponent> getEffectTooltip(TooltipInfo info) {
         List<ITextComponent> list = new ArrayList<>();
 
-        list.addAll(descLocName("", TextFormatting.AQUA));
-
         return list;
 
     }
