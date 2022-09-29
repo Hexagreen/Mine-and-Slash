@@ -12,7 +12,10 @@ import com.robertx22.mine_and_slash.saveclasses.gearitem.gear_bases.TooltipInfo;
 import com.robertx22.mine_and_slash.saveclasses.spells.AbilityPlace;
 import com.robertx22.mine_and_slash.uncommon.capability.entity.EntityCap;
 import com.robertx22.mine_and_slash.uncommon.datasaving.Load;
+import com.robertx22.mine_and_slash.uncommon.effectdatas.DamageEffect;
+import com.robertx22.mine_and_slash.uncommon.effectdatas.EffectData;
 import com.robertx22.mine_and_slash.uncommon.effectdatas.SpellDamageEffect;
+import com.robertx22.mine_and_slash.uncommon.effectdatas.interfaces.WeaponTypes;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Elements;
 import com.robertx22.mine_and_slash.uncommon.enumclasses.Masteries;
 import com.robertx22.mine_and_slash.uncommon.localization.SpellType;
@@ -66,16 +69,16 @@ public class ElectricalDischargeSpell extends BaseSpell {
         PreCalcSpellConfigs c = new PreCalcSpellConfigs();
 
         c.set(SC.HEALTH_COST, 0, 0);
-        c.set(SC.MANA_COST, 28, 22);
+        c.set(SC.MANA_COST, 28, 25);
         c.set(SC.ENERGY_COST, 0, 0);
         c.set(SC.MAGIC_SHIELD_COST, 0, 0);
         c.set(SC.BASE_VALUE, 0, 0);
         c.set(SC.CAST_TIME_TICKS, 0, 0);
         c.set(SC.COOLDOWN_SECONDS, 10, 8);
-        c.set(SC.RADIUS, 3, 5);
+        c.set(SC.RADIUS, 3, 4);
         c.set(SC.TIMES_TO_CAST, 1, 1);
 
-        c.setMaxLevel(8);
+        c.setMaxLevel(12);
 
         return c;
     }
@@ -99,13 +102,14 @@ public class ElectricalDischargeSpell extends BaseSpell {
 
         List<ITextComponent> list = new ArrayList<>();
 
-        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.NormalSpell.getLocNameStr()));
+        list.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE + Spells.Bolt.getLocNameStr()));
         list.add(new StringTextComponent(TextFormatting.GRAY + "" + TextFormatting.ITALIC + SpellType.getSpellTypeStr(Spells.Area)));
 
         TooltipUtils.addEmpty(list);
+        list.add(new StringTextComponent(TextFormatting.GRAY + Spells.BoltDesc.getLocNameStr()));
+        TooltipUtils.addEmpty(list);
 
         list.addAll(descLocName(""));
-
 
         list.addAll(getCalculation(ctx).GetTooltipString(info, ctx));
 
@@ -135,7 +139,10 @@ public class ElectricalDischargeSpell extends BaseSpell {
                 EntityCap.UnitData data = Load.Unit(en);
                 int num = (int) (data.getUnit().getCurrentEffectiveHealth(en, data) * 0.18F);
 
-                SpellDamageEffect dmg = new SpellDamageEffect(ctx.caster, en, num, ctx.data, Load.Unit(en), this);
+                DamageEffect dmg = new DamageEffect(
+                        null, ctx.caster, en, num, EffectData.EffectTypes.BOLT, WeaponTypes.None);
+                dmg.element = getSpell()
+                        .getElement();
                 dmg.Activate();
 
             }

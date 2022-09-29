@@ -75,7 +75,7 @@ public class MagicBurstSpell extends BaseSpell {
         c.set(SC.RADIUS, 3, 5);
         c.set(SC.TIMES_TO_CAST, 1, 1);
 
-        c.setMaxLevel(12);
+        c.setMaxLevel(16);
 
         return c;
     }

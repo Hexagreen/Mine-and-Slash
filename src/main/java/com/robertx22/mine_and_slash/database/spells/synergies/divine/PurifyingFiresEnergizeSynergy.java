@@ -48,7 +48,7 @@ public class PurifyingFiresEnergizeSynergy extends OnAttackSpellDmgDoneSynergy {
     public PreCalcSpellConfigs getPreCalcConfig() {
         PreCalcSpellConfigs c = new PreCalcSpellConfigs();
         c.set(SC.BASE_VALUE, 1, 4);
-        c.setMaxLevel(4);
+        c.setMaxLevel(8);
         return c;
     }
 
